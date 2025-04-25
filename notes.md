@@ -128,3 +128,15 @@ downgrade scipy from 1.15.2 to 1.11.4 Nov 18 2023
 ```
 ModuleNotFoundError: No module named 'wandb'
 ```
+
+jax_implementation is now ok
+
+# pytorch
+
+```
+ModuleNotFoundError: No module named 'datasets'
+```
+
+installed datasets
+
+now works
