@@ -1,0 +1,10 @@
+/n/home11/lilliansun/.conda/envs/dp-adamw/lib/python3.11/site-packages/opacus/accountants/analysis/rdp.py:332: UserWarning: Optimal order is the largest alpha. Please consider expanding the range of alphas to get a tighter privacy bound.
+  warnings.warn(
+E=0 A=9.57 S=0 L=2.31 LR=0.0000 ‖Δ‖=8.73 ||≠||=0.02:   0%|          | 0/3360 [00:10<?, ?it/s]
+Traceback (most recent call last):
+  File "/n/holylabs/LABS/sham_lab/Lab/lillian/DP-AdamW/jax_implementation/main.py", line 137, in <module>
+    main()
+  File "/n/holylabs/LABS/sham_lab/Lab/lillian/DP-AdamW/jax_implementation/main.py", line 127, in main
+    del metadata['metrics']  # avoid saving a python object
+        ~~~~~~~~^^^^^^^^^^^
+KeyError: 'metrics'

@@ -1,0 +1,144 @@
+_wandb:
+    value:
+        cli_version: 0.19.10
+        m: []
+        python_version: 3.11.12
+        t:
+            "1":
+                - 1
+                - 2
+                - 3
+                - 5
+                - 12
+                - 41
+                - 45
+                - 49
+                - 53
+                - 55
+            "2":
+                - 1
+                - 2
+                - 3
+                - 5
+                - 12
+                - 41
+                - 45
+                - 49
+                - 53
+                - 55
+            "3":
+                - 2
+                - 13
+                - 16
+                - 23
+                - 55
+            "4": 3.11.12
+            "5": 0.19.10
+            "8":
+                - 5
+            "12": 0.19.10
+            "13": linux-x86_64
+activation:
+    value: tanh
+adam_corr:
+    value: true
+adam_corr_after_epoch:
+    value: -1
+augmult_num:
+    value: 0
+batch_size:
+    value: 1024
+beta_1:
+    value: 0.9
+beta_2:
+    value: 0.999
+classifier_model:
+    value: CNN5
+clipping_only:
+    value: false
+cosine_lr:
+    value: false
+data_dir:
+    value: /tmp/data
+dataset:
+    value: CIFAR10
+debug:
+    value: false
+delta:
+    value: 1e-05
+dict_path:
+    value: /tmp
+disable_jit:
+    value: false
+dp_l2_norm_clip:
+    value: 3
+dp_noise_multiplier:
+    value: 1
+dp_sampling:
+    value: false
+elu_alpha:
+    value: 1
+ema:
+    value: false
+epochs:
+    value: 70
+eps:
+    value: 1e-08
+eps_root:
+    value: 1e-09
+eval_every:
+    value: 1000
+exp_entity:
+    value: cs2080
+exp_group:
+    value: jax
+exp_name:
+    value: cifar10_cnn5_dpadam_eps_1
+exp_proj:
+    value: dp-adamw
+gamma_decay:
+    value: 1
+imp_max:
+    value: 1
+imp_min:
+    value: 0
+learning_rate:
+    value: 5e-06
+lr_decay:
+    value: 1
+n_data_workers:
+    value: 0
+negative_slope:
+    value: 0.2
+normalization:
+    value: none
+num_classes:
+    value: 10
+optimizer:
+    value: sgd
+out_path:
+    value: $HOME/tmp
+priv_accountant:
+    value: prv
+progress_bar:
+    value: true
+reload_ckpt_idx:
+    value: null
+reload_ckpt_path:
+    value: null
+resnet_depth:
+    value: 16
+resnet_width:
+    value: 4
+seed:
+    value: 1024
+sgd_momentum:
+    value: false
+target_eps:
+    value: 1
+tmp_bias:
+    value: 0
+trainer:
+    value: DPAdam
+weight_standardization:
+    value: false

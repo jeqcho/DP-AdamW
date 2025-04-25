@@ -1,0 +1,16 @@
+{"time":"2025-04-25T00:09:56.610106119-04:00","level":"INFO","msg":"stream: starting","core version":"0.19.10","symlink path":"/n/holylabs/LABS/sham_lab/Lab/lillian/DP-AdamW/wandb/run-20250425_000956-qo08loxk/logs/debug-core.log"}
+{"time":"2025-04-25T00:09:56.813947375-04:00","level":"INFO","msg":"created new stream","id":"qo08loxk"}
+{"time":"2025-04-25T00:09:56.813985716-04:00","level":"INFO","msg":"stream: started","id":"qo08loxk"}
+{"time":"2025-04-25T00:09:56.814626438-04:00","level":"INFO","msg":"handler: started","stream_id":"qo08loxk"}
+{"time":"2025-04-25T00:09:56.814658706-04:00","level":"INFO","msg":"writer: Do: started","stream_id":"qo08loxk"}
+{"time":"2025-04-25T00:09:56.814789877-04:00","level":"INFO","msg":"sender: started","stream_id":"qo08loxk"}
+{"time":"2025-04-25T00:09:57.019704282-04:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-04-25T00:24:44.310148343-04:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-04-25T00:24:44.310202473-04:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-04-25T00:24:44.763478289-04:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-04-25T00:24:44.912965318-04:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-04-25T00:24:44.918151406-04:00","level":"INFO","msg":"stream: closing","id":"qo08loxk"}
+{"time":"2025-04-25T00:24:44.918175231-04:00","level":"INFO","msg":"handler: closed","stream_id":"qo08loxk"}
+{"time":"2025-04-25T00:24:44.918184367-04:00","level":"INFO","msg":"writer: Close: closed","stream_id":"qo08loxk"}
+{"time":"2025-04-25T00:24:44.918332197-04:00","level":"INFO","msg":"sender: closed","stream_id":"qo08loxk"}
+{"time":"2025-04-25T00:24:44.918358296-04:00","level":"INFO","msg":"stream: closed","id":"qo08loxk"}

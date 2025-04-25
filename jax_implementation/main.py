@@ -37,6 +37,7 @@ parser.add_argument("--reload_ckpt_path", type=str, default=None,
                     help="checkpoint path to reload")
 parser.add_argument("--reload_ckpt_idx", type=str, default=None,
                     help="either best or last")
+parser.add_argument("--exp_entity", type=str, default=None)
 parser.add_argument("--exp_group", type=str, default=None)
 parser.add_argument("--exp_proj", type=str, default=None)
 parser.add_argument("--disable_jit", default=False, action='store_true')
@@ -60,7 +61,7 @@ def main(input_args=None):
         seed = conf.seed
 
     if not conf.debug:
-        wandb.init(project=conf.exp_proj, config=conf, group=conf.exp_group, name=conf.exp_name)
+        wandb.init(entity=conf.exp_entity, project=conf.exp_proj, config=conf, group=conf.exp_group, name=conf.exp_name)
 
     train_set, test_set = get_dataset(conf)
     model_fn = get_classifier(conf)
@@ -124,7 +125,8 @@ def main(input_args=None):
         pbar_it.set_description(desc)
 
         if not conf.debug:
-            del metadata['metrics']  # avoid saving a python object
+            if 'metrics' in metadata:
+                del metadata['metrics']  # avoid saving a python object
             wandb.log(metadata)
 
     if not conf.debug:

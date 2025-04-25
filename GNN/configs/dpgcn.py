@@ -25,7 +25,7 @@ def get_config():
 
   config.dataset = 'ogbn-arxiv-disjoint'
   config.dataset_path = 'datasets/'
-  config.wandb_project = 'my_wandb_project'
+  config.wandb_project = 'dp-adamw'
   config.experiment_name = 'dpadambc_eps_3'
   config.group = 'eps_3_ogbn_arxiv'
   config.multi_graph = False

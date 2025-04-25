@@ -53,13 +53,12 @@ parser.add_argument("--model_name", choices=['bert_base', 'bert_large'], default
 def main():
     conf = configlib.parse()
 
-    # Init Wandb
-    wandb.login(key='b7617eecafac1c7019d5cf07b1aadac73891e3d8')
-    wandb.init(project='dp_nlp', group=conf.exp_group, name=conf.exp_name)
+    # TODO: change to your own key
+    wandb.login(key='db16394d65b7e2b87c7f11d1aedf3c38327c6fca') # Lillian's key
+    wandb.init(project='dp-adamw', group=conf.exp_group, name=conf.exp_name)
 
     # load data
-    DATA_DIR = "/home/qiaoyuet/project/data"
-    snli_folder = os.path.join(DATA_DIR, "snli_1.0")
+    snli_folder = os.path.join("snli_1.0")
     train_path = os.path.join(snli_folder, "snli_1.0_train.txt")
     dev_path = os.path.join(snli_folder, "snli_1.0_dev.txt")
     df_train = pd.read_csv(train_path, sep='\t')

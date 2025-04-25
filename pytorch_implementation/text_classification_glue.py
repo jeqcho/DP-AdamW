@@ -47,7 +47,7 @@ parser.add_argument("--num_epochs", default=3, type=int)
 parser.add_argument("--seed", default=0, type=int)
 parser.add_argument("--beta_1", default=0.9, type=float)
 parser.add_argument("--beta_2", default=0.999, type=float)
-parser.add_argument("--out_dir", default='/home/qiaoyuet/project/dp_nlp/tmp_dicts/', type=str)
+parser.add_argument("--out_dir", default='tmp_dicts/', type=str)
 parser.add_argument("--data_name", choices=['qnli', 'mnli', 'qqp', 'sst2'])
 parser.add_argument("--model_name", choices=['bert_base', 'bert_large'])
 parser.add_argument("--gamma_decay", default=1.0, type=float)
@@ -57,9 +57,9 @@ parser.add_argument("--target_epsilon", default=None, type=float)
 def main():
     conf = configlib.parse()
 
-    # Init Wandb
-    wandb.login(key='b7617eecafac1c7019d5cf07b1aadac73891e3d8')
-    wandb.init(project='dp_nlp_glue', group=conf.exp_group, name=conf.exp_name)
+    # TODO: change to your own key
+    wandb.login(key='db16394d65b7e2b87c7f11d1aedf3c38327c6fca') # Lillian's key
+    wandb.init(project='dp-adamw', group=conf.exp_group, name=conf.exp_name)
 
     # Load data
     if conf.data_name == 'qnli':
