@@ -4,10 +4,8 @@
 #SBATCH --gres=gpu:1
 #SBATCH --mem=100gb
 #SBATCH -t 1-23:00                                                          # Runtime in D-HH:MM
-#SBATCH -o /n/holylabs/LABS/sham_lab/Lab/lillian/DP-AdamW/results/output_%j.out        # File to which STDOUT will be written, %j inserts jobid
-#SBATCH -e /n/holylabs/LABS/sham_lab/Lab/lillian/DP-AdamW/results/output_%j.err        # File to which STDERR will be written, %j inserts jobid
-#SBATCH --mail-user=lilliansun@college.harvard.edu
-#SBATCH --mail-type=ALL
+#SBATCH -o results/output_%j.out        # File to which STDOUT will be written, %j inserts jobid
+#SBATCH -e results/output_%j.err        # File to which STDERR will be written, %j inserts jobid
 #SBATCH --account kempner_sham_lab
 
 
