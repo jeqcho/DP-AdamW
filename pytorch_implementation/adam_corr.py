@@ -277,6 +277,75 @@ class AdamCorr(Optimizer):
         }, hist_dict, summary_stats_dict, dummy_step, cur_gamma
 
 
+#### DP-AdamW without bias correction ####
+
+def adamw_dp(params, grads, exp_avgs, exp_avg_sqs, state_steps, *, beta1, beta2, lr, weight_decay, eps):
+    """
+    Performs one DP-AdamW update with no bias correction assuming that the gradients are already clipped and noised
+    """
+    for i, p in enumerate(params):
+        g = grads[i]
+        m = exp_avgs[i]
+        v = exp_avg_sqs[i]
+        step = state_steps[i]
+
+        m.mul_(beta1).add_(g, alpha=1 - beta1)
+        v.mul_(beta2).addcmul_(g, g, value=1 - beta2)
+
+        bc1 = 1 - beta1**step
+        bc2 = 1 - beta2**step
+
+        m_hat = m / bc1
+        v_hat = v / bc2
+        denom = v_hat.sqrt().add_(eps)
+
+        p.addcdiv_(m_hat, denom, value=-lr)
+
+        if weight_decay != 0:
+            p.add_(p, alpha=-lr * weight_decay)
+
+
+class DPAdamW(Optimizer):
+    """
+    DPAdamW optimizer class
+    """
+    def __init__(
+        self, params, dp_batch_size=None, dp_noise_multiplier=None, dp_l2_norm_clip=None,
+        lr=1e-3, betas=(0.9, 0.999), eps=1e-8, weight_decay=1e-2):
+        defaults = dict(lr=lr, betas=betas, eps=eps,
+                        weight_decay=weight_decay)
+        super().__init__(params, defaults)
+        self.noise_multiplier = dp_noise_multiplier
+        self.dp_batch_size = dp_batch_size
+        self.dp_l2_norm_clip = dp_l2_norm_clip
+
+    @torch.no_grad()
+    def step(self, closure=None):
+        loss = closure() if closure is not None else None
+
+        for group in self.param_groups:
+            b1, b2 = group['betas']
+            ps, gs, ms, vs, steps = [], [], [], [], []
+
+            for p in group['params']:
+                if p.grad is None:
+                    continue
+                ps.append(p); gs.append(p.grad)
+
+                st = self.state[p]
+                if len(st) == 0:
+                    st['step'] = 0
+                    st['exp_avg'] = torch.zeros_like(p)
+                    st['exp_avg_sq'] = torch.zeros_like(p)
+
+                st['step'] += 1
+                steps.append(st['step'])
+                ms.append(st['exp_avg'])
+                vs.append(st['exp_avg_sq'])
+
+            adamw_dp(ps, gs, ms, vs, steps, beta1=b1, beta2=b2, lr=group['lr'], weight_decay=group['weight_decay'], eps=group['eps'])
+        return loss
+
 def adam(params: List[Tensor],
          grads: List[Tensor],
          exp_avgs: List[Tensor],

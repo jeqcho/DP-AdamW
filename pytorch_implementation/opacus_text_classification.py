@@ -25,7 +25,8 @@ import wandb
 import configlib
 
 parser = configlib.add_parser("config")
-parser.add_argument("--opt_model", choices=['adam', 'adamw', 'adam_corr', 'sgdm', 'svag', 'sgd'])
+# parser.add_argument("--opt_model", choices=['adam', 'adamw', 'adam_corr', 'sgdm', 'svag', 'sgd'])
+parser.add_argument("--opt_model", choices=['adam', 'adamw', 'dp_adamw', 'adam_corr', 'sgdm', 'svag', 'sgd'])
 parser.add_argument("--exp_name", default="tmp", type=str)
 parser.add_argument("--exp_group", default="tmp", type=str)
 parser.add_argument("--eps_root", default=1e-8, type=float)
@@ -277,6 +278,16 @@ def main():
         scheduler = ExponentialLR(optimizer, gamma=conf.gamma_decay)
     elif conf.opt_model == "adamw":
         optimizer = torch.optim.AdamW(model.parameters(), lr=conf.lr, eps=conf.eps)
+    elif conf.opt_model == "dp_adamw":
+        from adam_corr import DPAdamW
+        optimizer = DPAdamW(
+            model.parameters(), lr=conf.lr, eps=conf.eps,
+            betas=(conf.beta_1, conf.beta_2),
+            weight_decay=1e-2,
+            dp_batch_size=BATCH_SIZE,
+            dp_noise_multiplier=NOISE_MULTIPLIER,
+            dp_l2_norm_clip=MAX_GRAD_NORM,
+        )
     elif conf.opt_model == "adam":
         # optimizer = OrigAdam(model.parameters(), lr=conf.lr, eps=conf.eps, tmp_err=conf.tmp_err,
         #                      betas=(conf.beta_1, conf.beta_2),)  # if needed logging
