@@ -9,9 +9,6 @@
 #SBATCH --account kempner_sham_lab
 
 
-CODE_DIR=/n/holylabs/LABS/sham_lab/Lab/lillian/DP-AdamW
-pushd $CODE_DIR
-
 echo "Activating conda environment"
 module load Mambaforge/23.11.0-fasrc01
 conda activate dp-adamw
