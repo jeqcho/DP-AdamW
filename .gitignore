@@ -3,3 +3,5 @@
 *.out
 *.err
 **/wandb/
+__pycache__/
+*.py[cod]
