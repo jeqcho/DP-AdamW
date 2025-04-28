@@ -55,8 +55,8 @@ def main():
     conf = configlib.parse()
 
     # TODO: change to your own key
-    wandb.login(key='db16394d65b7e2b87c7f11d1aedf3c38327c6fca') # Lillian's key
-    wandb.init(project='dp-adamw', group=conf.exp_group, name=conf.exp_name)
+    # wandb.login(key='db16394d65b7e2b87c7f11d1aedf3c38327c6fca') # Lillian's key
+    wandb.init(group=conf.exp_group, name=conf.exp_name)
 
     # load data
     snli_folder = os.path.join("snli_1.0")
