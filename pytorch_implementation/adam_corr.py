@@ -298,7 +298,7 @@ def adamw_dp_bc(params, grads, exp_avgs, exp_avg_sqs, state_steps, *, beta1, bet
         m_hat = m / bc1
         v_hat = v / bc2
         phi = (dp_noise_multiplier ** 2) * (dp_l2_norm_clip ** 2) / (dp_batch_size ** 2)
-        v_corr = torch.maximum(v_hat - phi, eps_root)
+        v_corr = torch.clamp_min(v_hat - phi, eps_root)
         denom = v_corr.sqrt().add_(eps)
 
         p.addcdiv_(m_hat, denom, value=-lr)

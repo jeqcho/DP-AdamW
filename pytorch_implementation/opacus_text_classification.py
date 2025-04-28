@@ -278,7 +278,7 @@ def main():
         scheduler = ExponentialLR(optimizer, gamma=conf.gamma_decay)
     elif conf.opt_model == "adamw":
         optimizer = torch.optim.AdamW(model.parameters(), lr=conf.lr, eps=conf.eps)
-    elif conf.opt_model == "dp_adamwbc":
+    elif conf.opt_model == "dp_adamw_bc":
         from adam_corr import DPAdamWBC
         optimizer = DPAdamWBC(
             model.parameters(), lr=conf.lr, eps=conf.eps,
