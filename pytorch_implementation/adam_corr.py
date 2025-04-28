@@ -277,11 +277,11 @@ class AdamCorr(Optimizer):
         }, hist_dict, summary_stats_dict, dummy_step, cur_gamma
 
 
-#### DP-AdamW without bias correction ####
+#### DP-AdamW with bias correction ####
 
-def adamw_dp(params, grads, exp_avgs, exp_avg_sqs, state_steps, *, beta1, beta2, lr, weight_decay, eps):
+def adamw_dp_bc(params, grads, exp_avgs, exp_avg_sqs, state_steps, *, beta1, beta2, lr, weight_decay, eps, dp_batch_size, dp_noise_multiplier, dp_l2_norm_clip, eps_root):
     """
-    Performs one DP-AdamW update with no bias correction assuming that the gradients are already clipped and noised
+    Performs one DP-AdamW update with bias correction assuming that the gradients are already clipped and noised
     """
     for i, p in enumerate(params):
         g = grads[i]
@@ -297,7 +297,9 @@ def adamw_dp(params, grads, exp_avgs, exp_avg_sqs, state_steps, *, beta1, beta2,
 
         m_hat = m / bc1
         v_hat = v / bc2
-        denom = v_hat.sqrt().add_(eps)
+        phi = (dp_noise_multiplier ** 2) * (dp_l2_norm_clip ** 2) / (dp_batch_size ** 2)
+        v_corr = torch.maximum(v_hat - phi, eps_root)
+        denom = v_corr.sqrt().add_(eps)
 
         p.addcdiv_(m_hat, denom, value=-lr)
 
@@ -305,9 +307,9 @@ def adamw_dp(params, grads, exp_avgs, exp_avg_sqs, state_steps, *, beta1, beta2,
             p.add_(p, alpha=-lr * weight_decay)
 
 
-class DPAdamW(Optimizer):
+class DPAdamWBC(Optimizer):
     """
-    DPAdamW optimizer class
+    DPAdamW optimizer class with bias correction
     """
     def __init__(
         self, params, dp_batch_size=None, dp_noise_multiplier=None, dp_l2_norm_clip=None,
@@ -318,6 +320,7 @@ class DPAdamW(Optimizer):
         self.noise_multiplier = dp_noise_multiplier
         self.dp_batch_size = dp_batch_size
         self.dp_l2_norm_clip = dp_l2_norm_clip
+        self.eps_root = 1e-10
 
     @torch.no_grad()
     def step(self, closure=None):
@@ -343,7 +346,7 @@ class DPAdamW(Optimizer):
                 ms.append(st['exp_avg'])
                 vs.append(st['exp_avg_sq'])
 
-            adamw_dp(ps, gs, ms, vs, steps, beta1=b1, beta2=b2, lr=group['lr'], weight_decay=group['weight_decay'], eps=group['eps'])
+            adamw_dp_bc(ps, gs, ms, vs, steps, beta1=b1, beta2=b2, lr=group['lr'], weight_decay=group['weight_decay'], eps=group['eps'], dp_batch_size=self.dp_batch_size, dp_noise_multiplier=self.noise_multiplier, dp_l2_norm_clip=self.dp_l2_norm_clip, eps_root=self.eps_root)
         return loss
 
 def adam(params: List[Tensor],
