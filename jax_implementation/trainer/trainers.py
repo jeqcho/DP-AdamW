@@ -3,10 +3,12 @@ import configlib
 from trainer.iterative import IterativeTrainer
 from trainer.dp_iterative import DPIterativeTrainer
 from trainer.dp_adambc import DPAdamTrainer
+from trainer.dp_adamw import DPAdamWTrainer
 
 parser = configlib.add_parser("Trainer config")
 parser.add_argument("--trainer", default="DPIterative", type=str,
-    help="The trainer to use, class name (e.g. Iterative, DPIterative, ...). Trainer is appended",)
+    choices=["Iterative", "DPIterative", "DPAdam", "DPAdamW"],
+    help="The trainer to use, class name (e.g. Iterative, DPIterative, DPAdam, DPAdamW). Trainer is appended",)
 
 
 def get_trainer(conf: configlib.Config, model_fn, train_set, test_set, seed):

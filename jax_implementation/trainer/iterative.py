@@ -14,20 +14,15 @@ import numpy as np
 from trainer.utils import grad_norm, tree_flatten_1dim
 
 
-parser = configlib.add_parser("Trainer config")
-parser.add_argument("--epochs", type=int,
-        help="The number of epochs to train for (if steps not set).")
-parser.add_argument("--steps", type=int,
-        help="The number of steps to train for (overrides epochs).")
-parser.add_argument("--batch_size", "-b", default=128, type=int,
-        help="The data loader batch size.")
-parser.add_argument("--learning_rate", "--lr", default=.1, type=float,
-        help="The leraning rate to use (or start/max on schedules).")
-parser.add_argument("--cosine_lr", default=False, action='store_true',
-        help="Use a one cycle cosine leraning rate schedule.")
-parser.add_argument("--ema", default=False, action='store_true',
-        help="Use exponential moving average parameters for evaluation.")
-parser.add_argument("--optimizer", default='sgd', choices=['sgd', 'adam'])
+parser = configlib.add_parser("Base Trainer config")
+parser.add_argument('--epochs', type=int, default=100)
+parser.add_argument('--steps', type=int, default=None)
+parser.add_argument('--batch_size', type=int, default=128)
+parser.add_argument('--learning_rate', '--lr', type=float, default=1e-1)
+parser.add_argument('--cosine_lr', default=False, action='store_true')
+parser.add_argument('--ema', default=False, action='store_true')
+parser.add_argument('--optimizer', choices=['sgd', 'adam'], default='sgd')
+parser.add_argument('--n_data_workers', type=int, default=2, help="The number of workers to give the data loader.")
 
 
 def save_ckpt(ckpt_dir: str, params, state, idx) -> None:
@@ -43,10 +38,6 @@ def restore_ckpt(ckpt_dir, load_idx):
     with open(os.path.join(ckpt_dir, "state_{}.pkl".format(load_idx)), "rb") as f:
         loaded_state = pickle.load(f)
     return loaded_params, loaded_state
-
-
-parser.add_argument("--n_data_workers", type=int, default=0,
-        help="The number of workers to give the data loader.")
 
 
 class TrainerGen(object):

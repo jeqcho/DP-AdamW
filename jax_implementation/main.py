@@ -8,6 +8,8 @@ from trainer.trainers import get_trainer
 
 from trainer.iterative import IterativeTrainer
 from trainer.dp_iterative import DPIterativeTrainer
+from trainer.dp_adamw import DPAdamWTrainer
+from trainer.dp_adambc import DPAdamTrainer
 
 import random
 from tqdm import tqdm
@@ -18,6 +20,7 @@ import torch
 import numpy as np
 from jax.config import config
 import wandb
+import optax
 
 # Configuration arguments
 parser = configlib.add_parser("Run config")
@@ -43,7 +46,6 @@ parser.add_argument("--exp_proj", type=str, default=None)
 parser.add_argument("--disable_jit", default=False, action='store_true')
 parser.add_argument("--eval_every", type=int, default=1000)
 
-
 def main(input_args=None):
     conf = configlib.parse(input_args=input_args)
     pprint.pprint(conf)
@@ -65,18 +67,15 @@ def main(input_args=None):
 
     train_set, test_set = get_dataset(conf)
     model_fn = get_classifier(conf)
+
+    # Use the generic get_trainer function for all trainer types
     trainer = get_trainer(
         conf=conf,
         model_fn=model_fn,
         train_set=train_set,
         test_set=test_set,
-        seed=seed,
+        seed=conf.seed, # Use the potentially generated seed from conf
     )
-
-    # seed
-    torch.manual_seed(seed)
-    random.seed(seed)
-    np.random.seed(seed)
 
     neg_loss_improvement = 0
     acc = 0
