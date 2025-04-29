@@ -27,7 +27,8 @@ from opacus.accountants.prv import PRVAccountant
 from opacus.accountants.utils import get_noise_multiplier
 
 parser = configlib.add_parser("config")
-parser.add_argument("--opt_model", choices=['adam', 'adamw', 'adam_corr', 'sgd', 'svag'])
+# parser.add_argument("--opt_model", choices=['adam', 'adamw', 'adam_corr', 'sgd', 'svag'])
+parser.add_argument("--opt_model", choices=['adam', 'adamw', 'dp_adamw', 'dp_adamw_bc', 'adam_corr', 'sgdm', 'svag', 'sgd'])
 parser.add_argument("--exp_name", default="tmp", type=str)
 parser.add_argument("--exp_group", default="tmp", type=str)
 parser.add_argument("--eps_root", default=1e-8, type=float)
@@ -49,7 +50,8 @@ parser.add_argument("--beta_1", default=0.9, type=float)
 parser.add_argument("--beta_2", default=0.999, type=float)
 parser.add_argument("--out_dir", default='tmp_dicts/', type=str)
 parser.add_argument("--data_name", choices=['qnli', 'mnli', 'qqp', 'sst2'])
-parser.add_argument("--model_name", choices=['bert_base', 'bert_large'])
+# parser.add_argument("--model_name", choices=['bert_base', 'bert_large'])
+parser.add_argument("--model_name", choices=['bert_base', 'bert_large'], default='bert_base')
 parser.add_argument("--gamma_decay", default=1.0, type=float)
 parser.add_argument("--target_epsilon", default=None, type=float)
 
@@ -58,8 +60,8 @@ def main():
     conf = configlib.parse()
 
     # TODO: change to your own key
-    wandb.login(key='db16394d65b7e2b87c7f11d1aedf3c38327c6fca') # Lillian's key
-    wandb.init(project='dp-adamw', group=conf.exp_group, name=conf.exp_name)
+    # wandb.login(key='db16394d65b7e2b87c7f11d1aedf3c38327c6fca') # Lillian's key
+    wandb.init(group=conf.exp_group, name=conf.exp_name)
 
     # Load data
     if conf.data_name == 'qnli':
@@ -333,6 +335,16 @@ def main():
         # scheduler = ExponentialLR(optimizer, gamma=conf.gamma_decay)
     elif conf.opt_model == "adamw":
         optimizer = torch.optim.AdamW(model.parameters(), lr=conf.lr, eps=conf.eps)
+    elif conf.opt_model == "dp_adamw_bc":
+        from adam_corr import DPAdamWBC
+        optimizer = DPAdamWBC(
+            model.parameters(), lr=conf.lr, eps=conf.eps,
+            betas=(conf.beta_1, conf.beta_2),
+            weight_decay=1e-2,
+            dp_batch_size=BATCH_SIZE,
+            dp_noise_multiplier=NOISE_MULTIPLIER,
+            dp_l2_norm_clip=MAX_GRAD_NORM,
+        )
     elif conf.opt_model == "adam":
         # optimizer = OrigAdam(model.parameters(), lr=conf.lr, eps=conf.eps, tmp_err=conf.tmp_err,
         #                      betas=(conf.beta_1, conf.beta_2),)  # if needed logging
