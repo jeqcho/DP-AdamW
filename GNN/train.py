@@ -596,8 +596,10 @@ def train_and_evaluate(config,
   state = ckpt.restore_or_initialize(state)
   # Get optimizer Adam summary stats
   if config.optimizer == 'sgd' or not config.differentially_private_training:
+    print("empty adam_summary_stats")
     adam_summary_stats = {}
   else:
+    print("loading adam_summary_stats")
     adam_summary_stats = state.opt_state[1][0].summary_stats
   initial_step = int(state.step) + 1
 

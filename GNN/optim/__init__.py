@@ -1,1 +1,1 @@
-from .adam_optimizers import adam, adamcorr
+from .adam_optimizers import adam, adamcorr, adamw

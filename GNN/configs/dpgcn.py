@@ -26,7 +26,7 @@ def get_config():
   config.dataset = 'ogbn-arxiv-disjoint'
   config.dataset_path = 'GNN/datasets/'
   config.wandb_project = 'dp-adamw-gnn'
-  config.experiment_name = 'dpadambc_eps_3'
+  config.experiment_name = 'dpadambc_eps_3-adamw-0.01'
   config.group = 'eps_3_ogbn_arxiv'
   config.multi_graph = False
   config.pad_subgraphs_to = 100
@@ -49,7 +49,7 @@ def get_config():
   config.resample_every_steps = 0
   config.checkpoint_every_steps = 50
   config.rng_seed = 86583
-  config.optimizer = 'adam'
+  config.optimizer = 'adamw'
   config.learning_rate = 1e-4
   config.momentum = 0.
   config.nesterov = False

@@ -6,7 +6,7 @@ from optax._src import base
 from optax._src import utils
 from optax._src import numerics
 from optax._src import combine
-from optax._src.transform import ScaleByAdamState, update_moment, update_moment_per_elem_norm, bias_correction
+from optax._src.transform import ScaleByAdamState, update_moment, update_moment_per_elem_norm, bias_correction, add_decayed_weights
 from optax._src.alias import _scale_by_learning_rate
 from typing import Any, Callable, NamedTuple, Optional, Union
 import chex
@@ -226,3 +226,26 @@ def adam(
         scale_by_adam(b1=b1, b2=b2, eps=eps, mu_dtype=mu_dtype),
         _scale_by_learning_rate(learning_rate),
     )
+
+# adamw
+# from jax_implementation.trainer.dp_adamw import adamw
+# reimplement
+
+
+def adamw(
+    sigma: float,
+    learning_rate: float,
+    b1: float,
+    b2: float,
+    eps: float,
+    eps_root: float,
+    mu_dtype: Optional[Any] = None,
+    weight_decay: float = 0.0, # AdamW specific
+) -> base.GradientTransformation:
+    return combine.chain(
+        # This transformation handles the Adam moment updates with DP correction
+        scale_by_adam_corr(
+             sigma=sigma, b1=b1, b2=b2, eps=eps, eps_root=eps_root, mu_dtype=mu_dtype),
+        add_decayed_weights(weight_decay=weight_decay),
+        _scale_by_learning_rate(learning_rate),
+    ) 
