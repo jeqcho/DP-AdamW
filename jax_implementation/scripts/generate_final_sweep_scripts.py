@@ -39,6 +39,8 @@ script_template = """#!/bin/bash
 #SBATCH --account kempner_sham_lab
 # #SBATCH --account sneel_lab
 
+CODE_DIR=/n/holylabs/LABS/sham_lab/Lab/lillian/DP-AdamW/jax_implementation
+pushd $CODE_DIR
 
 echo "Activating conda environment"
 module load Mambaforge/23.11.0-fasrc01
@@ -87,7 +89,7 @@ do
 
                 exp_name="${{TARGET_EPS}}_${{exp_suffix}}_wd${{WEIGHT_DECAY}}_lr${{lr}}_c${{DP_L2_NORM_CLIP}}_e${{e}}_trial${{trial}}"
 
-                python ../main.py \\
+                python main.py \\
                     --seed $SEED \\
                     --epochs 70 \\
                     --progress_bar \\
