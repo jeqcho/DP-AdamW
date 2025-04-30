@@ -21,7 +21,7 @@ parser.add_argument('--batch_size', type=int, default=128)
 parser.add_argument('--learning_rate', '--lr', type=float, default=1e-1)
 parser.add_argument('--cosine_lr', default=False, action='store_true')
 parser.add_argument('--ema', default=False, action='store_true')
-parser.add_argument('--optimizer', choices=['sgd', 'adam'], default='sgd')
+parser.add_argument('--optimizer', choices=['sgd', 'adam'], default='adam')
 parser.add_argument('--n_data_workers', type=int, default=2, help="The number of workers to give the data loader.")
 
 

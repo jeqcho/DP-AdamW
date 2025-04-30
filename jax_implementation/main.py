@@ -44,7 +44,7 @@ parser.add_argument("--exp_entity", type=str, default=None)
 parser.add_argument("--exp_group", type=str, default=None)
 parser.add_argument("--exp_proj", type=str, default=None)
 parser.add_argument("--disable_jit", default=False, action='store_true')
-parser.add_argument("--eval_every", type=int, default=1000)
+parser.add_argument("--eval_every", type=int, default=500)
 
 def main(input_args=None):
     conf = configlib.parse(input_args=input_args)
@@ -128,10 +128,19 @@ def main(input_args=None):
                 del metadata['metrics']  # avoid saving a python object
             wandb.log(metadata)
 
+    # <<< Run final evaluation after the loop >>>
+    print("\nTraining finished. Running final evaluation...")        
+    acc, test_loss, best_acc = trainer.eval()
+    if not conf.debug:
+        test_log_dict = {'test_accuracy': acc, 'best_test_accuracy': best_acc, 'test_loss': test_loss}
+        test_log_dict.update({'test_step': metadata.get('step')})
+        test_log_dict.update({'dp_epsilon': metadata.get('eps')})
+        wandb.log(test_log_dict)
+
     if not conf.debug:
         wandb.finish()
 
-    return acc
+    return acc # Return the last periodic accuracy, or maybe final_acc? User decision.
 
 
 if __name__ == "__main__":
