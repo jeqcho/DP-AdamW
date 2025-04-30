@@ -15,11 +15,11 @@ from opacus.accountants.rdp import RDPAccountant
 from opacus.accountants.utils import get_noise_multiplier
 import pickle
 import os
-from jax_implementation.trainer.dp_adambc import scale_by_adam_corr
 
 # Import necessary components from other trainer files
 from trainer.dp_iterative import DPIterativeTrainer, noise_and_normalize
 from trainer.utils import tree_zeros_like, tree_flatten_1dim, grad_norm, tree_ones_like
+from trainer.dp_adambc import scale_by_adam_corr
 from data_utils.jax_dataloader import NumpyLoader, Cycle
 
 # --- Arguments specific to DPAdamW ---
@@ -233,12 +233,12 @@ class DPAdamWTrainer(DPIterativeTrainer):
         metadata['update_norm'] = float(grad_norm(update))
 
         if self.conf.adam_corr:
-            update, self.opt_state = self.opt.update((update, clipped_grads), self.opt_state)
+            update, self.opt_state = self.opt.update((update, clipped_grads), self.opt_state, params=self.theta)
             _, _, _, _, _, _, perc_corr = self.opt_state[2][0]
             metadata['perc_corr1'] = float(perc_corr[0])
             metadata['perc_corr2'] = float(perc_corr[1])
         else:
-            update, self.opt_state = self.opt.update(update, self.opt_state)
+            update, self.opt_state = self.opt.update(update, self.opt_state, params=self.theta)
 
         self.theta = optax.apply_updates(self.theta, update)
 
