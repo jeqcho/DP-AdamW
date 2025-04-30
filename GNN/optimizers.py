@@ -19,7 +19,9 @@ import chex
 import jax
 import jax.numpy as jnp
 import optax
-from GNN.optim import adam, adamcorr, adamw
+from GNN.optim import adam, adamcorr, gnn_adamw, gnn_adamwbc
+
+from jax_implementation.trainer.dp_adamw import adamw
 
 
 def compute_opt_noise(l2_norm_threshold, base_sensitivity, noise_multiplier):
@@ -177,6 +179,7 @@ def dpadamw(
     batch_size,
     learning_rate,
     b1,
+    weight_decay,
     eps_root,
     l2_norm_threshold,
     base_sensitivity,
@@ -185,8 +188,7 @@ def dpadamw(
 ):
     b2 = 1 - (1 - b1) ** 2
     sigma = compute_opt_noise(l2_norm_threshold, base_sensitivity, noise_multiplier)
-    weight_decay = 0.01
-    _adamw = adamw(
+    _adamw = gnn_adamw(
         sigma=sigma,
         learning_rate=learning_rate,
         b1=b1,
@@ -205,4 +207,38 @@ def dpadamw(
             return_type="custom",
         ),
         _adamw,
+    )
+
+def dpadamwbc(
+    batch_size,
+    learning_rate,
+    b1,
+    weight_decay,
+    eps_root,
+    l2_norm_threshold,
+    base_sensitivity,
+    noise_multiplier,
+    init_rng,
+):
+    b2 = 1 - (1 - b1) ** 2
+    sigma = compute_opt_noise(l2_norm_threshold, base_sensitivity, noise_multiplier)
+    _adamwbc = gnn_adamwbc(
+        sigma=sigma,
+        learning_rate=learning_rate,
+        b1=b1,
+        b2=b2,
+        eps=0,
+        eps_root=eps_root,
+        weight_decay=weight_decay,
+    )
+    return optax.chain(
+        dp_aggregate(
+            batch_size,
+            l2_norm_threshold,
+            base_sensitivity,
+            noise_multiplier,
+            init_rng,
+            return_type="custom",
+        ),
+        _adamwbc,
     )

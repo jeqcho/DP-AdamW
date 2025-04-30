@@ -419,9 +419,20 @@ def create_optimizer(
         'learning_rate': config.learning_rate,
         'b1': config.b1,
         'eps_root': config.eps_root,
+        'weight_decay': config.weight_decay,
     }
     if config.differentially_private_training:
       return optimizers.dpadamw(**opt_params, **privacy_params)
+  
+  if config.optimizer == 'adamwbc':
+    opt_params = {
+        'learning_rate': config.learning_rate,
+        'b1': config.b1,
+        'eps_root': config.eps_root,
+        'weight_decay': config.weight_decay,
+    }
+    if config.differentially_private_training:
+      return optimizers.dpadamwbc(**opt_params, **privacy_params)
 
   raise ValueError(f'Unsupported optimizer: {config.optimizer}')
 
@@ -592,6 +603,17 @@ def train_and_evaluate(config,
 
   # Set up checkpointing of the model.
   checkpoint_dir = os.path.join(workdir, 'checkpoints')
+  # nuke tmp
+  # Remove checkpoint directory if it exists
+  if os.path.exists(checkpoint_dir):
+    import shutil
+    shutil.rmtree(checkpoint_dir)
+  os.makedirs(checkpoint_dir, exist_ok=True)
+  # output contents of checkpoint_dir
+  print(f"Checkpoint directory: {checkpoint_dir}")
+  if os.path.exists(checkpoint_dir):
+    print(f"Contents of {checkpoint_dir}: {os.listdir(checkpoint_dir)}")
+  
   ckpt = checkpoint.Checkpoint(checkpoint_dir, max_to_keep=2)
   state = ckpt.restore_or_initialize(state)
   # Get optimizer Adam summary stats

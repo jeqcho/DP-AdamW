@@ -58,4 +58,5 @@ def get_config():
   config.eps = 1e-12
   config.batch_size = 10000
   config.virtual_batch_size = 5000
+  config.weight_decay = 0.001
   return config
