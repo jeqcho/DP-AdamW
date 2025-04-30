@@ -17,13 +17,13 @@ import pickle
 import os
 
 # Import necessary components from other trainer files
-from trainer.dp_iterative import DPIterativeTrainer, noise_and_normalize
-from trainer.utils import tree_zeros_like, tree_flatten_1dim, grad_norm, tree_ones_like
+from jax_implementation.trainer.dp_iterative import DPIterativeTrainer, noise_and_normalize
+from jax_implementation.trainer.utils import tree_zeros_like, tree_flatten_1dim, grad_norm, tree_ones_like
+from jax_implementation.data_utils.jax_dataloader import NumpyLoader, Cycle
 from trainer.dp_adambc import scale_by_adam_corr
-from data_utils.jax_dataloader import NumpyLoader, Cycle
 
 # --- Arguments specific to DPAdamW ---
-parser = configlib.add_parser("DP-AdamW Trainer config")
+# parser = configlib.add_parser("DP-AdamW Trainer config")
 # Remove duplicate definitions - these are expected to be defined in dp_adambc.py
 # parser.add_argument("--beta_1", default=0.9, type=float)
 # parser.add_argument("--beta_2", default=0.999, type=float)
@@ -31,7 +31,7 @@ parser = configlib.add_parser("DP-AdamW Trainer config")
 # parser.add_argument("--eps_root", type=float, default=1e-8)
 # parser.add_argument("--adam_corr", default=False, action='store_true', help="Enable bias correction for DP-AdamW similar to DPAdam.")
 # AdamW specific argument - Keep this one
-parser.add_argument('--weight_decay', type=float, default=0.01, help='Weight decay for DPAdamW optimizer')
+# parser.add_argument('--weight_decay', type=float, default=0.01, help='Weight decay for DPAdamW optimizer')
 
 class ScaleByAdamWStateCorr(NamedTuple):
     count: chex.Array  # shape=(), dtype=jnp.int32.
@@ -146,7 +146,7 @@ def adamw(
 class DPAdamWTrainer(DPIterativeTrainer):
     def __init__(
             self,
-            conf: configlib.Config,
+            conf,
             model_fn,
             train_set,
             test_set,

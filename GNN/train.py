@@ -39,11 +39,11 @@ import wandb
 import random
 import math
 
-import input_pipeline
-import models
-import normalizations
-import optimizers
-import privacy_accountants
+from GNN import input_pipeline
+from GNN import models
+from GNN import normalizations
+from GNN import optimizers
+from GNN import privacy_accountants
 import sys
 
 _SUBGRAPH_PADDING_VALUE = -1
@@ -413,6 +413,15 @@ def create_optimizer(
     }
     if config.differentially_private_training:
       return optimizers.dpadamcorr(**opt_params, **privacy_params)
+  
+  if config.optimizer == 'adamw':
+    opt_params = {
+        'learning_rate': config.learning_rate,
+        'b1': config.b1,
+        'eps_root': config.eps_root,
+    }
+    if config.differentially_private_training:
+      return optimizers.dpadamw(**opt_params, **privacy_params)
 
   raise ValueError(f'Unsupported optimizer: {config.optimizer}')
 

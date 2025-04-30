@@ -24,8 +24,8 @@ def get_config():
   config = ml_collections.ConfigDict()
 
   config.dataset = 'ogbn-arxiv-disjoint'
-  config.dataset_path = 'datasets/'
-  config.wandb_project = 'dp-adamw'
+  config.dataset_path = 'GNN/datasets/'
+  config.wandb_project = 'dp-adamw-gnn'
   config.experiment_name = 'dpadambc_eps_3'
   config.group = 'eps_3_ogbn_arxiv'
   config.multi_graph = False
@@ -49,7 +49,7 @@ def get_config():
   config.resample_every_steps = 0
   config.checkpoint_every_steps = 50
   config.rng_seed = 86583
-  config.optimizer = 'adamcorr'
+  config.optimizer = 'adam'
   config.learning_rate = 1e-4
   config.momentum = 0.
   config.nesterov = False

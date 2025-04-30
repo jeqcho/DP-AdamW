@@ -4,25 +4,25 @@ import jax
 import jax.numpy as jnp
 import optax
 from functools import partial
-from data_utils.jax_dataloader import NumpyLoader, Cycle
+from jax_implementation.data_utils.jax_dataloader import NumpyLoader, Cycle
 from tqdm import tqdm
 import time
 import pickle
 import configlib
 import os
 import numpy as np
-from trainer.utils import grad_norm, tree_flatten_1dim
+from jax_implementation.trainer.utils import grad_norm, tree_flatten_1dim
 
 
-parser = configlib.add_parser("Base Trainer config")
-parser.add_argument('--epochs', type=int, default=100)
-parser.add_argument('--steps', type=int, default=None)
-parser.add_argument('--batch_size', type=int, default=128)
-parser.add_argument('--learning_rate', '--lr', type=float, default=1e-1)
-parser.add_argument('--cosine_lr', default=False, action='store_true')
-parser.add_argument('--ema', default=False, action='store_true')
-parser.add_argument('--optimizer', choices=['sgd', 'adam'], default='adam')
-parser.add_argument('--n_data_workers', type=int, default=2, help="The number of workers to give the data loader.")
+# parser = configlib.add_parser("Base Trainer config")
+# parser.add_argument('--epochs', type=int, default=100)
+# parser.add_argument('--steps', type=int, default=None)
+# parser.add_argument('--batch_size', type=int, default=128)
+# parser.add_argument('--learning_rate', '--lr', type=float, default=1e-1)
+# parser.add_argument('--cosine_lr', default=False, action='store_true')
+# parser.add_argument('--ema', default=False, action='store_true')
+# parser.add_argument('--optimizer', choices=['sgd', 'adam'], default='adam')
+# parser.add_argument('--n_data_workers', type=int, default=2, help="The number of workers to give the data loader.")
 
 
 def save_ckpt(ckpt_dir: str, params, state, idx) -> None:
@@ -61,7 +61,7 @@ class TrainerGen(object):
 class IterativeTrainer(object):
     def __init__(
         self,
-        conf: configlib.Config,
+        conf,
         model_fn,
         train_set,
         test_set,

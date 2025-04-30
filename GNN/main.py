@@ -24,7 +24,7 @@ import jax
 from ml_collections import config_flags
 import tensorflow as tf
 
-import train
+from GNN import train
 
 FLAGS = flags.FLAGS
 

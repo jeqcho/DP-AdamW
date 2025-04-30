@@ -19,7 +19,9 @@ import chex
 import jax
 import jax.numpy as jnp
 import optax
-from optim import adam, adamcorr
+from GNN.optim import adam, adamcorr
+
+from jax_implementation.trainer import dp_adamw
 
 def compute_opt_noise(l2_norm_threshold, base_sensitivity, noise_multiplier):
   return l2_norm_threshold * base_sensitivity * noise_multiplier
@@ -123,3 +125,30 @@ def dpadamcorr(batch_size, learning_rate, b1, eps_root, l2_norm_threshold,
   return optax.chain(
       dp_aggregate(batch_size, l2_norm_threshold, base_sensitivity, noise_multiplier, init_rng,
                    return_type='custom'), adamcorr(sigma, learning_rate, b1, b2, 0, eps_root))
+
+
+def dpadamw(
+    batch_size,
+    learning_rate,
+    b1,
+    eps_root,
+    l2_norm_threshold,
+    base_sensitivity,
+    noise_multiplier,
+    init_rng,
+):
+    b2 = 1 - (1 - b1) ** 2
+    eps_root_decay = 0 # this is not used in adamw but they want it
+    weight_decay = None
+    return dp_adamw.adamw(
+        batch_size=batch_size,
+        dp_noise_multiplier=noise_multiplier,
+        dp_l2_norm_clip=l2_norm_threshold,
+        learning_rate=learning_rate,
+        b1=b1,
+        b2=b2,
+        eps=0,
+        eps_root=eps_root,
+        eps_root_decay=eps_root_decay,
+        weight_decay=weight_decay,
+    )
