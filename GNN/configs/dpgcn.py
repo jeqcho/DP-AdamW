@@ -25,7 +25,7 @@ def get_config():
 
   config.dataset = 'ogbn-arxiv-disjoint'
   config.dataset_path = 'GNN/datasets/'
-  config.wandb_project = 'dp-adamw-gnn'
+  config.wandb_project = 'dp-gnn-sweeps'
   config.experiment_name = 'dpadambc_eps_3-adamw-0.01'
   config.group = 'eps_3_ogbn_arxiv'
   config.multi_graph = False
@@ -39,10 +39,10 @@ def get_config():
   config.num_decoder_layers = 2
   config.activation_fn = 'tanh'
   config.num_classes = 40
-  config.max_degree = 6
+  config.max_degree = 7
   config.differentially_private_training = True
   config.l2_norm_threshold = 3e-4
-  config.training_noise_multiplier = 2.7
+  config.training_noise_multiplier = 2
   config.num_training_steps = 10000
   config.max_training_epsilon = 3
   config.evaluate_every_steps = 10

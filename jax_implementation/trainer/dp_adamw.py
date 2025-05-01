@@ -20,7 +20,7 @@ import os
 from jax_implementation.trainer.dp_iterative import DPIterativeTrainer, noise_and_normalize
 from jax_implementation.trainer.utils import tree_zeros_like, tree_flatten_1dim, grad_norm, tree_ones_like
 from jax_implementation.data_utils.jax_dataloader import NumpyLoader, Cycle
-from trainer.dp_adambc import scale_by_adam_corr
+from jax_implementation.trainer.dp_adambc import scale_by_adam_corr
 
 # --- Arguments specific to DPAdamW ---
 # parser = configlib.add_parser("DP-AdamW Trainer config")
