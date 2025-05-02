@@ -44,12 +44,12 @@ def get_config():
   config.l2_norm_threshold = 3e-4
   config.training_noise_multiplier = 2
   config.num_training_steps = 10000
-  config.max_training_epsilon = 3
+  config.max_training_epsilon = 12
   config.evaluate_every_steps = 10
   config.resample_every_steps = 0
   config.checkpoint_every_steps = 50
-  config.rng_seed = 86583
-  config.optimizer = 'adamw'
+  config.rng_seed = None
+  config.optimizer = 'adamwbc'
   config.learning_rate = 1e-4
   config.momentum = 0.
   config.nesterov = False
