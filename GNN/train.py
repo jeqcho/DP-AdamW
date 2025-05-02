@@ -560,6 +560,10 @@ def train_and_evaluate(config, workdir):
     # Clear GPU memory
     gc.collect()
     # Seed for reproducibility.
+    if not hasattr(config, 'rng_seed') or config.rng_seed is None:
+        import random
+        config.rng_seed = random.randint(0, 1000000)
+        print(f'No RNG seed provided, using random seed: {config.rng_seed}')
     rng = jax.random.PRNGKey(config.rng_seed)
     # Set the metric TODO: put in config
     eval_metric = "test_f1_micro" if config.multilabel else "test_accuracy"
