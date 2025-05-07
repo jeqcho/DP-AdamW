@@ -1,11 +1,12 @@
 # Import the W&B Python Library and log into W&B
-from typing import Literal
+from typing import Literal, List
 import wandb
 import os
 
 from wandb.sdk.wandb_run import Run
 from GNN import train
 from GNN.configs import dpgcn
+from GNN.log_utils import log_uniform_percentiles
 
 wandb.login()
 
@@ -18,7 +19,7 @@ def override_and_run(
     optimizer: Literal["adamw", "adamwbc"],
     lr: float,
     weight_decay: float,
-    run_name_suffix:str=""
+    run_name_suffix: str = "",
 ):
     # Create workdir if it doesn't exist
     workdir = "./tmp"
@@ -36,7 +37,9 @@ def override_and_run(
     config.weight_decay = weight_decay
 
     # wandb overrides
-    run.name = f"lr-{lr:.3e}-wd-{weight_decay:.3e}{run_name_suffix}"
+    run.name = (
+        f"lr-{lr:.3e}-wd-{weight_decay:.3e}_{optimizer}_eps-{epsilon}_{run_name_suffix}"
+    )
 
     if optimizer == "adamw":
         config.eps = 1e-12
@@ -58,7 +61,7 @@ def sweep_func_wrapper(epsilon: float, optimizer: Literal["adamw", "adamwbc"]):
         weight_decay: float = wandb.config.weight_decay
 
         results = override_and_run(run, epsilon, optimizer, lr, weight_decay)
-        
+
         return results
 
     return sweep_func
@@ -72,13 +75,13 @@ def sweep_once(epsilon: float, optimizer: Literal["adamw", "adamwbc"]):
         "metric": {"goal": "maximize", "name": "val_accuracy"},
         "parameters": {
             "lr": {
-                "max": 0.05,
-                "min": 0.00001,
+                "max": 1e-1,
+                "min": 1e-6,
                 "distribution": "log_uniform_values",
             },  # 1e-2 to 1e-3
             "weight_decay": {
-                "max": 0.01,
-                "min": 0.000001,
+                "max": 1e-1,
+                "min": 1e-7,
                 "distribution": "log_uniform_values",
             },  # 1e-3 to 1e-6
         },
@@ -87,11 +90,12 @@ def sweep_once(epsilon: float, optimizer: Literal["adamw", "adamwbc"]):
     # 3: Start the sweep
     sweep_id = wandb.sweep(sweep=sweep_configuration, project=project_id)
 
-    wandb.agent(sweep_id, function=sweep_func_wrapper(epsilon, optimizer), count=15)
+    wandb.agent(sweep_id, function=sweep_func_wrapper(epsilon, optimizer), count=30)
 
 
 if __name__ == "__main__":
-    optimizers: list[Literal["adamw", "adamwbc"]] = ["adamwbc", "adamw"]
+    # optimizers: list[Literal["adamw", "adamwbc"]] = ["adamwbc", "adamw"]
+    optimizers: list[Literal["adamw", "adamwbc"]] = ["adamw"]
     for optimizer in optimizers:
-        for epsilon in [3, 6, 12]:
+        for epsilon in [3]:
             sweep_once(epsilon, optimizer)

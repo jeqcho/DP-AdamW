@@ -7,7 +7,7 @@ if __name__ == "__main__":
     project_id = "dp-gnn-sweeps2"
     
     # Read final_params.csv
-    df = pd.read_csv("GNN/results/final_params.csv")
+    df = pd.read_csv("GNN/results/final_params-2.csv")
     
     # Initialize wandb
     wandb.login()
@@ -50,7 +50,10 @@ if __name__ == "__main__":
             'std_test_accuracy': std_acc,
             'original_test_accuracy': row['test_accuracy']
         })
+        
+        # break since we are rerunning for the first row
+        break
     
     # Convert results to DataFrame and save to CSV
     results_df = pd.DataFrame(results)
-    results_df.to_csv("GNN/results/mean_results.csv", index=False)
+    results_df.to_csv("GNN/results/mean_results-3.csv", index=False)
