@@ -1,0 +1,3138 @@
+nohup: ignoring input
+2025-05-03 17:06:16.585331: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1746291976.599023   54324 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1746291976.603218   54324 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1746291976.615201   54324 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1746291976.615226   54324 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1746291976.615231   54324 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1746291976.615235   54324 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+I0000 00:00:1746291979.733703   54324 gpu_device.cc:2019] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 11287 MB memory:  -> device: 0, name: NVIDIA L4, pci bus id: 0000:31:00.0, compute capability: 8.9
+wandb: Currently logged in as: jeqin_chooi (cs2080) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.19.10
+wandb: Run data is saved locally in /home/ubuntu/DP-AdamW/wandb/run-20250503_170620-jfuf8sct
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run dazzling-deluge-574
+wandb: ⭐️ View project at https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: 🚀 View run at https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/jfuf8sct
+I0000 00:00:1746291981.211874   54324 gpu_device.cc:2019] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 11287 MB memory:  -> device: 0, name: NVIDIA L4, pci bus id: 0000:31:00.0, compute capability: 8.9
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          epsilon ▁▅▆▇█
+wandb:     mt_clean_max ▆▂█▁
+wandb:    mt_clean_mean ▁▁▆█
+wandb:  mt_clean_median ▁▄▆█
+wandb:     mt_clean_min ▁█▂▆
+wandb:     mt_clean_q25 ▁▄▇█
+wandb:     mt_clean_q75 █▅▂▁
+wandb:    mt_noised_max ▅▁█▁
+wandb:   mt_noised_mean ▁█▇▃
+wandb: mt_noised_median ▁██▅
+wandb:    mt_noised_min ▁█▅▇
+wandb:    mt_noised_q25 ▁▆██
+wandb:    mt_noised_q75 █▃▂▁
+wandb:    test_accuracy ▁▅▇██
+wandb:        test_loss █▄▂▁▁
+wandb:   train_accuracy ▁▅▇██
+wandb:       train_loss █▄▂▁▁
+wandb:     val_accuracy ▁▅▇██
+wandb:         val_loss █▄▂▁▁
+wandb:     vt_clean_max █▄▂▁
+wandb:    vt_clean_mean █▄▂▁
+wandb:  vt_clean_median █▅▂▁
+wandb:     vt_clean_min ▁▅█▇
+wandb:     vt_clean_q25 █▅▃▁
+wandb:     vt_clean_q75 █▄▂▁
+wandb:    vt_noised_max █▄▂▁
+wandb:   vt_noised_mean █▄▂▁
+wandb: vt_noised_median ▁▆██
+wandb:    vt_noised_min ▁▃▆█
+wandb:    vt_noised_q25 ▁▅▇█
+wandb:    vt_noised_q75 █▄▂▁
+wandb: 
+wandb: Run summary:
+wandb:          epsilon 2.8252
+wandb:     mt_clean_max 0.01161
+wandb:    mt_clean_mean 0.0
+wandb:  mt_clean_median 0.0
+wandb:     mt_clean_min -0.01204
+wandb:     mt_clean_q25 -0.00014
+wandb:     mt_clean_q75 0.00014
+wandb:    mt_noised_max 0.0148
+wandb:   mt_noised_mean -1e-05
+wandb: mt_noised_median -1e-05
+wandb:    mt_noised_min -0.01522
+wandb:    mt_noised_q25 -0.00153
+wandb:    mt_noised_q75 0.00151
+wandb:    test_accuracy 48.98875
+wandb:        test_loss 1.93323
+wandb:   train_accuracy 50.6944
+wandb:       train_loss 1.83685
+wandb:     val_accuracy 49.75335
+wandb:         val_loss 1.92326
+wandb:     vt_clean_max 0.00294
+wandb:    vt_clean_mean 0.0
+wandb:  vt_clean_median 0.0
+wandb:     vt_clean_min 0.0
+wandb:     vt_clean_q25 0.0
+wandb:     vt_clean_q75 0.0
+wandb:    vt_noised_max 0.00313
+wandb:   vt_noised_mean 9e-05
+wandb: vt_noised_median 9e-05
+wandb:    vt_noised_min 3e-05
+wandb:    vt_noised_q25 8e-05
+wandb:    vt_noised_q75 0.00011
+wandb: 
+wandb: 🚀 View run lr-9.857e-03-wd-1.629e-06_adamw_eps-3_3_adamw_0 at: https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/jfuf8sct
+wandb: ⭐️ View project at: https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250503_170620-jfuf8sct/logs
+wandb: Tracking run with wandb version 0.19.10
+wandb: Run data is saved locally in /home/ubuntu/DP-AdamW/wandb/run-20250503_170714-tzryaibq
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run genial-glade-575
+wandb: ⭐️ View project at https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: 🚀 View run at https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/tzryaibq
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          epsilon ▁▅▆▇█
+wandb:     mt_clean_max █▄▁▃
+wandb:    mt_clean_mean █▂▃▁
+wandb:  mt_clean_median ▁▃▅█
+wandb:     mt_clean_min ▁▅█▅
+wandb:     mt_clean_q25 ▁▄▆█
+wandb:     mt_clean_q75 █▅▃▁
+wandb:    mt_noised_max █▂▁▁
+wandb:   mt_noised_mean ▁▅█▁
+wandb: mt_noised_median █▃▅▁
+wandb:    mt_noised_min ▁▆█▇
+wandb:    mt_noised_q25 ▁▆██
+wandb:    mt_noised_q75 █▃▂▁
+wandb:    test_accuracy ▁▆▇██
+wandb:        test_loss █▃▂▁▁
+wandb:   train_accuracy ▁▆▇██
+wandb:       train_loss █▄▂▂▁
+wandb:     val_accuracy ▁▆▇██
+wandb:         val_loss █▃▂▁▁
+wandb:     vt_clean_max █▃▂▁
+wandb:    vt_clean_mean █▄▂▁
+wandb:  vt_clean_median █▄▂▁
+wandb:     vt_clean_min ▁▅█▅
+wandb:     vt_clean_q25 █▅▃▁
+wandb:     vt_clean_q75 █▄▂▁
+wandb:    vt_noised_max █▃▂▁
+wandb:   vt_noised_mean █▃▂▁
+wandb: vt_noised_median ▁▆▇█
+wandb:    vt_noised_min ▁▄▇█
+wandb:    vt_noised_q25 ▁▅▇█
+wandb:    vt_noised_q75 █▄▂▁
+wandb: 
+wandb: Run summary:
+wandb:          epsilon 2.8252
+wandb:     mt_clean_max 0.01167
+wandb:    mt_clean_mean -0.0
+wandb:  mt_clean_median 0.0
+wandb:     mt_clean_min -0.0117
+wandb:     mt_clean_q25 -0.00015
+wandb:     mt_clean_q75 0.00015
+wandb:    mt_noised_max 0.01272
+wandb:   mt_noised_mean -0.0
+wandb: mt_noised_median -0.0
+wandb:    mt_noised_min -0.01193
+wandb:    mt_noised_q25 -0.00153
+wandb:    mt_noised_q75 0.00152
+wandb:    test_accuracy 48.56079
+wandb:        test_loss 1.9187
+wandb:   train_accuracy 50.47338
+wandb:       train_loss 1.83697
+wandb:     val_accuracy 49.81039
+wandb:         val_loss 1.89765
+wandb:     vt_clean_max 0.00119
+wandb:    vt_clean_mean 0.0
+wandb:  vt_clean_median 0.0
+wandb:     vt_clean_min 0.0
+wandb:     vt_clean_q25 0.0
+wandb:     vt_clean_q75 0.0
+wandb:    vt_noised_max 0.00138
+wandb:   vt_noised_mean 9e-05
+wandb: vt_noised_median 9e-05
+wandb:    vt_noised_min 3e-05
+wandb:    vt_noised_q25 8e-05
+wandb:    vt_noised_q75 0.00011
+wandb: 
+wandb: 🚀 View run lr-9.857e-03-wd-1.629e-06_adamw_eps-3_3_adamw_1 at: https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/tzryaibq
+wandb: ⭐️ View project at: https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250503_170714-tzryaibq/logs
+wandb: Tracking run with wandb version 0.19.10
+wandb: Run data is saved locally in /home/ubuntu/DP-AdamW/wandb/run-20250503_170753-zmv99azk
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run zesty-night-576
+wandb: ⭐️ View project at https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: 🚀 View run at https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/zmv99azk
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          epsilon ▁▅▆▇█
+wandb:     mt_clean_max █▃▁▂
+wandb:    mt_clean_mean █▆▃▁
+wandb:  mt_clean_median █▆▁▁
+wandb:     mt_clean_min ▁▆█▇
+wandb:     mt_clean_q25 ▁▄▇█
+wandb:     mt_clean_q75 █▅▂▁
+wandb:    mt_noised_max █▃▁▃
+wandb:   mt_noised_mean ▅█▂▁
+wandb: mt_noised_median ▄█▃▁
+wandb:    mt_noised_min ▁▇██
+wandb:    mt_noised_q25 ▁▆▇█
+wandb:    mt_noised_q75 █▃▂▁
+wandb:    test_accuracy ▁▆▇██
+wandb:        test_loss █▃▂▁▁
+wandb:   train_accuracy ▁▆▇▇█
+wandb:       train_loss █▄▂▂▁
+wandb:     val_accuracy ▁▆▇██
+wandb:         val_loss █▃▂▁▁
+wandb:     vt_clean_max █▄▂▁
+wandb:    vt_clean_mean █▄▂▁
+wandb:  vt_clean_median █▄▂▁
+wandb:     vt_clean_min ▁█▅█
+wandb:     vt_clean_q25 █▅▃▁
+wandb:     vt_clean_q75 █▄▂▁
+wandb:    vt_noised_max █▄▂▁
+wandb:   vt_noised_mean █▄▂▁
+wandb: vt_noised_median ▁▆▇█
+wandb:    vt_noised_min ▁▅▇█
+wandb:    vt_noised_q25 ▁▅▇█
+wandb:    vt_noised_q75 █▄▂▁
+wandb: 
+wandb: Run summary:
+wandb:          epsilon 2.8252
+wandb:     mt_clean_max 0.0124
+wandb:    mt_clean_mean 0.0
+wandb:  mt_clean_median 0.0
+wandb:     mt_clean_min -0.01056
+wandb:     mt_clean_q25 -0.00015
+wandb:     mt_clean_q75 0.00015
+wandb:    mt_noised_max 0.01552
+wandb:   mt_noised_mean -0.0
+wandb: mt_noised_median -0.0
+wandb:    mt_noised_min -0.01318
+wandb:    mt_noised_q25 -0.00152
+wandb:    mt_noised_q75 0.00151
+wandb:    test_accuracy 48.84472
+wandb:        test_loss 1.92984
+wandb:   train_accuracy 51.43225
+wandb:       train_loss 1.80252
+wandb:     val_accuracy 49.90771
+wandb:         val_loss 1.89394
+wandb:     vt_clean_max 0.00493
+wandb:    vt_clean_mean 0.0
+wandb:  vt_clean_median 0.0
+wandb:     vt_clean_min 0.0
+wandb:     vt_clean_q25 0.0
+wandb:     vt_clean_q75 0.0
+wandb:    vt_noised_max 0.00514
+wandb:   vt_noised_mean 9e-05
+wandb: vt_noised_median 9e-05
+wandb:    vt_noised_min 3e-05
+wandb:    vt_noised_q25 8e-05
+wandb:    vt_noised_q75 0.00011
+wandb: 
+wandb: 🚀 View run lr-9.857e-03-wd-1.629e-06_adamw_eps-3_3_adamw_2 at: https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/zmv99azk
+wandb: ⭐️ View project at: https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250503_170753-zmv99azk/logs
+wandb: Tracking run with wandb version 0.19.10
+wandb: Run data is saved locally in /home/ubuntu/DP-AdamW/wandb/run-20250503_170833-xfek899t
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run sleek-elevator-577
+wandb: ⭐️ View project at https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: 🚀 View run at https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/xfek899t
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          epsilon ▁▅▆▇█
+wandb:     mt_clean_max █▁▃▅
+wandb:    mt_clean_mean ▁▇▂█
+wandb:  mt_clean_median █▄▁▅
+wandb:     mt_clean_min ▁█▆█
+wandb:     mt_clean_q25 ▁▄▇█
+wandb:     mt_clean_q75 █▅▂▁
+wandb:    mt_noised_max █▁▄▄
+wandb:   mt_noised_mean ▃▄▁█
+wandb: mt_noised_median ▁█▇▁
+wandb:    mt_noised_min ▁▅▄█
+wandb:    mt_noised_q25 ▁▆▇█
+wandb:    mt_noised_q75 █▃▂▁
+wandb:    test_accuracy ▁▅▇██
+wandb:        test_loss █▃▂▁▁
+wandb:   train_accuracy ▁▅▇▇█
+wandb:       train_loss █▄▂▂▁
+wandb:     val_accuracy ▁▆▇██
+wandb:         val_loss █▃▂▁▁
+wandb:     vt_clean_max █▄▂▁
+wandb:    vt_clean_mean █▄▂▁
+wandb:  vt_clean_median █▅▂▁
+wandb:     vt_clean_min ▁▃█▇
+wandb:     vt_clean_q25 █▅▃▁
+wandb:     vt_clean_q75 █▄▂▁
+wandb:    vt_noised_max █▄▂▁
+wandb:   vt_noised_mean █▄▂▁
+wandb: vt_noised_median ▁▆▇█
+wandb:    vt_noised_min ▁▃▅█
+wandb:    vt_noised_q25 ▁▅▇█
+wandb:    vt_noised_q75 █▄▂▁
+wandb: 
+wandb: Run summary:
+wandb:          epsilon 2.8252
+wandb:     mt_clean_max 0.01408
+wandb:    mt_clean_mean 0.0
+wandb:  mt_clean_median 0.0
+wandb:     mt_clean_min -0.01002
+wandb:     mt_clean_q25 -0.00015
+wandb:     mt_clean_q75 0.00016
+wandb:    mt_noised_max 0.01535
+wandb:   mt_noised_mean -0.0
+wandb: mt_noised_median -1e-05
+wandb:    mt_noised_min -0.01052
+wandb:    mt_noised_q25 -0.00152
+wandb:    mt_noised_q75 0.00151
+wandb:    test_accuracy 48.39413
+wandb:        test_loss 1.93983
+wandb:   train_accuracy 50.9946
+wandb:       train_loss 1.82361
+wandb:     val_accuracy 49.93792
+wandb:         val_loss 1.9038
+wandb:     vt_clean_max 0.00161
+wandb:    vt_clean_mean 0.0
+wandb:  vt_clean_median 0.0
+wandb:     vt_clean_min 0.0
+wandb:     vt_clean_q25 0.0
+wandb:     vt_clean_q75 0.0
+wandb:    vt_noised_max 0.00176
+wandb:   vt_noised_mean 9e-05
+wandb: vt_noised_median 9e-05
+wandb:    vt_noised_min 3e-05
+wandb:    vt_noised_q25 8e-05
+wandb:    vt_noised_q75 0.00011
+wandb: 
+wandb: 🚀 View run lr-9.857e-03-wd-1.629e-06_adamw_eps-3_3_adamw_3 at: https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/xfek899t
+wandb: ⭐️ View project at: https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250503_170833-xfek899t/logs
+wandb: Tracking run with wandb version 0.19.10
+wandb: Run data is saved locally in /home/ubuntu/DP-AdamW/wandb/run-20250503_170913-el9anfdq
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run ethereal-silence-578
+wandb: ⭐️ View project at https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: 🚀 View run at https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/el9anfdq
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          epsilon ▁▅▆▇█
+wandb:     mt_clean_max █▅▂▁
+wandb:    mt_clean_mean ▁▇██
+wandb:  mt_clean_median ▁▇█▆
+wandb:     mt_clean_min ▁▇██
+wandb:     mt_clean_q25 ▁▄▇█
+wandb:     mt_clean_q75 █▅▂▁
+wandb:    mt_noised_max █▂▂▁
+wandb:   mt_noised_mean ▄▁▁█
+wandb: mt_noised_median ▁█▃▂
+wandb:    mt_noised_min ▁▂█▇
+wandb:    mt_noised_q25 ▁▆▇█
+wandb:    mt_noised_q75 █▃▁▁
+wandb:    test_accuracy ▁▆▇██
+wandb:        test_loss █▃▂▁▁
+wandb:   train_accuracy ▁▆▇██
+wandb:       train_loss █▃▂▁▁
+wandb:     val_accuracy ▁▆▇██
+wandb:         val_loss █▃▂▁▁
+wandb:     vt_clean_max █▃▂▁
+wandb:    vt_clean_mean █▄▂▁
+wandb:  vt_clean_median █▄▂▁
+wandb:     vt_clean_min ▁▆▅█
+wandb:     vt_clean_q25 █▅▃▁
+wandb:     vt_clean_q75 █▄▂▁
+wandb:    vt_noised_max █▃▂▁
+wandb:   vt_noised_mean █▄▂▁
+wandb: vt_noised_median ▁▆▇█
+wandb:    vt_noised_min ▁▄▆█
+wandb:    vt_noised_q25 ▁▅▇█
+wandb:    vt_noised_q75 █▄▂▁
+wandb: 
+wandb: Run summary:
+wandb:          epsilon 2.8252
+wandb:     mt_clean_max 0.01058
+wandb:    mt_clean_mean -0.0
+wandb:  mt_clean_median -0.0
+wandb:     mt_clean_min -0.01067
+wandb:     mt_clean_q25 -0.00014
+wandb:     mt_clean_q75 0.00014
+wandb:    mt_noised_max 0.01202
+wandb:   mt_noised_mean 0.0
+wandb: mt_noised_median -1e-05
+wandb:    mt_noised_min -0.01316
+wandb:    mt_noised_q25 -0.00151
+wandb:    mt_noised_q75 0.00152
+wandb:    test_accuracy 48.59371
+wandb:        test_loss 1.93957
+wandb:   train_accuracy 51.06388
+wandb:       train_loss 1.83413
+wandb:     val_accuracy 50.10907
+wandb:         val_loss 1.91199
+wandb:     vt_clean_max 0.00095
+wandb:    vt_clean_mean 0.0
+wandb:  vt_clean_median 0.0
+wandb:     vt_clean_min 0.0
+wandb:     vt_clean_q25 0.0
+wandb:     vt_clean_q75 0.0
+wandb:    vt_noised_max 0.0011
+wandb:   vt_noised_mean 9e-05
+wandb: vt_noised_median 9e-05
+wandb:    vt_noised_min 3e-05
+wandb:    vt_noised_q25 8e-05
+wandb:    vt_noised_q75 0.00011
+wandb: 
+wandb: 🚀 View run lr-9.857e-03-wd-1.629e-06_adamw_eps-3_3_adamw_4 at: https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/el9anfdq
+wandb: ⭐️ View project at: https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250503_170913-el9anfdq/logs
+wandb: Tracking run with wandb version 0.19.10
+wandb: Run data is saved locally in /home/ubuntu/DP-AdamW/wandb/run-20250503_170954-mfrqbt16
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run legendary-music-579
+wandb: ⭐️ View project at https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: 🚀 View run at https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/mfrqbt16
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          epsilon ▁▃▄▄▄▅▅▅▆▆▆▆▇▇▇▇▇███
+wandb:     mt_clean_max █▄▁▁▂▂▁▂▂▃▃▄▄▅▄▃▄▄▆
+wandb:    mt_clean_mean █▇▇▅▇▅▂▂▁▄▃▂▂▅▃▃▄▃▄
+wandb:  mt_clean_median █▃▄▅▅▅▂▂▁▂▂▂▂▄▃▄▃▂▃
+wandb:     mt_clean_min ▁▃▇█▆▆▇▅▅▄▄▄▅▄▅▅▆▆▅
+wandb:     mt_clean_q25 ▁▂▄▅▆▆▇▇▇▇▇████████
+wandb:     mt_clean_q75 █▇▅▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:    mt_noised_max █▃▃▁▃▃▃▄▂▃▁▃▄▃▃▃▁▂▆
+wandb:   mt_noised_mean ▂▄▂▅▄▄▂▅▅▄█▆▄▃▄▂▆▂▁
+wandb: mt_noised_median ▂▅▃▅▇▁▃▆▇▆██▅▄▅▃▄▂▁
+wandb:    mt_noised_min ▁▂▇█▄▅▅▇▆▆▄▅▄▄▅▇▆▂▄
+wandb:    mt_noised_q25 ▁▆▇████████████████
+wandb:    mt_noised_q75 █▃▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    test_accuracy ▁▅▇▇▇▇██████████████
+wandb:        test_loss █▄▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   train_accuracy ▁▅▆▆▇▇▇▇████████████
+wandb:       train_loss █▅▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     val_accuracy ▁▅▇▇▇███████████████
+wandb:         val_loss █▄▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_max █▅▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁
+wandb:    vt_clean_mean █▅▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁
+wandb:  vt_clean_median █▆▅▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:     vt_clean_min ▁▂▆▇▆▇▇▇▇▇▆▆▇▇██▇▇▇
+wandb:     vt_clean_q25 █▆▅▄▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁
+wandb:     vt_clean_q75 █▅▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁
+wandb:    vt_noised_max █▅▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁
+wandb:   vt_noised_mean █▅▄▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb: vt_noised_median ▁▅▇▇▇██████████████
+wandb:    vt_noised_min ▁▂▄▄▅▅▄▅▆▆▆▇▇▇▇████
+wandb:    vt_noised_q25 ▁▄▅▆▆▇▇▇▇▇█████████
+wandb:    vt_noised_q75 █▅▄▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          epsilon 5.95673
+wandb:     mt_clean_max 0.01479
+wandb:    mt_clean_mean 0.0
+wandb:  mt_clean_median -0.0
+wandb:     mt_clean_min -0.01278
+wandb:     mt_clean_q25 -6e-05
+wandb:     mt_clean_q75 6e-05
+wandb:    mt_noised_max 0.01529
+wandb:   mt_noised_mean -1e-05
+wandb: mt_noised_median -1e-05
+wandb:    mt_noised_min -0.01498
+wandb:    mt_noised_q25 -0.0015
+wandb:    mt_noised_q75 0.00148
+wandb:    test_accuracy 53.11401
+wandb:        test_loss 1.74231
+wandb:   train_accuracy 58.4137
+wandb:       train_loss 1.52989
+wandb:     val_accuracy 54.72331
+wandb:         val_loss 1.72734
+wandb:     vt_clean_max 0.00036
+wandb:    vt_clean_mean 0.0
+wandb:  vt_clean_median 0.0
+wandb:     vt_clean_min 0.0
+wandb:     vt_clean_q25 0.0
+wandb:     vt_clean_q75 0.0
+wandb:    vt_noised_max 0.00041
+wandb:   vt_noised_mean 9e-05
+wandb: vt_noised_median 9e-05
+wandb:    vt_noised_min 5e-05
+wandb:    vt_noised_q25 8e-05
+wandb:    vt_noised_q75 0.0001
+wandb: 
+wandb: 🚀 View run lr-8.069e-03-wd-9.113e-06_adamw_eps-6_6_adamw_0 at: https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/mfrqbt16
+wandb: ⭐️ View project at: https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250503_170954-mfrqbt16/logs
+wandb: Tracking run with wandb version 0.19.10
+wandb: Run data is saved locally in /home/ubuntu/DP-AdamW/wandb/run-20250503_171131-6coz7l4f
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run serene-dust-580
+wandb: ⭐️ View project at https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: 🚀 View run at https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/6coz7l4f
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          epsilon ▁▃▄▄▄▅▅▅▆▆▆▆▇▇▇▇▇███
+wandb:     mt_clean_max █▇▄▁▂▂▃▂▂▂▂▂▄▄▃▃▃▄▄
+wandb:    mt_clean_mean ▃▄▁▂▄▅▅▆▄▆▅█▆▃▂▁▅▅▅
+wandb:  mt_clean_median █▅▄▄▄▂▃▂▃▃▄▄▂▁▂▁▃▂▁
+wandb:     mt_clean_min ▁▅▆█▆▇▅▅▅▅▅▄▂▃▃▄▄▅▆
+wandb:     mt_clean_q25 ▁▃▄▅▆▆▇▇▇▇█████████
+wandb:     mt_clean_q75 █▆▅▄▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁
+wandb:    mt_noised_max █▇▄▂▄▁▄▄▃▃▂▃▃▄▃▅▄▄▅
+wandb:   mt_noised_mean ▂▅▄▇█▆▇▇▂▁▆▇▅██▇▆▄█
+wandb: mt_noised_median ▄▅▃█▇▄▇▇▁▃▆▅▅▆▇▆▆▅▇
+wandb:    mt_noised_min ▁▅▇█▇▇▆▇▆▅▄▅▃▅▂▇▅▇▆
+wandb:    mt_noised_q25 ▁▆▇████████████████
+wandb:    mt_noised_q75 █▃▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    test_accuracy ▁▆▆▇▇▇██████████████
+wandb:        test_loss █▄▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   train_accuracy ▁▅▆▇▇▇▇█████████████
+wandb:       train_loss █▅▃▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     val_accuracy ▁▅▆▇▇▇██████████████
+wandb:         val_loss █▄▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_max █▅▃▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    vt_clean_mean █▆▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁
+wandb:  vt_clean_median █▆▅▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:     vt_clean_min ▁▄▆█▇█▇▆▆▅▅▄▃▃▃▂▂▁▁
+wandb:     vt_clean_q25 █▆▅▄▄▃▃▂▂▂▂▂▂▁▁▁▁▁▁
+wandb:     vt_clean_q75 █▆▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁
+wandb:    vt_noised_max █▄▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   vt_noised_mean █▅▄▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb: vt_noised_median ▁▆▇▇███████████████
+wandb:    vt_noised_min ▁▃▃▄▅▅▅▆▇▇▇▇▇▇▇██▇█
+wandb:    vt_noised_q25 ▁▄▅▆▆▇▇▇▇▇█████████
+wandb:    vt_noised_q75 █▅▄▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          epsilon 5.95673
+wandb:     mt_clean_max 0.01146
+wandb:    mt_clean_mean 0.0
+wandb:  mt_clean_median -0.0
+wandb:     mt_clean_min -0.01007
+wandb:     mt_clean_q25 -6e-05
+wandb:     mt_clean_q75 6e-05
+wandb:    mt_noised_max 0.01439
+wandb:   mt_noised_mean 1e-05
+wandb: mt_noised_median 1e-05
+wandb:    mt_noised_min -0.01298
+wandb:    mt_noised_q25 -0.00148
+wandb:    mt_noised_q75 0.00149
+wandb:    test_accuracy 53.46584
+wandb:        test_loss 1.74177
+wandb:   train_accuracy 58.00904
+wandb:       train_loss 1.5522
+wandb:     val_accuracy 54.71996
+wandb:         val_loss 1.7144
+wandb:     vt_clean_max 0.00027
+wandb:    vt_clean_mean 0.0
+wandb:  vt_clean_median 0.0
+wandb:     vt_clean_min 0.0
+wandb:     vt_clean_q25 0.0
+wandb:     vt_clean_q75 0.0
+wandb:    vt_noised_max 0.00038
+wandb:   vt_noised_mean 9e-05
+wandb: vt_noised_median 9e-05
+wandb:    vt_noised_min 5e-05
+wandb:    vt_noised_q25 8e-05
+wandb:    vt_noised_q75 0.0001
+wandb: 
+wandb: 🚀 View run lr-8.069e-03-wd-9.113e-06_adamw_eps-6_6_adamw_1 at: https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/6coz7l4f
+wandb: ⭐️ View project at: https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250503_171131-6coz7l4f/logs
+wandb: Tracking run with wandb version 0.19.10
+wandb: Run data is saved locally in /home/ubuntu/DP-AdamW/wandb/run-20250503_171308-xbtd0zd6
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run worldly-brook-581
+wandb: ⭐️ View project at https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: 🚀 View run at https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/xbtd0zd6
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          epsilon ▁▃▄▄▄▅▅▅▆▆▆▆▇▇▇▇▇███
+wandb:     mt_clean_max █▅▁▁▁▃▂▃▄▄▄▅▄▄▄▂▄▃▄
+wandb:    mt_clean_mean ▁▃▆▇▇▇▇███▇▇▇▇▇▇▇█▇
+wandb:  mt_clean_median ▁█▅▃▅▇▇▇▆▆▅▆▅▆▆▅▅▅▅
+wandb:     mt_clean_min ▁▅▇▇▇▇█▇▆▆▆▅▆▆▆▇▆▅▄
+wandb:     mt_clean_q25 ▁▂▄▅▆▆▇▇▇▇▇████████
+wandb:     mt_clean_q75 █▇▅▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:    mt_noised_max █▃▁▁▅▁▁▃▂▂▃▄▂▄▃▄▄▁▄
+wandb:   mt_noised_mean ▂▁▅▆▃▄▄▄▃▂▆█▅▅▆▂▁█▄
+wandb: mt_noised_median ▁▃▆▅▂▄▃▅▄▂▅█▅▆▆▃▁█▅
+wandb:    mt_noised_min ▁▄▆▆▆▆▆█▇▅▄▄▆▅▇▇▆▇▆
+wandb:    mt_noised_q25 ▁▆▇████████████████
+wandb:    mt_noised_q75 █▃▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    test_accuracy ▁▄▆▇▇▇██████████████
+wandb:        test_loss █▄▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   train_accuracy ▁▄▆▇▇▇▇▇████████████
+wandb:       train_loss █▅▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     val_accuracy ▁▄▆▇▇▇██████████████
+wandb:         val_loss █▄▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_max █▅▃▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    vt_clean_mean █▅▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁
+wandb:  vt_clean_median █▆▅▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:     vt_clean_min ▁▅█▆▇▆▅▅▅▆▆▆▅▅▅▅▄▄▄
+wandb:     vt_clean_q25 █▇▅▄▄▃▃▂▂▂▂▂▂▁▁▁▁▁▁
+wandb:     vt_clean_q75 █▅▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁
+wandb:    vt_noised_max █▅▃▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   vt_noised_mean █▅▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁
+wandb: vt_noised_median ▁▅▆▇███████████████
+wandb:    vt_noised_min ▁▂▄▄▄▅▅▆▆▇▇▇▇▇█████
+wandb:    vt_noised_q25 ▁▄▅▆▆▇▇▇▇▇▇████████
+wandb:    vt_noised_q75 █▅▄▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          epsilon 5.95673
+wandb:     mt_clean_max 0.01283
+wandb:    mt_clean_mean -0.0
+wandb:  mt_clean_median -0.0
+wandb:     mt_clean_min -0.01313
+wandb:     mt_clean_q25 -6e-05
+wandb:     mt_clean_q75 6e-05
+wandb:    mt_noised_max 0.01611
+wandb:   mt_noised_mean -0.0
+wandb: mt_noised_median 0.0
+wandb:    mt_noised_min -0.01234
+wandb:    mt_noised_q25 -0.00149
+wandb:    mt_noised_q75 0.00148
+wandb:    test_accuracy 53.25803
+wandb:        test_loss 1.76649
+wandb:   train_accuracy 58.56984
+wandb:       train_loss 1.53553
+wandb:     val_accuracy 54.93137
+wandb:         val_loss 1.72354
+wandb:     vt_clean_max 0.00027
+wandb:    vt_clean_mean 0.0
+wandb:  vt_clean_median 0.0
+wandb:     vt_clean_min 0.0
+wandb:     vt_clean_q25 0.0
+wandb:     vt_clean_q75 0.0
+wandb:    vt_noised_max 0.00038
+wandb:   vt_noised_mean 9e-05
+wandb: vt_noised_median 9e-05
+wandb:    vt_noised_min 5e-05
+wandb:    vt_noised_q25 8e-05
+wandb:    vt_noised_q75 0.0001
+wandb: 
+wandb: 🚀 View run lr-8.069e-03-wd-9.113e-06_adamw_eps-6_6_adamw_2 at: https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/xbtd0zd6
+wandb: ⭐️ View project at: https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250503_171308-xbtd0zd6/logs
+wandb: Tracking run with wandb version 0.19.10
+wandb: Run data is saved locally in /home/ubuntu/DP-AdamW/wandb/run-20250503_171447-c2ax562l
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run autumn-oath-582
+wandb: ⭐️ View project at https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: 🚀 View run at https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/c2ax562l
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          epsilon ▁▃▄▄▄▅▅▅▆▆▆▆▇▇▇▇▇███
+wandb:     mt_clean_max █▄▁▁▂▄▁▃▃▂▃▃▂▄▄▄▄▃▄
+wandb:    mt_clean_mean ▇█▄▂▁▁▁▂▂▃▄▄▄▅▅▅▅▆▆
+wandb:  mt_clean_median ▆█▅▄▂▂▂▂▁▂▂▂▁▂▂▃▃▂▃
+wandb:     mt_clean_min ▁▅██▇▄▅▅▅▅▅▅▆▅▇▇▇▇▇
+wandb:     mt_clean_q25 ▁▂▄▅▅▆▆▇▇▇▇████████
+wandb:     mt_clean_q75 █▇▅▄▄▃▃▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:    mt_noised_max █▄▃▁▃▃▃▆▁▅▅▂▅▃▃▄▆▃▃
+wandb:   mt_noised_mean ▂▃█▂▂▂▂▁▃▁▄▂▅█▅▁█▄▃
+wandb: mt_noised_median ▄▆▇▂▄▅▁▄▄▃▆▄▅▄▅▃█▆▅
+wandb:    mt_noised_min ▃▃▆▆▄▄▇▇▁▅▄▅▆▅▅▆███
+wandb:    mt_noised_q25 ▁▆▇████████████████
+wandb:    mt_noised_q75 █▃▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    test_accuracy ▁▅▆▇▇▇██████████████
+wandb:        test_loss █▄▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   train_accuracy ▁▄▆▆▇▇▇▇████████████
+wandb:       train_loss █▅▄▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁
+wandb:     val_accuracy ▁▅▆▆▇▇██████████████
+wandb:         val_loss █▄▃▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_max █▅▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁
+wandb:    vt_clean_mean █▆▅▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:  vt_clean_median █▆▅▄▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁
+wandb:     vt_clean_min ▁▃▅▇▆██▇▅▅▄▃▃▂▂▁▂▁▂
+wandb:     vt_clean_q25 █▇▆▅▄▄▃▃▂▂▂▂▂▁▁▁▁▁▁
+wandb:     vt_clean_q75 █▆▄▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:    vt_noised_max █▅▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁
+wandb:   vt_noised_mean █▆▅▄▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁
+wandb: vt_noised_median ▁▅▇▇███████████████
+wandb:    vt_noised_min ▁▂▃▄▅▅▆▆▆▆▆▇▇▇▇▇▇██
+wandb:    vt_noised_q25 ▁▄▅▆▆▇▇▇▇▇█████████
+wandb:    vt_noised_q75 █▆▄▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          epsilon 5.95673
+wandb:     mt_clean_max 0.0132
+wandb:    mt_clean_mean 0.0
+wandb:  mt_clean_median 0.0
+wandb:     mt_clean_min -0.01093
+wandb:     mt_clean_q25 -6e-05
+wandb:     mt_clean_q75 6e-05
+wandb:    mt_noised_max 0.01328
+wandb:   mt_noised_mean -0.0
+wandb: mt_noised_median -0.0
+wandb:    mt_noised_min -0.01163
+wandb:    mt_noised_q25 -0.0015
+wandb:    mt_noised_q75 0.00149
+wandb:    test_accuracy 52.60992
+wandb:        test_loss 1.7663
+wandb:   train_accuracy 58.02883
+wandb:       train_loss 1.53411
+wandb:     val_accuracy 54.15953
+wandb:         val_loss 1.7248
+wandb:     vt_clean_max 0.0003
+wandb:    vt_clean_mean 0.0
+wandb:  vt_clean_median 0.0
+wandb:     vt_clean_min 0.0
+wandb:     vt_clean_q25 0.0
+wandb:     vt_clean_q75 0.0
+wandb:    vt_noised_max 0.00039
+wandb:   vt_noised_mean 9e-05
+wandb: vt_noised_median 9e-05
+wandb:    vt_noised_min 6e-05
+wandb:    vt_noised_q25 8e-05
+wandb:    vt_noised_q75 0.0001
+wandb: 
+wandb: 🚀 View run lr-8.069e-03-wd-9.113e-06_adamw_eps-6_6_adamw_3 at: https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/c2ax562l
+wandb: ⭐️ View project at: https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250503_171447-c2ax562l/logs
+wandb: Tracking run with wandb version 0.19.10
+wandb: Run data is saved locally in /home/ubuntu/DP-AdamW/wandb/run-20250503_171630-0a4xp25g
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run playful-pond-583
+wandb: ⭐️ View project at https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: 🚀 View run at https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/0a4xp25g
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          epsilon ▁▃▄▄▄▅▅▅▆▆▆▆▇▇▇▇▇███
+wandb:     mt_clean_max █▄▃▁▂▄▂▁▂▂▂▂▂▂▂▂▅▃▃
+wandb:    mt_clean_mean ▁▃▇▇▆▆▄▆▄▆▅▅▄▅▅▇█▇▅
+wandb:  mt_clean_median ▅▂▁▆▄▅▅▄▃▅▆▇▅▄▅▅▇█▄
+wandb:     mt_clean_min ▁▅▇██▆▆▅▄▂▃▄▃▄▅▆▅▅▇
+wandb:     mt_clean_q25 ▁▃▄▅▆▆▇▇▇▇█████████
+wandb:     mt_clean_q75 █▆▅▄▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁
+wandb:    mt_noised_max █▄▃▂▁▂▁▂▂▂▁▃▂▂▃▃▅▆▃
+wandb:   mt_noised_mean ▁▂▄▂▂▂▄▂▃▅▅▅▄▃▅▇█▅▁
+wandb: mt_noised_median ▁▄▄▃▅▂▅▃▅▆▆▆▅▃▆▇█▇▃
+wandb:    mt_noised_min ▁▅▆█▆▇▇▅▆▃▆▅▃▃▆▇▆▅▇
+wandb:    mt_noised_q25 ▁▆▇▇███████████████
+wandb:    mt_noised_q75 █▃▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    test_accuracy ▁▄▇▇▇▇▇█████████████
+wandb:        test_loss █▄▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   train_accuracy ▁▄▆▆▇▇▇▇████████████
+wandb:       train_loss █▅▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     val_accuracy ▁▅▆▇▇▇██████████████
+wandb:         val_loss █▄▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_max █▅▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    vt_clean_mean █▅▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁
+wandb:  vt_clean_median █▆▅▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:     vt_clean_min ▁▅▅███▇▇▇▆▆▆▅▅▅▅▅▄▅
+wandb:     vt_clean_q25 █▇▅▄▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁
+wandb:     vt_clean_q75 █▅▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁
+wandb:    vt_noised_max █▅▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   vt_noised_mean █▆▄▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb: vt_noised_median ▁▆▇▇███████████████
+wandb:    vt_noised_min ▁▂▃▄▅▅▆▆▆▇▇▆▇▇▇████
+wandb:    vt_noised_q25 ▁▄▅▆▆▇▇▇▇▇▇████████
+wandb:    vt_noised_q75 █▅▄▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          epsilon 5.95673
+wandb:     mt_clean_max 0.01396
+wandb:    mt_clean_mean 0.0
+wandb:  mt_clean_median 0.0
+wandb:     mt_clean_min -0.01043
+wandb:     mt_clean_q25 -6e-05
+wandb:     mt_clean_q75 6e-05
+wandb:    mt_noised_max 0.01403
+wandb:   mt_noised_mean -1e-05
+wandb: mt_noised_median -1e-05
+wandb:    mt_noised_min -0.01074
+wandb:    mt_noised_q25 -0.00149
+wandb:    mt_noised_q75 0.00148
+wandb:    test_accuracy 52.84447
+wandb:        test_loss 1.76754
+wandb:   train_accuracy 57.92767
+wandb:       train_loss 1.55166
+wandb:     val_accuracy 54.29376
+wandb:         val_loss 1.72416
+wandb:     vt_clean_max 0.00026
+wandb:    vt_clean_mean 0.0
+wandb:  vt_clean_median 0.0
+wandb:     vt_clean_min 0.0
+wandb:     vt_clean_q25 0.0
+wandb:     vt_clean_q75 0.0
+wandb:    vt_noised_max 0.00035
+wandb:   vt_noised_mean 9e-05
+wandb: vt_noised_median 9e-05
+wandb:    vt_noised_min 5e-05
+wandb:    vt_noised_q25 8e-05
+wandb:    vt_noised_q75 0.0001
+wandb: 
+wandb: 🚀 View run lr-8.069e-03-wd-9.113e-06_adamw_eps-6_6_adamw_4 at: https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/0a4xp25g
+wandb: ⭐️ View project at: https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250503_171630-0a4xp25g/logs
+wandb: Tracking run with wandb version 0.19.10
+wandb: Run data is saved locally in /home/ubuntu/DP-AdamW/wandb/run-20250503_171814-lxmnjsfq
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run resilient-rain-584
+wandb: ⭐️ View project at https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: 🚀 View run at https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/lxmnjsfq
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          epsilon ▁▂▂▃▃▄▄▄▄▄▄▄▅▅▅▅▅▅▅▅▅▆▆▆▆▆▆▆▇▇▇▇▇▇▇▇████
+wandb:     mt_clean_max █▇▃▂▁▁▁▂▂▂▂▂▂▂▂▃▂▂▃▃▃▃▃▃▃▃▃▄▄▃▄▃▄▄▄▄▄▄▄▄
+wandb:    mt_clean_mean ▁▁▂▅▇██▇▇▇▆▆▅▅▆▄▄▄▃▃▄▄▄▄▅▅▄▄▄▄▃▄▄▄▄▅▄▄▄▅
+wandb:  mt_clean_median ▁▆█▆▇█▆▇▆▅▅▅▅▅▅▄▃▄▄▅▅▄▅▅▄▅▅▅▅▅▄▅▅▅▅▅▅▅▅▅
+wandb:     mt_clean_min ▁▂▄▇███▇██▇▇▇▇▇█▇▇▆▆▆▆▆▆▆▇▆▆▆▆█▇█▇▇▇█▇██
+wandb:     mt_clean_q25 ▁▂▃▃▄▅▅▆▆▆▆▇▇▇▇▇▇▇▇█████████████████████
+wandb:     mt_clean_q75 █▇▇▅▅▄▃▃▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    mt_noised_max █▄▄▃▂▁▁▁▂▂▂▁▁▂▂▂▁▂▁▁▂▂▃▂▂▁▃▂▂▂▂▂▂▄▂▂▄▂▃▄
+wandb:   mt_noised_mean ▆▆▄▄▅▄▄▄▆▅▅▆▄▆▅▆▄▄▅▆▅▆▆▇█▅▅▄▁▄▃▆▇▇█▇▇▅▆▆
+wandb: mt_noised_median ▅▃▁▃▃▇▅▃▅▆▅▅▄▇▆▄▅▅▆▄▅▆▅█▃▄▆▂▆▆▆▇▄▄▆▇▅▆▅▆
+wandb:    mt_noised_min ▃▁▅▆▆▆█▇█▇▇▆█▇█▇▇▇▇▇▇█▇▇▆▆█▆▇▇▇▇▇▇▅▇▇█▇▇
+wandb:    mt_noised_q25 ▁▆▇▇▇███████████████████████████████████
+wandb:    mt_noised_q75 █▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    test_accuracy ▁▃▅▆▆▇▇▇▇▇██████████████████████████████
+wandb:        test_loss █▅▃▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   train_accuracy ▁▃▄▅▅▆▇▇▇▇▇▇▇███████████████████████████
+wandb:       train_loss █▅▄▄▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     val_accuracy ▁▄▅▆▆▇▇▇▇▇▇▇████████████████████████████
+wandb:         val_loss █▆▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_max █▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    vt_clean_mean █▅▄▄▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  vt_clean_median █▆▅▄▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_min ▁▄█▆████▇█▆▆▅▅▄▅▆▆▆▅▅▄▄▄▃▄▄▄▄▃▃▃▃▂▂▂▂▂▂▁
+wandb:     vt_clean_q25 █▇▆▄▄▃▃▃▃▃▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_q75 █▅▄▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    vt_noised_max █▅▃▃▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   vt_noised_mean █▆▅▄▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: vt_noised_median ▁▆▇█████████████████████████████████████
+wandb:    vt_noised_min ▁▂▃▅▅▅▆▇▆▇▆▇▆▇▇▇▇▇▇▇▇▇▇█▇██████▇█▇██████
+wandb:    vt_noised_q25 ▁▄▅▆▆▇▇▇████████████████████████████████
+wandb:    vt_noised_q75 █▆▅▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          epsilon 11.91532
+wandb:     mt_clean_max 0.01287
+wandb:    mt_clean_mean -0.0
+wandb:  mt_clean_median -0.0
+wandb:     mt_clean_min -0.00824
+wandb:     mt_clean_q25 -4e-05
+wandb:     mt_clean_q75 4e-05
+wandb:    mt_noised_max 0.0167
+wandb:   mt_noised_mean 0.0
+wandb: mt_noised_median 0.0
+wandb:    mt_noised_min -0.01132
+wandb:    mt_noised_q25 -0.00149
+wandb:    mt_noised_q75 0.00149
+wandb:    test_accuracy 54.59128
+wandb:        test_loss 1.69384
+wandb:   train_accuracy 60.06861
+wandb:       train_loss 1.46568
+wandb:     val_accuracy 56.16967
+wandb:         val_loss 1.66154
+wandb:     vt_clean_max 0.00016
+wandb:    vt_clean_mean 0.0
+wandb:  vt_clean_median 0.0
+wandb:     vt_clean_min 0.0
+wandb:     vt_clean_q25 0.0
+wandb:     vt_clean_q75 0.0
+wandb:    vt_noised_max 0.00028
+wandb:   vt_noised_mean 9e-05
+wandb: vt_noised_median 9e-05
+wandb:    vt_noised_min 6e-05
+wandb:    vt_noised_q25 9e-05
+wandb:    vt_noised_q75 0.0001
+wandb: 
+wandb: 🚀 View run lr-4.274e-03-wd-7.091e-05_adamw_eps-12_12_adamw_0 at: https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/lxmnjsfq
+wandb: ⭐️ View project at: https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250503_171814-lxmnjsfq/logs
+wandb: Tracking run with wandb version 0.19.10
+wandb: Run data is saved locally in /home/ubuntu/DP-AdamW/wandb/run-20250503_172319-g15l5fqv
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run golden-sound-585
+wandb: ⭐️ View project at https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: 🚀 View run at https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/g15l5fqv
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          epsilon ▁▂▂▃▃▄▄▄▄▄▅▅▅▅▅▆▆▆▆▆▆▆▆▆▆▇▇▇▇▇▇▇▇▇▇█████
+wandb:     mt_clean_max ▆██▅▂▂▂▂▁▂▃▃▃▃▁▃▃▂▃▃▄▄▃▃▄▄▄▄▅▄▄▇▅▃▄▅▆▆▆▅
+wandb:    mt_clean_mean █▄▄▄▃▂▂▂▂▂▂▂▂▂▁▂▁▁▁▁▁▂▁▂▂▂▁▂▂▂▂▁▁▁▁▂▂▂▂▁
+wandb:  mt_clean_median ▇▁█▇▄▄▄▃▁▂▄▄▄▃▂▃▃▃▂▁▂▃▂▂▂▂▁▂▃▂▂▂▁▂▁▃▂▂▁▁
+wandb:     mt_clean_min ▃▁▂▄▇▇▇▆▆▅▆▆▅▄▅▆▆▅▅▄▃▃▄▄▃▄▅▆▆▆▆▇██▇█▇███
+wandb:     mt_clean_q25 ▁▂▄▄▅▆▆▆▇▇▇▇▇▇▇█████████████████████████
+wandb:     mt_clean_q75 █▇▅▅▄▃▃▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    mt_noised_max ▇█▇▄▅▁▃▄▃▂▄▂▂▂▃▂▂▂▃▂▁▄▂▄▃▃▄▃▂▅▂▄█▄▄▄▂▅▅▄
+wandb:   mt_noised_mean █▄▅▃▄▄▅▄▇▅▁▁▂▅▃▄▂▄▆▃▃▂▂▄▄▁▃▂▃▃▅▅▃▅▂▄▆▂▂▅
+wandb: mt_noised_median █▃▄▄▄▄▄▆▃▄▃▂▄▃▃▅▄▂▅▄▂▃▃▁▄▃▂▁▄▄▅▂▃▅▃▃▆▂▃▂
+wandb:    mt_noised_min ▂▃▄▆▆▇▇██▇▇▇▇▇▇▇▅▆▆▄▆▅▄▅▆▄▁▇▇█▇▇▇▅▇▅▇▇██
+wandb:    mt_noised_q25 ▁▆▇█████████████████████████████████████
+wandb:    mt_noised_q75 █▄▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    test_accuracy ▁▄▅▆▆▇▇▇▇▇█▇████████████████████████████
+wandb:        test_loss █▅▄▃▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   train_accuracy ▁▅▆▆▆▇▇▇▇▇▇▇▇▇██████████████████████████
+wandb:       train_loss █▅▄▄▃▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     val_accuracy ▁▃▅▆▆▇▇▇▇▇██████████████████████████████
+wandb:         val_loss █▄▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_max █▅▄▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    vt_clean_mean █▆▃▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  vt_clean_median █▅▄▃▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_min ▁▃▆█▇██▇▇▇▆▆▆▅▅▅▅▄▄▄▃▃▃▃▃▃▂▂▂▂▂▂▂▂▂▂▂▂▁▁
+wandb:     vt_clean_q25 █▇▆▅▄▃▃▃▃▂▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_q75 █▆▅▄▄▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    vt_noised_max █▅▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   vt_noised_mean █▆▅▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: vt_noised_median ▁▇▇█████████████████████████████████████
+wandb:    vt_noised_min ▁▄▄▄▆▆▇▇▇▆▇▇▇▇▇▇▇██▇█▇████████▇▇██▇█████
+wandb:    vt_noised_q25 ▁▄▆▆▇▇▇▇████████████████████████████████
+wandb:    vt_noised_q75 █▆▄▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          epsilon 11.91532
+wandb:     mt_clean_max 0.01239
+wandb:    mt_clean_mean -0.0
+wandb:  mt_clean_median -0.0
+wandb:     mt_clean_min -0.00755
+wandb:     mt_clean_q25 -5e-05
+wandb:     mt_clean_q75 5e-05
+wandb:    mt_noised_max 0.01324
+wandb:   mt_noised_mean 1e-05
+wandb: mt_noised_median 0.0
+wandb:    mt_noised_min -0.00953
+wandb:    mt_noised_q25 -0.00149
+wandb:    mt_noised_q75 0.00149
+wandb:    test_accuracy 54.43286
+wandb:        test_loss 1.7105
+wandb:   train_accuracy 60.40839
+wandb:       train_loss 1.46282
+wandb:     val_accuracy 55.78711
+wandb:         val_loss 1.68447
+wandb:     vt_clean_max 0.00017
+wandb:    vt_clean_mean 0.0
+wandb:  vt_clean_median 0.0
+wandb:     vt_clean_min 0.0
+wandb:     vt_clean_q25 0.0
+wandb:     vt_clean_q75 0.0
+wandb:    vt_noised_max 0.0003
+wandb:   vt_noised_mean 9e-05
+wandb: vt_noised_median 9e-05
+wandb:    vt_noised_min 6e-05
+wandb:    vt_noised_q25 9e-05
+wandb:    vt_noised_q75 0.0001
+wandb: 
+wandb: 🚀 View run lr-4.274e-03-wd-7.091e-05_adamw_eps-12_12_adamw_1 at: https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/g15l5fqv
+wandb: ⭐️ View project at: https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250503_172319-g15l5fqv/logs
+wandb: Tracking run with wandb version 0.19.10
+wandb: Run data is saved locally in /home/ubuntu/DP-AdamW/wandb/run-20250503_172829-t77jev3y
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run apricot-energy-586
+wandb: ⭐️ View project at https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: 🚀 View run at https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/t77jev3y
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          epsilon ▁▂▃▃▃▄▄▄▄▄▄▄▅▅▅▅▅▅▅▆▆▆▆▆▆▆▇▇▇▇▇▇▇▇▇▇████
+wandb:     mt_clean_max ▆█▅▄▃▁▂▁▂▂▁▁▁▂▂▃▂▂▂▁▂▂▁▂▃▂▂▃▄▃▃▂▂▃▄▃▄▄▃▃
+wandb:    mt_clean_mean █▄▃▃▂▇▇▅▅▄▄▄▄▅▄▄▃▂▂▂▂▂▂▂▃▃▂▂▂▂▂▃▁▂▂▁▃▂▂▂
+wandb:  mt_clean_median █▆▇▇▆▆▅▆▄▃▅▄▄▄▂▃▄▂▄▄▂▂▂▃▂▃▃▂▃▂▃▃▃▂▂▂▂▁▃▂
+wandb:     mt_clean_min ▂▁▃▄▆▇▇▇▇▇▇▇▇▇▇▇▇▆▇▇██▇▇▆▆▅▆▅▆▇▇▆▅▆▇▆▆▇█
+wandb:     mt_clean_q25 ▁▁▃▄▄▅▆▆▆▆▇▇▇▇▇▇▇▇██████████████████████
+wandb:     mt_clean_q75 ██▇▅▅▄▃▃▃▃▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    mt_noised_max █▃▂▂▂▂▂▃▂▁▂▃▃▂▁▂▂▁▂▃▂▂▂▃▄▂▂▂▂▂▂▂▂▅▄▃▄▁▂▄
+wandb:   mt_noised_mean ▅▄▃▄▆▄▂▂▅▃█▅▄▆▄▄▁▁▂▅▄▇▄▆▃▄▅▄▃▂▆▃▂▃▄▄▄▃▅▁
+wandb: mt_noised_median ▁▃▅▆█▂▂▅▅▂▂▅█▁▃▃▇▂▃▃█▅▇▃▃▆▂▅▇▃▄▃▄▅▆▂▂▄▃▇
+wandb:    mt_noised_min ▁▂▄▆▆█▆█▆▆▇▇▆▇▆█▇██▅██▆▇▆█▇▆▆▅▇▅▇██▇▇█▆█
+wandb:    mt_noised_q25 ▁▇██████████████████████████████████████
+wandb:    mt_noised_q75 █▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    test_accuracy ▁▂▆▇▇▇▇█████████████████████████████████
+wandb:        test_loss █▆▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   train_accuracy ▁▄▅▆▆▇▇▇▇▇▇▇████████████████████████████
+wandb:       train_loss █▆▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     val_accuracy ▁▃▅▆▇▇▇█████████████████████████████████
+wandb:         val_loss █▅▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_max █▃▃▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    vt_clean_mean █▆▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  vt_clean_median █▅▅▄▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_min ▁▄▇▆▇▇███▇▆▆▅▅▅▄▃▃▃▄▄▄▄▄▄▃▃▃▃▃▃▃▃▃▃▃▃▃▂▂
+wandb:     vt_clean_q25 █▇▆▄▄▃▃▃▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_q75 █▆▃▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    vt_noised_max █▃▃▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   vt_noised_mean █▆▅▄▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: vt_noised_median ▁▇▇█████████████████████████████████████
+wandb:    vt_noised_min ▁▂▃▄▅▅▆▆▆▇▇▇▇▇▇▇▇▇█████████████▇██▇█████
+wandb:    vt_noised_q25 ▁▄▅▆▆▇▇▇████████████████████████████████
+wandb:    vt_noised_q75 █▅▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          epsilon 11.91532
+wandb:     mt_clean_max 0.01145
+wandb:    mt_clean_mean -0.0
+wandb:  mt_clean_median 0.0
+wandb:     mt_clean_min -0.00767
+wandb:     mt_clean_q25 -5e-05
+wandb:     mt_clean_q75 5e-05
+wandb:    mt_noised_max 0.01484
+wandb:   mt_noised_mean -1e-05
+wandb: mt_noised_median -1e-05
+wandb:    mt_noised_min -0.01011
+wandb:    mt_noised_q25 -0.00149
+wandb:    mt_noised_q75 0.00147
+wandb:    test_accuracy 54.77851
+wandb:        test_loss 1.69908
+wandb:   train_accuracy 60.08731
+wandb:       train_loss 1.47939
+wandb:     val_accuracy 55.74348
+wandb:         val_loss 1.68644
+wandb:     vt_clean_max 0.00015
+wandb:    vt_clean_mean 0.0
+wandb:  vt_clean_median 0.0
+wandb:     vt_clean_min 0.0
+wandb:     vt_clean_q25 0.0
+wandb:     vt_clean_q75 0.0
+wandb:    vt_noised_max 0.00024
+wandb:   vt_noised_mean 9e-05
+wandb: vt_noised_median 9e-05
+wandb:    vt_noised_min 6e-05
+wandb:    vt_noised_q25 9e-05
+wandb:    vt_noised_q75 0.0001
+wandb: 
+wandb: 🚀 View run lr-4.274e-03-wd-7.091e-05_adamw_eps-12_12_adamw_2 at: https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/t77jev3y
+wandb: ⭐️ View project at: https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250503_172829-t77jev3y/logs
+wandb: Tracking run with wandb version 0.19.10
+wandb: Run data is saved locally in /home/ubuntu/DP-AdamW/wandb/run-20250503_173348-zl8odax0
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run glad-pond-587
+wandb: ⭐️ View project at https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: 🚀 View run at https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/zl8odax0
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          epsilon ▁▂▃▃▃▄▄▄▄▄▅▅▅▅▅▅▅▆▆▆▆▆▆▆▆▇▇▇▇▇▇▇▇▇▇█████
+wandb:     mt_clean_max █▅▃▂▁▂▁▂▃▄▅▃▄▃▄▅▃▄▆▅▅▅▄▅▅▄▄▄▅▆▅▅▄▆▅▆▆▆▆▅
+wandb:    mt_clean_mean ▁▂▄▄▃▄▅▅▅▅▄▆▅▅▆▇▆▇▆▆▇▇▆▆▇█▇▇▇▇▇█▇▇▇▇█▇▇▇
+wandb:  mt_clean_median █▁▂▃▃▃▃▄▄▄▅▅▅▆▅▅▅▅▅▅▅▅▅▅▅▄▅▅▅▅▅▅▅▅▅▅▅▅▅▅
+wandb:     mt_clean_min ▅▁▂▃▇▇▇▇▆▅▆▆▆▆▆▅▇▇▇▇▆▇▇▆▇▇█▇▇▇▆▆▇▇█▇▇▇▇█
+wandb:     mt_clean_q25 ▁▂▂▃▄▅▅▅▆▆▆▇▇▇▇▇▇███████████████████████
+wandb:     mt_clean_q75 █▆▅▅▄▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    mt_noised_max █▆▅▃▂▂▁▂▁▃▂▅▁▂▂▃▄▂▂▄▄▃▂▃▅▄▅▃▄▁▂▂▄▃▅▅▁▃▅▂
+wandb:   mt_noised_mean ▄▃▃█▆▄▂▁▅▃▆▂▄▅▅▄▆█▄█▆▆▅▇▄▃▃▅▃▂▇█▇▅▂▆▇▅▁▄
+wandb: mt_noised_median ▅▄▄█▆▃▁▂▅▃▃▄▃▃▃▂▄▁▆▅▂▃▅▃▄▃▄▂▅▅▁▄▂▃▃▂▄▃▄▆
+wandb:    mt_noised_min ▂▁▄▇▇▇▆▇█▆▆▅▆▇▆▆▆▇▅▇▇█▇▇▆▆▆▇▇█▆█▆▆▆▇▇▆▇▆
+wandb:    mt_noised_q25 ▁▆▇▇████████████████████████████████████
+wandb:    mt_noised_q75 █▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    test_accuracy ▁▂▅▆▇▇▇▇████████████████████████████████
+wandb:        test_loss █▄▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   train_accuracy ▁▅▆▆▆▇▇▇▇███████████████████████████████
+wandb:       train_loss █▃▃▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     val_accuracy ▁▆▆▇▇▇▇█████████████████████████████████
+wandb:         val_loss █▆▅▄▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_max █▅▄▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    vt_clean_mean █▆▅▄▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  vt_clean_median █▆▅▄▃▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_min ▁▃▄▇█▆▆▆▅▅▅▅▄▅▆▅▆▆▆▆▅▅▅▄▄▄▃▃▃▃▂▂▂▂▂▂▂▂▂▁
+wandb:     vt_clean_q25 █▇▆▅▄▃▃▃▃▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_q75 █▆▄▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    vt_noised_max █▅▄▃▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   vt_noised_mean █▅▄▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: vt_noised_median ▁▇██████████████████████████████████████
+wandb:    vt_noised_min ▁▃▃▅▅▆▆▆▇▇▇▇▇▇▇▇▇▇▇▇██▇█████▇▇▇██████▇██
+wandb:    vt_noised_q25 ▁▃▄▄▅▆▆▆▇▇▇▇▇▇██████████████████████████
+wandb:    vt_noised_q75 █▆▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          epsilon 11.91532
+wandb:     mt_clean_max 0.01243
+wandb:    mt_clean_mean 0.0
+wandb:  mt_clean_median -0.0
+wandb:     mt_clean_min -0.00735
+wandb:     mt_clean_q25 -5e-05
+wandb:     mt_clean_q75 5e-05
+wandb:    mt_noised_max 0.01193
+wandb:   mt_noised_mean 0.0
+wandb: mt_noised_median 1e-05
+wandb:    mt_noised_min -0.01149
+wandb:    mt_noised_q25 -0.00148
+wandb:    mt_noised_q75 0.00149
+wandb:    test_accuracy 55.09742
+wandb:        test_loss 1.70064
+wandb:   train_accuracy 60.42379
+wandb:       train_loss 1.46648
+wandb:     val_accuracy 56.31061
+wandb:         val_loss 1.67719
+wandb:     vt_clean_max 0.00018
+wandb:    vt_clean_mean 0.0
+wandb:  vt_clean_median 0.0
+wandb:     vt_clean_min 0.0
+wandb:     vt_clean_q25 0.0
+wandb:     vt_clean_q75 0.0
+wandb:    vt_noised_max 0.00028
+wandb:   vt_noised_mean 9e-05
+wandb: vt_noised_median 9e-05
+wandb:    vt_noised_min 6e-05
+wandb:    vt_noised_q25 9e-05
+wandb:    vt_noised_q75 0.0001
+wandb: 
+wandb: 🚀 View run lr-4.274e-03-wd-7.091e-05_adamw_eps-12_12_adamw_3 at: https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/zl8odax0
+wandb: ⭐️ View project at: https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250503_173348-zl8odax0/logs
+wandb: Tracking run with wandb version 0.19.10
+wandb: Run data is saved locally in /home/ubuntu/DP-AdamW/wandb/run-20250503_173916-qwt0xgjf
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run olive-sun-588
+wandb: ⭐️ View project at https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: 🚀 View run at https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/qwt0xgjf
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          epsilon ▁▂▂▂▃▃▃▃▃▄▄▄▅▅▅▅▅▅▅▅▆▆▆▆▆▆▆▆▆▆▇▇▇▇▇▇▇███
+wandb:     mt_clean_max █▇▄▂▂▁▁▂▁▁▂▁▂▂▁▁▂▃▂▃▃▄▄▃▃▂▄▄▄▄▄▃▄▄▄▄▅▅▅▆
+wandb:    mt_clean_mean █▄▃▃▁▁▂▁▂▁▁▃▂▃▄▄▃▄▄▄▄▄▄▃▅▃▄▄▅▅▄▅▅▄▄▄▄▆▃▄
+wandb:  mt_clean_median ▇█▂▂▁▂▂▂▁▁▃▂▃▂▂▂▃▂▂▂▂▂▂▂▂▂▂▂▂▂▃▃▂▃▃▃▂▃▃▃
+wandb:     mt_clean_min ▂▁▄▅▆█▇▇▇▇▆▇▆▆▆▆▆▆▇▆▇▇▇▇▇█▇▇▇▇▇█████▇▇▇▇
+wandb:     mt_clean_q25 ▁▂▃▄▄▅▆▆▆▇▇▇▇▇▇█████████████████████████
+wandb:     mt_clean_q75 █▇▅▄▄▃▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    mt_noised_max █▄▅▁▁▂▃▂▂▂▂▁▂▅▄▂▂▄▃▃▄▅▂▂▅▃▂▅▂▄▃▃▃▃▂▅▃▃▄▃
+wandb:   mt_noised_mean ▄▄▂▃▆▃▅▆▅▁▁▄▄▆▆▇▅▅▄▅▄▅▅▆▅█▂▆▆▄▄▂▂▅▇▃▅▄▄▅
+wandb: mt_noised_median ▄▂▅▁▂▆▂▃▃▄▅▅▅▄▁▆▅▅▆▆▇▅▄▅▆▃▅█▅▄▃▄▄▆▁▄▆▇▅▄
+wandb:    mt_noised_min ▃▁▄▄▆▇█▇▇▇▇▆▅▇▆▆▆▇▇▆▇▇▇█▇▇▇█▆█▇▇▇▇▇█▇▇▇▇
+wandb:    mt_noised_q25 ▁▇██████████████████████████████████████
+wandb:    mt_noised_q75 █▃▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    test_accuracy ▁▂▆▇▇▇▇▇▇▇██████████████████████████████
+wandb:        test_loss █▅▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   train_accuracy ▁▄▅▆▆▆▇▇▇▇▇▇████████████████████████████
+wandb:       train_loss █▆▅▄▄▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     val_accuracy ▁▅▆▆▇▇▇▇████████████████████████████████
+wandb:         val_loss █▅▄▃▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_max █▅▃▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    vt_clean_mean █▆▅▄▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  vt_clean_median █▇▅▅▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_min ▁▇▆▇██▇▆▆▄▅▄▅▄▄▄▄▄▃▃▃▃▃▃▃▃▂▂▃▃▃▃▃▃▂▂▂▂▂▂
+wandb:     vt_clean_q25 █▇▆▅▄▄▃▃▃▃▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_q75 █▆▄▃▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    vt_noised_max █▅▃▃▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   vt_noised_mean █▆▅▄▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: vt_noised_median ▁▆██████████████████████████████████████
+wandb:    vt_noised_min ▁▂▃▄▄▅▆▆▆▆▇▇▇███▇██████▇██▇█▇█████████▇█
+wandb:    vt_noised_q25 ▁▆▇▇▇▇▇█████████████████████████████████
+wandb:    vt_noised_q75 █▆▄▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          epsilon 11.91532
+wandb:     mt_clean_max 0.01491
+wandb:    mt_clean_mean -0.0
+wandb:  mt_clean_median 0.0
+wandb:     mt_clean_min -0.00914
+wandb:     mt_clean_q25 -5e-05
+wandb:     mt_clean_q75 4e-05
+wandb:    mt_noised_max 0.01182
+wandb:   mt_noised_mean -1e-05
+wandb: mt_noised_median -0.0
+wandb:    mt_noised_min -0.01032
+wandb:    mt_noised_q25 -0.00149
+wandb:    mt_noised_q75 0.00148
+wandb:    test_accuracy 54.98015
+wandb:        test_loss 1.67125
+wandb:   train_accuracy 60.49197
+wandb:       train_loss 1.45448
+wandb:     val_accuracy 56.10926
+wandb:         val_loss 1.65203
+wandb:     vt_clean_max 0.0002
+wandb:    vt_clean_mean 0.0
+wandb:  vt_clean_median 0.0
+wandb:     vt_clean_min 0.0
+wandb:     vt_clean_q25 0.0
+wandb:     vt_clean_q75 0.0
+wandb:    vt_noised_max 0.00026
+wandb:   vt_noised_mean 9e-05
+wandb: vt_noised_median 9e-05
+wandb:    vt_noised_min 6e-05
+wandb:    vt_noised_q25 9e-05
+wandb:    vt_noised_q75 0.0001
+wandb: 
+wandb: 🚀 View run lr-4.274e-03-wd-7.091e-05_adamw_eps-12_12_adamw_4 at: https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/qwt0xgjf
+wandb: ⭐️ View project at: https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250503_173916-qwt0xgjf/logs
+wandb: Tracking run with wandb version 0.19.10
+wandb: Run data is saved locally in /home/ubuntu/DP-AdamW/wandb/run-20250503_174456-p2brc86z
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run deft-night-589
+wandb: ⭐️ View project at https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: 🚀 View run at https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/p2brc86z
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          epsilon ▁▅▆▇█
+wandb:     mt_clean_max ▁▆██
+wandb:    mt_clean_mean █▅▃▁
+wandb:  mt_clean_median █▅▃▁
+wandb:     mt_clean_min ▅▁█▃
+wandb:     mt_clean_q25 ▁▄▇█
+wandb:     mt_clean_q75 █▅▂▁
+wandb:    mt_noised_max ▁▅▆█
+wandb:   mt_noised_mean █▆▃▁
+wandb: mt_noised_median █▄▃▁
+wandb:    mt_noised_min ▃▁▆█
+wandb:    mt_noised_q25 ▁▆██
+wandb:    mt_noised_q75 █▃▂▁
+wandb:        perc_corr ▁▆▇█
+wandb:    test_accuracy ▁▅▇██
+wandb:        test_loss █▃▂▁▁
+wandb:   train_accuracy ▁▅▇██
+wandb:       train_loss █▄▂▁▁
+wandb:     val_accuracy ▁▅▇██
+wandb:         val_loss █▃▂▁▁
+wandb:     vt_clean_max █▃▂▁
+wandb:    vt_clean_mean █▅▂▁
+wandb:  vt_clean_median █▅▂▁
+wandb:     vt_clean_min ▁▄▇█
+wandb:     vt_clean_q25 █▅▃▁
+wandb:     vt_clean_q75 █▄▂▁
+wandb:      vt_corr_max █▃▂▁
+wandb:     vt_corr_mean █▄▂▁
+wandb:   vt_corr_median ▁▁▁▁
+wandb:      vt_corr_min ▁▁▁▁
+wandb:      vt_corr_q25 ▁▁▁▁
+wandb:      vt_corr_q75 █▄▂▁
+wandb:    vt_noised_max █▃▂▁
+wandb:   vt_noised_mean █▅▂▁
+wandb: vt_noised_median ▁▆▇█
+wandb:    vt_noised_min ▁▄▇█
+wandb:    vt_noised_q25 ▁▅▇█
+wandb:    vt_noised_q75 █▄▂▁
+wandb: 
+wandb: Run summary:
+wandb:          epsilon 2.8252
+wandb:     mt_clean_max 0.02515
+wandb:    mt_clean_mean 0.0
+wandb:  mt_clean_median 0.0
+wandb:     mt_clean_min -0.0154
+wandb:     mt_clean_q25 -0.00012
+wandb:     mt_clean_q75 0.00012
+wandb:    mt_noised_max 0.02452
+wandb:   mt_noised_mean -1e-05
+wandb: mt_noised_median -1e-05
+wandb:    mt_noised_min -0.01387
+wandb:    mt_noised_q25 -0.00153
+wandb:    mt_noised_q75 0.0015
+wandb:        perc_corr 0.48737
+wandb:    test_accuracy 47.97852
+wandb:        test_loss 1.89661
+wandb:   train_accuracy 52.11291
+wandb:       train_loss 1.75548
+wandb:     val_accuracy 49.84395
+wandb:         val_loss 1.86305
+wandb:     vt_clean_max 0.00186
+wandb:    vt_clean_mean 0.0
+wandb:  vt_clean_median 0.0
+wandb:     vt_clean_min 0.0
+wandb:     vt_clean_q25 0.0
+wandb:     vt_clean_q75 0.0
+wandb:      vt_corr_max 0.00164
+wandb:     vt_corr_mean 1e-05
+wandb:   vt_corr_median 0.0
+wandb:      vt_corr_min 0.0
+wandb:      vt_corr_q25 0.0
+wandb:      vt_corr_q75 1e-05
+wandb:    vt_noised_max 0.00174
+wandb:   vt_noised_mean 9e-05
+wandb: vt_noised_median 9e-05
+wandb:    vt_noised_min 3e-05
+wandb:    vt_noised_q25 8e-05
+wandb:    vt_noised_q75 0.00011
+wandb: 
+wandb: 🚀 View run lr-2.107e-04-wd-3.245e-05_adamwbc_eps-3_3_adamwbc_0 at: https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/p2brc86z
+wandb: ⭐️ View project at: https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250503_174456-p2brc86z/logs
+wandb: Tracking run with wandb version 0.19.10
+wandb: Run data is saved locally in /home/ubuntu/DP-AdamW/wandb/run-20250503_174549-q426ppp2
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run logical-dragon-590
+wandb: ⭐️ View project at https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: 🚀 View run at https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/q426ppp2
+Running row['epsilon']=3 row['optimizer']='adamw'
+No RNG seed provided, using random seed: 452556
+Logging for wandb is done setup
+SAMPLING EDGELISTS
+num train_nodes 90941
+dropped count 270
+FINISHED!
+FINISHED DATASET LOADING
+Getting subgraphs
+sampled subgraphs
+90941 8
+created accountant
+initializing...
+initialized
+Got clipping thresholds
+initialized model (etc.)
+Checkpoint directory: ./tmp/checkpoints
+Contents of ./tmp/checkpoints: []
+loading adam_summary_stats
+done training
+No RNG seed provided, using random seed: 35408
+Logging for wandb is done setup
+SAMPLING EDGELISTS
+num train_nodes 90941
+dropped count 287
+FINISHED!
+FINISHED DATASET LOADING
+Getting subgraphs
+sampled subgraphs
+90941 8
+created accountant
+initializing...
+initialized
+Got clipping thresholds
+initialized model (etc.)
+Checkpoint directory: ./tmp/checkpoints
+Contents of ./tmp/checkpoints: []
+loading adam_summary_stats
+done training
+No RNG seed provided, using random seed: 704935
+Logging for wandb is done setup
+SAMPLING EDGELISTS
+num train_nodes 90941
+dropped count 260
+FINISHED!
+FINISHED DATASET LOADING
+Getting subgraphs
+sampled subgraphs
+90941 8
+created accountant
+initializing...
+initialized
+Got clipping thresholds
+initialized model (etc.)
+Checkpoint directory: ./tmp/checkpoints
+Contents of ./tmp/checkpoints: []
+loading adam_summary_stats
+done training
+No RNG seed provided, using random seed: 553873
+Logging for wandb is done setup
+SAMPLING EDGELISTS
+num train_nodes 90941
+dropped count 299
+FINISHED!
+FINISHED DATASET LOADING
+Getting subgraphs
+sampled subgraphs
+90941 8
+created accountant
+initializing...
+initialized
+Got clipping thresholds
+initialized model (etc.)
+Checkpoint directory: ./tmp/checkpoints
+Contents of ./tmp/checkpoints: []
+loading adam_summary_stats
+done training
+No RNG seed provided, using random seed: 414772
+Logging for wandb is done setup
+SAMPLING EDGELISTS
+num train_nodes 90941
+dropped count 295
+FINISHED!
+FINISHED DATASET LOADING
+Getting subgraphs
+sampled subgraphs
+90941 8
+created accountant
+initializing...
+initialized
+Got clipping thresholds
+initialized model (etc.)
+Checkpoint directory: ./tmp/checkpoints
+Contents of ./tmp/checkpoints: []
+loading adam_summary_stats
+done training
+Running row['epsilon']=6 row['optimizer']='adamw'
+No RNG seed provided, using random seed: 847449
+Logging for wandb is done setup
+SAMPLING EDGELISTS
+num train_nodes 90941
+dropped count 263
+FINISHED!
+FINISHED DATASET LOADING
+Getting subgraphs
+sampled subgraphs
+90941 8
+created accountant
+initializing...
+initialized
+Got clipping thresholds
+initialized model (etc.)
+Checkpoint directory: ./tmp/checkpoints
+Contents of ./tmp/checkpoints: []
+loading adam_summary_stats
+checkpoint 1checkpoint 2checkpoint 3done training
+No RNG seed provided, using random seed: 345521
+Logging for wandb is done setup
+SAMPLING EDGELISTS
+num train_nodes 90941
+dropped count 267
+FINISHED!
+FINISHED DATASET LOADING
+Getting subgraphs
+sampled subgraphs
+90941 8
+created accountant
+initializing...
+initialized
+Got clipping thresholds
+initialized model (etc.)
+Checkpoint directory: ./tmp/checkpoints
+Contents of ./tmp/checkpoints: []
+loading adam_summary_stats
+checkpoint 1checkpoint 2checkpoint 3done training
+No RNG seed provided, using random seed: 989992
+Logging for wandb is done setup
+SAMPLING EDGELISTS
+num train_nodes 90941
+dropped count 285
+FINISHED!
+FINISHED DATASET LOADING
+Getting subgraphs
+sampled subgraphs
+90941 8
+created accountant
+initializing...
+initialized
+Got clipping thresholds
+initialized model (etc.)
+Checkpoint directory: ./tmp/checkpoints
+Contents of ./tmp/checkpoints: []
+loading adam_summary_stats
+checkpoint 1checkpoint 2checkpoint 3done training
+No RNG seed provided, using random seed: 457341
+Logging for wandb is done setup
+SAMPLING EDGELISTS
+num train_nodes 90941
+dropped count 286
+FINISHED!
+FINISHED DATASET LOADING
+Getting subgraphs
+sampled subgraphs
+90941 8
+created accountant
+initializing...
+initialized
+Got clipping thresholds
+initialized model (etc.)
+Checkpoint directory: ./tmp/checkpoints
+Contents of ./tmp/checkpoints: []
+loading adam_summary_stats
+checkpoint 1checkpoint 2checkpoint 3done training
+No RNG seed provided, using random seed: 556890
+Logging for wandb is done setup
+SAMPLING EDGELISTS
+num train_nodes 90941
+dropped count 275
+FINISHED!
+FINISHED DATASET LOADING
+Getting subgraphs
+sampled subgraphs
+90941 8
+created accountant
+initializing...
+initialized
+Got clipping thresholds
+initialized model (etc.)
+Checkpoint directory: ./tmp/checkpoints
+Contents of ./tmp/checkpoints: []
+loading adam_summary_stats
+checkpoint 1checkpoint 2checkpoint 3done training
+Running row['epsilon']=12 row['optimizer']='adamw'
+No RNG seed provided, using random seed: 797204
+Logging for wandb is done setup
+SAMPLING EDGELISTS
+num train_nodes 90941
+dropped count 272
+FINISHED!
+FINISHED DATASET LOADING
+Getting subgraphs
+sampled subgraphs
+90941 8
+created accountant
+initializing...
+initialized
+Got clipping thresholds
+initialized model (etc.)
+Checkpoint directory: ./tmp/checkpoints
+Contents of ./tmp/checkpoints: []
+loading adam_summary_stats
+checkpoint 1checkpoint 2checkpoint 3checkpoint 4checkpoint 5checkpoint 6checkpoint 7checkpoint 8checkpoint 9checkpoint 10checkpoint 11checkpoint 12checkpoint 13done training
+No RNG seed provided, using random seed: 61703
+Logging for wandb is done setup
+SAMPLING EDGELISTS
+num train_nodes 90941
+dropped count 276
+FINISHED!
+FINISHED DATASET LOADING
+Getting subgraphs
+sampled subgraphs
+90941 8
+created accountant
+initializing...
+initialized
+Got clipping thresholds
+initialized model (etc.)
+Checkpoint directory: ./tmp/checkpoints
+Contents of ./tmp/checkpoints: []
+loading adam_summary_stats
+checkpoint 1checkpoint 2checkpoint 3checkpoint 4checkpoint 5checkpoint 6checkpoint 7checkpoint 8checkpoint 9checkpoint 10checkpoint 11checkpoint 12checkpoint 13done training
+No RNG seed provided, using random seed: 925531
+Logging for wandb is done setup
+SAMPLING EDGELISTS
+num train_nodes 90941
+dropped count 272
+FINISHED!
+FINISHED DATASET LOADING
+Getting subgraphs
+sampled subgraphs
+90941 8
+created accountant
+initializing...
+initialized
+Got clipping thresholds
+initialized model (etc.)
+Checkpoint directory: ./tmp/checkpoints
+Contents of ./tmp/checkpoints: []
+loading adam_summary_stats
+checkpoint 1checkpoint 2checkpoint 3checkpoint 4checkpoint 5checkpoint 6checkpoint 7checkpoint 8checkpoint 9checkpoint 10checkpoint 11checkpoint 12checkpoint 13done training
+No RNG seed provided, using random seed: 604374
+Logging for wandb is done setup
+SAMPLING EDGELISTS
+num train_nodes 90941
+dropped count 286
+FINISHED!
+FINISHED DATASET LOADING
+Getting subgraphs
+sampled subgraphs
+90941 8
+created accountant
+initializing...
+initialized
+Got clipping thresholds
+initialized model (etc.)
+Checkpoint directory: ./tmp/checkpoints
+Contents of ./tmp/checkpoints: []
+loading adam_summary_stats
+checkpoint 1checkpoint 2checkpoint 3checkpoint 4checkpoint 5checkpoint 6checkpoint 7checkpoint 8checkpoint 9checkpoint 10checkpoint 11checkpoint 12checkpoint 13done training
+No RNG seed provided, using random seed: 237089
+Logging for wandb is done setup
+SAMPLING EDGELISTS
+num train_nodes 90941
+dropped count 277
+FINISHED!
+FINISHED DATASET LOADING
+Getting subgraphs
+sampled subgraphs
+90941 8
+created accountant
+initializing...
+initialized
+Got clipping thresholds
+initialized model (etc.)
+Checkpoint directory: ./tmp/checkpoints
+Contents of ./tmp/checkpoints: []
+loading adam_summary_stats
+checkpoint 1checkpoint 2checkpoint 3checkpoint 4checkpoint 5checkpoint 6checkpoint 7checkpoint 8checkpoint 9checkpoint 10checkpoint 11checkpoint 12checkpoint 13done training
+Running row['epsilon']=3 row['optimizer']='adamwbc'
+No RNG seed provided, using random seed: 728783
+Logging for wandb is done setup
+SAMPLING EDGELISTS
+num train_nodes 90941
+dropped count 321
+FINISHED!
+FINISHED DATASET LOADING
+Getting subgraphs
+sampled subgraphs
+90941 8
+created accountant
+initializing...
+initialized
+Got clipping thresholds
+initialized model (etc.)
+Checkpoint directory: ./tmp/checkpoints
+Contents of ./tmp/checkpoints: []
+loading adam_summary_stats
+done training
+No RNG seed provided, using random seed: 841055
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          epsilon ▁▅▆▇█
+wandb:     mt_clean_max ▇█▂▁
+wandb:    mt_clean_mean ▁▁██
+wandb:  mt_clean_median ▁▅█▆
+wandb:     mt_clean_min ▃▁█▇
+wandb:     mt_clean_q25 ▁▄▇█
+wandb:     mt_clean_q75 █▅▂▁
+wandb:    mt_noised_max █▇▃▁
+wandb:   mt_noised_mean ▁▄▅█
+wandb: mt_noised_median ▁▅▆█
+wandb:    mt_noised_min ▁▁▇█
+wandb:    mt_noised_q25 ▁▆▇█
+wandb:    mt_noised_q75 █▃▂▁
+wandb:        perc_corr ▁▆▇█
+wandb:    test_accuracy ▁▅▇██
+wandb:        test_loss █▄▂▁▁
+wandb:   train_accuracy ▁▅▇██
+wandb:       train_loss █▄▂▁▁
+wandb:     val_accuracy ▁▅▇██
+wandb:         val_loss █▄▂▁▁
+wandb:     vt_clean_max █▃▂▁
+wandb:    vt_clean_mean █▄▂▁
+wandb:  vt_clean_median █▄▂▁
+wandb:     vt_clean_min ▁▃▆█
+wandb:     vt_clean_q25 █▅▃▁
+wandb:     vt_clean_q75 █▄▂▁
+wandb:      vt_corr_max █▄▂▁
+wandb:     vt_corr_mean █▄▂▁
+wandb:   vt_corr_median ▁▁▁▁
+wandb:      vt_corr_min ▁▁▁▁
+wandb:      vt_corr_q25 ▁▁▁▁
+wandb:      vt_corr_q75 █▄▂▁
+wandb:    vt_noised_max █▄▂▁
+wandb:   vt_noised_mean █▄▂▁
+wandb: vt_noised_median ▁▆▇█
+wandb:    vt_noised_min ▁▃▇█
+wandb:    vt_noised_q25 ▁▅▇█
+wandb:    vt_noised_q75 █▄▂▁
+wandb: 
+wandb: Run summary:
+wandb:          epsilon 2.8252
+wandb:     mt_clean_max 0.03051
+wandb:    mt_clean_mean 0.0
+wandb:  mt_clean_median -0.0
+wandb:     mt_clean_min -0.01481
+wandb:     mt_clean_q25 -0.00012
+wandb:     mt_clean_q75 0.00012
+wandb:    mt_noised_max 0.02941
+wandb:   mt_noised_mean 0.0
+wandb: mt_noised_median -0.0
+wandb:    mt_noised_min -0.01465
+wandb:    mt_noised_q25 -0.00151
+wandb:    mt_noised_q75 0.00151
+wandb:        perc_corr 0.48642
+wandb:    test_accuracy 48.88793
+wandb:        test_loss 1.89846
+wandb:   train_accuracy 51.37067
+wandb:       train_loss 1.78876
+wandb:     val_accuracy 49.70301
+wandb:         val_loss 1.88776
+wandb:     vt_clean_max 0.00285
+wandb:    vt_clean_mean 0.0
+wandb:  vt_clean_median 0.0
+wandb:     vt_clean_min 0.0
+wandb:     vt_clean_q25 0.0
+wandb:     vt_clean_q75 0.0
+wandb:      vt_corr_max 0.00327
+wandb:     vt_corr_mean 1e-05
+wandb:   vt_corr_median 0.0
+wandb:      vt_corr_min 0.0
+wandb:      vt_corr_q25 0.0
+wandb:      vt_corr_q75 1e-05
+wandb:    vt_noised_max 0.00336
+wandb:   vt_noised_mean 9e-05
+wandb: vt_noised_median 9e-05
+wandb:    vt_noised_min 3e-05
+wandb:    vt_noised_q25 8e-05
+wandb:    vt_noised_q75 0.00011
+wandb: 
+wandb: 🚀 View run lr-2.107e-04-wd-3.245e-05_adamwbc_eps-3_3_adamwbc_1 at: https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/q426ppp2
+wandb: ⭐️ View project at: https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250503_174549-q426ppp2/logs
+wandb: Tracking run with wandb version 0.19.10
+wandb: Run data is saved locally in /home/ubuntu/DP-AdamW/wandb/run-20250503_174639-rx6gvxec
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run northern-disco-591
+wandb: ⭐️ View project at https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: 🚀 View run at https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/rx6gvxec
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          epsilon ▁▅▆▇█
+wandb:     mt_clean_max ▁█▄▆
+wandb:    mt_clean_mean ▂▁▄█
+wandb:  mt_clean_median ▅▁██
+wandb:     mt_clean_min █▁▆▄
+wandb:     mt_clean_q25 ▁▄▇█
+wandb:     mt_clean_q75 █▅▂▁
+wandb:    mt_noised_max ▁█▅▆
+wandb:   mt_noised_mean ▂█▅▁
+wandb: mt_noised_median ▁▆█▄
+wandb:    mt_noised_min ▇██▁
+wandb:    mt_noised_q25 ▁▆██
+wandb:    mt_noised_q75 █▃▂▁
+wandb:        perc_corr ▁▅▇█
+wandb:    test_accuracy ▁▅▇██
+wandb:        test_loss █▃▂▁▁
+wandb:   train_accuracy ▁▅▇██
+wandb:       train_loss █▄▂▁▁
+wandb:     val_accuracy ▁▅▇██
+wandb:         val_loss █▃▂▁▁
+wandb:     vt_clean_max █▄▂▁
+wandb:    vt_clean_mean █▄▂▁
+wandb:  vt_clean_median █▄▂▁
+wandb:     vt_clean_min ▁▃▄█
+wandb:     vt_clean_q25 █▄▂▁
+wandb:     vt_clean_q75 █▄▂▁
+wandb:      vt_corr_max █▄▂▁
+wandb:     vt_corr_mean █▄▂▁
+wandb:   vt_corr_median ▁▁▁▁
+wandb:      vt_corr_min ▁▁▁▁
+wandb:      vt_corr_q25 ▁▁▁▁
+wandb:      vt_corr_q75 █▄▂▁
+wandb:    vt_noised_max █▄▂▁
+wandb:   vt_noised_mean █▄▂▁
+wandb: vt_noised_median ▁▆▇█
+wandb:    vt_noised_min ▁▄▇█
+wandb:    vt_noised_q25 ▁▅▇█
+wandb:    vt_noised_q75 █▄▂▁
+wandb: 
+wandb: Run summary:
+wandb:          epsilon 2.8252
+wandb:     mt_clean_max 0.02382
+wandb:    mt_clean_mean 0.0
+wandb:  mt_clean_median -0.0
+wandb:     mt_clean_min -0.0168
+wandb:     mt_clean_q25 -0.00013
+wandb:     mt_clean_q75 0.00013
+wandb:    mt_noised_max 0.02601
+wandb:   mt_noised_mean -0.0
+wandb: mt_noised_median -0.0
+wandb:    mt_noised_min -0.01841
+wandb:    mt_noised_q25 -0.00152
+wandb:    mt_noised_q75 0.00151
+wandb:        perc_corr 0.48544
+wandb:    test_accuracy 48.69247
+wandb:        test_loss 1.9013
+wandb:   train_accuracy 51.09686
+wandb:       train_loss 1.81024
+wandb:     val_accuracy 49.77348
+wandb:         val_loss 1.88602
+wandb:     vt_clean_max 0.00174
+wandb:    vt_clean_mean 0.0
+wandb:  vt_clean_median 0.0
+wandb:     vt_clean_min 0.0
+wandb:     vt_clean_q25 0.0
+wandb:     vt_clean_q75 0.0
+wandb:      vt_corr_max 0.00195
+wandb:     vt_corr_mean 1e-05
+wandb:   vt_corr_median 0.0
+wandb:      vt_corr_min 0.0
+wandb:      vt_corr_q25 0.0
+wandb:      vt_corr_q75 1e-05
+wandb:    vt_noised_max 0.00204
+wandb:   vt_noised_mean 9e-05
+wandb: vt_noised_median 9e-05
+wandb:    vt_noised_min 3e-05
+wandb:    vt_noised_q25 8e-05
+wandb:    vt_noised_q75 0.00011
+wandb: 
+wandb: 🚀 View run lr-2.107e-04-wd-3.245e-05_adamwbc_eps-3_3_adamwbc_2 at: https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/rx6gvxec
+wandb: ⭐️ View project at: https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250503_174639-rx6gvxec/logs
+wandb: Tracking run with wandb version 0.19.10
+wandb: Run data is saved locally in /home/ubuntu/DP-AdamW/wandb/run-20250503_174731-ql7yo6ug
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run frosty-snowflake-592
+wandb: ⭐️ View project at https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: 🚀 View run at https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/ql7yo6ug
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          epsilon ▁▅▆▇█
+wandb:     mt_clean_max ▁█▂▃
+wandb:    mt_clean_mean ▁▆█▆
+wandb:  mt_clean_median █▂▁▃
+wandb:     mt_clean_min ▅▁█▇
+wandb:     mt_clean_q25 ▁▄▇█
+wandb:     mt_clean_q75 █▅▂▁
+wandb:    mt_noised_max ▄█▁▇
+wandb:   mt_noised_mean ▆▇▁█
+wandb: mt_noised_median █▄▁▇
+wandb:    mt_noised_min ▁▁█▄
+wandb:    mt_noised_q25 ▁▆▇█
+wandb:    mt_noised_q75 █▃▁▁
+wandb:        perc_corr ▁▆▇█
+wandb:    test_accuracy ▁▅▇██
+wandb:        test_loss █▄▂▁▁
+wandb:   train_accuracy ▁▅▇██
+wandb:       train_loss █▄▂▁▁
+wandb:     val_accuracy ▁▅▇██
+wandb:         val_loss █▄▂▁▁
+wandb:     vt_clean_max █▄▂▁
+wandb:    vt_clean_mean █▄▂▁
+wandb:  vt_clean_median █▄▂▁
+wandb:     vt_clean_min ▁▁▃█
+wandb:     vt_clean_q25 █▅▃▁
+wandb:     vt_clean_q75 █▄▂▁
+wandb:      vt_corr_max █▄▂▁
+wandb:     vt_corr_mean █▄▂▁
+wandb:   vt_corr_median ▁▁▁▁
+wandb:      vt_corr_min ▁▁▁▁
+wandb:      vt_corr_q25 ▁▁▁▁
+wandb:      vt_corr_q75 █▄▂▁
+wandb:    vt_noised_max █▄▂▁
+wandb:   vt_noised_mean █▄▂▁
+wandb: vt_noised_median ▁▆▇█
+wandb:    vt_noised_min ▁▄▇█
+wandb:    vt_noised_q25 ▁▅▇█
+wandb:    vt_noised_q75 █▄▂▁
+wandb: 
+wandb: Run summary:
+wandb:          epsilon 2.8252
+wandb:     mt_clean_max 0.02589
+wandb:    mt_clean_mean 0.0
+wandb:  mt_clean_median 0.0
+wandb:     mt_clean_min -0.01603
+wandb:     mt_clean_q25 -0.00013
+wandb:     mt_clean_q75 0.00013
+wandb:    mt_noised_max 0.0273
+wandb:   mt_noised_mean 1e-05
+wandb: mt_noised_median 1e-05
+wandb:    mt_noised_min -0.01714
+wandb:    mt_noised_q25 -0.00151
+wandb:    mt_noised_q75 0.00152
+wandb:        perc_corr 0.48604
+wandb:    test_accuracy 49.94136
+wandb:        test_loss 1.88594
+wandb:   train_accuracy 51.32778
+wandb:       train_loss 1.78749
+wandb:     val_accuracy 50.46814
+wandb:         val_loss 1.86186
+wandb:     vt_clean_max 0.00187
+wandb:    vt_clean_mean 0.0
+wandb:  vt_clean_median 0.0
+wandb:     vt_clean_min 0.0
+wandb:     vt_clean_q25 0.0
+wandb:     vt_clean_q75 0.0
+wandb:      vt_corr_max 0.00199
+wandb:     vt_corr_mean 1e-05
+wandb:   vt_corr_median 0.0
+wandb:      vt_corr_min 0.0
+wandb:      vt_corr_q25 0.0
+wandb:      vt_corr_q75 1e-05
+wandb:    vt_noised_max 0.00208
+wandb:   vt_noised_mean 9e-05
+wandb: vt_noised_median 9e-05
+wandb:    vt_noised_min 2e-05
+wandb:    vt_noised_q25 8e-05
+wandb:    vt_noised_q75 0.00011
+wandb: 
+wandb: 🚀 View run lr-2.107e-04-wd-3.245e-05_adamwbc_eps-3_3_adamwbc_3 at: https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/ql7yo6ug
+wandb: ⭐️ View project at: https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250503_174731-ql7yo6ug/logs
+wandb: Tracking run with wandb version 0.19.10
+wandb: Run data is saved locally in /home/ubuntu/DP-AdamW/wandb/run-20250503_174823-lamxmciw
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run mild-aardvark-593
+wandb: ⭐️ View project at https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: 🚀 View run at https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/lamxmciw
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          epsilon ▁▅▆▇█
+wandb:     mt_clean_max ▁▁█▃
+wandb:    mt_clean_mean █▄█▁
+wandb:  mt_clean_median █▁▄▄
+wandb:     mt_clean_min █▁▃█
+wandb:     mt_clean_q25 ▁▄▇█
+wandb:     mt_clean_q75 █▅▂▁
+wandb:    mt_noised_max █▇█▁
+wandb:   mt_noised_mean █▁▄█
+wandb: mt_noised_median █▁▆▄
+wandb:    mt_noised_min ▆▁▄█
+wandb:    mt_noised_q25 ▁▆▇█
+wandb:    mt_noised_q75 █▃▁▁
+wandb:        perc_corr ▁▅▇█
+wandb:    test_accuracy ▁▅▇██
+wandb:        test_loss █▃▂▁▁
+wandb:   train_accuracy ▁▅▇██
+wandb:       train_loss █▄▂▁▁
+wandb:     val_accuracy ▁▅▇██
+wandb:         val_loss █▃▂▁▁
+wandb:     vt_clean_max █▃▂▁
+wandb:    vt_clean_mean █▄▂▁
+wandb:  vt_clean_median █▄▂▁
+wandb:     vt_clean_min ▁▃█▅
+wandb:     vt_clean_q25 █▅▃▁
+wandb:     vt_clean_q75 █▄▂▁
+wandb:      vt_corr_max █▄▂▁
+wandb:     vt_corr_mean █▄▂▁
+wandb:   vt_corr_median ▁▁▁▁
+wandb:      vt_corr_min ▁▁▁▁
+wandb:      vt_corr_q25 ▁▁▁▁
+wandb:      vt_corr_q75 █▄▂▁
+wandb:    vt_noised_max █▄▂▁
+wandb:   vt_noised_mean █▄▂▁
+wandb: vt_noised_median ▁▆▇█
+wandb:    vt_noised_min ▁▃▅█
+wandb:    vt_noised_q25 ▁▅▇█
+wandb:    vt_noised_q75 █▄▂▁
+wandb: 
+wandb: Run summary:
+wandb:          epsilon 2.8252
+wandb:     mt_clean_max 0.02259
+wandb:    mt_clean_mean 0.0
+wandb:  mt_clean_median -0.0
+wandb:     mt_clean_min -0.01506
+wandb:     mt_clean_q25 -0.00012
+wandb:     mt_clean_q75 0.00012
+wandb:    mt_noised_max 0.02135
+wandb:   mt_noised_mean 1e-05
+wandb: mt_noised_median 0.0
+wandb:    mt_noised_min -0.01751
+wandb:    mt_noised_q25 -0.00151
+wandb:    mt_noised_q75 0.00152
+wandb:        perc_corr 0.48501
+wandb:    test_accuracy 49.44962
+wandb:        test_loss 1.89939
+wandb:   train_accuracy 51.11116
+wandb:       train_loss 1.81107
+wandb:     val_accuracy 49.92449
+wandb:         val_loss 1.90879
+wandb:     vt_clean_max 0.0016
+wandb:    vt_clean_mean 0.0
+wandb:  vt_clean_median 0.0
+wandb:     vt_clean_min 0.0
+wandb:     vt_clean_q25 0.0
+wandb:     vt_clean_q75 0.0
+wandb:      vt_corr_max 0.00151
+wandb:     vt_corr_mean 1e-05
+wandb:   vt_corr_median 0.0
+wandb:      vt_corr_min 0.0
+wandb:      vt_corr_q25 0.0
+wandb:      vt_corr_q75 1e-05
+wandb:    vt_noised_max 0.0016
+wandb:   vt_noised_mean 9e-05
+wandb: vt_noised_median 9e-05
+wandb:    vt_noised_min 3e-05
+wandb:    vt_noised_q25 8e-05
+wandb:    vt_noised_q75 0.00011
+wandb: 
+wandb: 🚀 View run lr-2.107e-04-wd-3.245e-05_adamwbc_eps-3_3_adamwbc_4 at: https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/lamxmciw
+wandb: ⭐️ View project at: https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250503_174823-lamxmciw/logs
+wandb: Tracking run with wandb version 0.19.10
+wandb: Run data is saved locally in /home/ubuntu/DP-AdamW/wandb/run-20250503_174916-jw7eiage
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run blooming-disco-594
+wandb: ⭐️ View project at https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: 🚀 View run at https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/jw7eiage
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          epsilon ▁▃▄▄▄▅▅▅▆▆▆▆▇▇▇▇▇███
+wandb:     mt_clean_max █▇▃▂▁▂▃▃▂▃▂▃▅▆▅▅▅▃▅
+wandb:    mt_clean_mean █▇▄▂▁▂▂▃▅▅▆▆▇█▆▆▇▆▆
+wandb:  mt_clean_median █▇▄▁▂▂▅▅▄█▇▅▇█▇██▇▆
+wandb:     mt_clean_min ▇▅▁▃▇▇▆▅▅▇▇▆▆▇▇█▇██
+wandb:     mt_clean_q25 ▁▂▃▃▄▅▆▆▇▇▇▇▇██████
+wandb:     mt_clean_q75 █▇▆▅▄▄▃▃▂▂▂▂▂▂▁▁▁▁▁
+wandb:    mt_noised_max █▇▅▂▁▂▄▃▃▃▄▄▃▄▅▅▃▃▃
+wandb:   mt_noised_mean ▁▄▅▄█▄▆▅▃▃▅▅▁▅▅▃▁▄▇
+wandb: mt_noised_median ▁▃▆▅█▅▇▆▆▄▅▅▃▆▆▆▃▄▆
+wandb:    mt_noised_min ▅█▁▃▆▄▇▄▅▅▇█▆▃▃▆▇▇▆
+wandb:    mt_noised_q25 ▁▆▇▇███████████████
+wandb:    mt_noised_q75 █▃▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:        perc_corr ▁▅▇████████████████
+wandb:    test_accuracy ▁▃▂▄▅▆▇▇▇▇██████████
+wandb:        test_loss █▅▅▃▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   train_accuracy ▁▄▃▅▆▆▆▇▇▇▇▇████████
+wandb:       train_loss █▅▅▄▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁
+wandb:     val_accuracy ▁▂▂▄▅▆▆▇▇▇▇█████████
+wandb:         val_loss █▅▄▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_max █▅▃▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    vt_clean_mean █▅▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁
+wandb:  vt_clean_median █▆▅▄▄▃▃▂▂▂▂▂▂▁▁▁▁▁▁
+wandb:     vt_clean_min ▁▃▅▆▇█▇▇▇▆▆▅▅▆▇▇▇▆▆
+wandb:     vt_clean_q25 █▇▆▅▄▄▃▃▃▂▂▂▂▂▁▁▁▁▁
+wandb:     vt_clean_q75 █▆▅▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:      vt_corr_max █▅▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_corr_mean █▅▄▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:   vt_corr_median ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      vt_corr_min ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      vt_corr_q25 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      vt_corr_q75 █▅▄▃▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:    vt_noised_max █▅▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁
+wandb:   vt_noised_mean █▅▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁
+wandb: vt_noised_median ▁▆▇▇███████████████
+wandb:    vt_noised_min ▁▃▄▅▅▅▅▆▇▇▇▇▇▇█████
+wandb:    vt_noised_q25 ▁▄▅▆▆▇▇▇▇▇▇████████
+wandb:    vt_noised_q75 █▅▄▃▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          epsilon 5.95673
+wandb:     mt_clean_max 0.02121
+wandb:    mt_clean_mean 0.0
+wandb:  mt_clean_median -0.0
+wandb:     mt_clean_min -0.01351
+wandb:     mt_clean_q25 -8e-05
+wandb:     mt_clean_q75 8e-05
+wandb:    mt_noised_max 0.01907
+wandb:   mt_noised_mean 1e-05
+wandb: mt_noised_median 0.0
+wandb:    mt_noised_min -0.01492
+wandb:    mt_noised_q25 -0.00149
+wandb:    mt_noised_q75 0.0015
+wandb:        perc_corr 0.49179
+wandb:    test_accuracy 53.03994
+wandb:        test_loss 1.71217
+wandb:   train_accuracy 56.85884
+wandb:       train_loss 1.55224
+wandb:     val_accuracy 54.25014
+wandb:         val_loss 1.69136
+wandb:     vt_clean_max 0.00063
+wandb:    vt_clean_mean 0.0
+wandb:  vt_clean_median 0.0
+wandb:     vt_clean_min 0.0
+wandb:     vt_clean_q25 0.0
+wandb:     vt_clean_q75 0.0
+wandb:      vt_corr_max 0.00063
+wandb:     vt_corr_mean 0.0
+wandb:   vt_corr_median 0.0
+wandb:      vt_corr_min 0.0
+wandb:      vt_corr_q25 0.0
+wandb:      vt_corr_q75 1e-05
+wandb:    vt_noised_max 0.00073
+wandb:   vt_noised_mean 9e-05
+wandb: vt_noised_median 9e-05
+wandb:    vt_noised_min 5e-05
+wandb:    vt_noised_q25 8e-05
+wandb:    vt_noised_q75 0.0001
+wandb: 
+wandb: 🚀 View run lr-7.306e-05-wd-1.288e-06_adamwbc_eps-6_6_adamwbc_0 at: https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/jw7eiage
+wandb: ⭐️ View project at: https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250503_174916-jw7eiage/logs
+wandb: Tracking run with wandb version 0.19.10
+wandb: Run data is saved locally in /home/ubuntu/DP-AdamW/wandb/run-20250503_175134-mhgw6aae
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run divine-forest-595
+wandb: ⭐️ View project at https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: 🚀 View run at https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/mhgw6aae
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          epsilon ▁▃▄▄▄▅▅▅▆▆▆▆▇▇▇▇▇███
+wandb:     mt_clean_max ▇▇█▄▄▄▁▄▄▄▅▃▅▇▆▆▆█▇
+wandb:    mt_clean_mean █▄▂▂▂▂▁▁▄▄▃▃▃▃▃▄▃▄▄
+wandb:  mt_clean_median █▇▄▁▆▅▂▆█▆▅▄▄▆▅█▆▆▇
+wandb:     mt_clean_min ▃▄▁▃▆▆▇▇▅▆▅▇▅▆▆▅▆▇█
+wandb:     mt_clean_q25 ▁▃▃▄▅▅▆▆▇▇▇▇▇██████
+wandb:     mt_clean_q75 █▆▆▅▄▄▃▃▂▂▂▂▂▁▁▁▁▁▁
+wandb:    mt_noised_max ▆█▅▃▄▄▂▁▆▂▂▄▅▃▄▃▅▆▅
+wandb:   mt_noised_mean ▂▄▁▁▂▆▄▄▆▅▁▄▄█▁▂▄▆▆
+wandb: mt_noised_median ▄▂▃▂▄▅▅▅▆▄▁▅▄█▁▂▅▃▅
+wandb:    mt_noised_min ▃▄▁▃▆█▇▇▆▅▅▄▅▅▅▅▇█▇
+wandb:    mt_noised_q25 ▁▆▇▇███████████████
+wandb:    mt_noised_q75 █▃▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:        perc_corr ▁▅▇█▇████████▇████▇
+wandb:    test_accuracy ▁▄▄▅▆▇▇▇▇▇██████████
+wandb:        test_loss █▅▄▄▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁
+wandb:   train_accuracy ▁▄▄▅▆▆▇▇▇▇▇█████████
+wandb:       train_loss █▅▅▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁
+wandb:     val_accuracy ▁▄▅▅▆▇▇▇▇▇██████████
+wandb:         val_loss █▅▄▄▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_max █▅▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    vt_clean_mean █▅▄▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:  vt_clean_median █▆▅▅▄▃▃▃▂▂▂▂▂▁▁▁▁▁▁
+wandb:     vt_clean_min ▁▃▄▅▄▃▅▆▇█▇▇▇█▇▆███
+wandb:     vt_clean_q25 █▇▆▆▅▄▄▃▃▃▂▂▂▂▂▁▁▁▁
+wandb:     vt_clean_q75 █▆▅▄▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁
+wandb:      vt_corr_max █▄▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_corr_mean █▅▄▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:   vt_corr_median ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      vt_corr_min ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      vt_corr_q25 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      vt_corr_q75 █▅▄▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:    vt_noised_max █▄▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   vt_noised_mean █▆▅▄▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁
+wandb: vt_noised_median ▁▆▇▇███████████████
+wandb:    vt_noised_min ▁▂▃▄▅▅▆▆▆▇▇████████
+wandb:    vt_noised_q25 ▁▄▅▆▆▇▇▇▇▇▇████████
+wandb:    vt_noised_q75 █▅▄▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          epsilon 5.95673
+wandb:     mt_clean_max 0.01951
+wandb:    mt_clean_mean 0.0
+wandb:  mt_clean_median 0.0
+wandb:     mt_clean_min -0.01153
+wandb:     mt_clean_q25 -8e-05
+wandb:     mt_clean_q75 8e-05
+wandb:    mt_noised_max 0.01933
+wandb:   mt_noised_mean 1e-05
+wandb: mt_noised_median 1e-05
+wandb:    mt_noised_min -0.01398
+wandb:    mt_noised_q25 -0.00148
+wandb:    mt_noised_q75 0.0015
+wandb:        perc_corr 0.4884
+wandb:    test_accuracy 52.14699
+wandb:        test_loss 1.72248
+wandb:   train_accuracy 56.75988
+wandb:       train_loss 1.54577
+wandb:     val_accuracy 53.74006
+wandb:         val_loss 1.68563
+wandb:     vt_clean_max 0.00043
+wandb:    vt_clean_mean 0.0
+wandb:  vt_clean_median 0.0
+wandb:     vt_clean_min 0.0
+wandb:     vt_clean_q25 0.0
+wandb:     vt_clean_q75 0.0
+wandb:      vt_corr_max 0.00042
+wandb:     vt_corr_mean 0.0
+wandb:   vt_corr_median 0.0
+wandb:      vt_corr_min 0.0
+wandb:      vt_corr_q25 0.0
+wandb:      vt_corr_q75 1e-05
+wandb:    vt_noised_max 0.00051
+wandb:   vt_noised_mean 9e-05
+wandb: vt_noised_median 9e-05
+wandb:    vt_noised_min 5e-05
+wandb:    vt_noised_q25 8e-05
+wandb:    vt_noised_q75 0.0001
+wandb: 
+wandb: 🚀 View run lr-7.306e-05-wd-1.288e-06_adamwbc_eps-6_6_adamwbc_1 at: https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/mhgw6aae
+wandb: ⭐️ View project at: https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250503_175134-mhgw6aae/logs
+wandb: Tracking run with wandb version 0.19.10
+wandb: Run data is saved locally in /home/ubuntu/DP-AdamW/wandb/run-20250503_175352-ho2crd7f
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run atomic-pond-596
+wandb: ⭐️ View project at https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: 🚀 View run at https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/ho2crd7f
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          epsilon ▁▃▄▄▄▅▅▅▆▆▆▆▇▇▇▇▇███
+wandb:     mt_clean_max █▅▄▂▁▂▃▃▅▆▅▄▄▆▅▅▆▇▇
+wandb:    mt_clean_mean █▄▃▃▂▃▂▂▃▃▃▂▃▂▂▁▂▂▁
+wandb:  mt_clean_median █▇█▅▂▄▁▃▄▅▅▅▂▄▄▃▃▃▂
+wandb:     mt_clean_min ▁▁▁▄▇▅▅▆▄▆▇████▆▆█▆
+wandb:     mt_clean_q25 ▁▂▃▄▅▅▆▆▇▇▇▇▇██████
+wandb:     mt_clean_q75 █▇▆▅▄▄▃▃▂▂▂▂▂▁▁▁▁▁▁
+wandb:    mt_noised_max ▇▄▅▃▂▂▁▃▄▄▇▄▅█▇▄▅▅▇
+wandb:   mt_noised_mean ▅▁▆█▅▂▁▃▃▂▅▄▄▃▆▅▆▆▅
+wandb: mt_noised_median ▄▁▆█▅▃▂▄▂▂▄▂▅▄▅▆▆▆▄
+wandb:    mt_noised_min ▁▅▃▃▆▅█▆▃▅▆▇█▅▆▆▅▇▇
+wandb:    mt_noised_q25 ▁▅▇▇███████████████
+wandb:    mt_noised_q75 █▃▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:        perc_corr ▁▆▇▇▇████▇██▇▇█████
+wandb:    test_accuracy ▁▄▄▆▇▇▇▇▇███████████
+wandb:        test_loss █▅▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁
+wandb:   train_accuracy ▁▄▄▅▆▆▇▇▇▇▇█████████
+wandb:       train_loss █▆▅▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁
+wandb:     val_accuracy ▁▄▅▆▆▇▇▇▇▇██████████
+wandb:         val_loss █▅▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_max █▄▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    vt_clean_mean █▅▄▃▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:  vt_clean_median █▆▅▄▄▃▃▂▂▂▂▂▂▁▁▁▁▁▁
+wandb:     vt_clean_min ▁▃▅▆▅███▇▇██▇███▇▇▇
+wandb:     vt_clean_q25 █▇▆▅▅▄▄▃▃▃▂▂▂▂▂▁▁▁▁
+wandb:     vt_clean_q75 █▆▅▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:      vt_corr_max █▄▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_corr_mean █▅▄▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:   vt_corr_median ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      vt_corr_min ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      vt_corr_q25 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      vt_corr_q75 █▆▄▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:    vt_noised_max █▄▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   vt_noised_mean █▅▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁
+wandb: vt_noised_median ▁▆▇▇███████████████
+wandb:    vt_noised_min ▁▂▄▄▅▆▆▆▆▇▇▇▇▇█████
+wandb:    vt_noised_q25 ▁▄▅▆▆▇▇▇▇▇▇████████
+wandb:    vt_noised_q75 █▆▄▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          epsilon 5.95673
+wandb:     mt_clean_max 0.02147
+wandb:    mt_clean_mean -0.0
+wandb:  mt_clean_median -0.0
+wandb:     mt_clean_min -0.01306
+wandb:     mt_clean_q25 -8e-05
+wandb:     mt_clean_q75 8e-05
+wandb:    mt_noised_max 0.02164
+wandb:   mt_noised_mean 0.0
+wandb: mt_noised_median -0.0
+wandb:    mt_noised_min -0.0141
+wandb:    mt_noised_q25 -0.00148
+wandb:    mt_noised_q75 0.00149
+wandb:        perc_corr 0.48998
+wandb:    test_accuracy 52.07497
+wandb:        test_loss 1.7306
+wandb:   train_accuracy 56.67961
+wandb:       train_loss 1.55562
+wandb:     val_accuracy 53.55549
+wandb:         val_loss 1.69603
+wandb:     vt_clean_max 0.00052
+wandb:    vt_clean_mean 0.0
+wandb:  vt_clean_median 0.0
+wandb:     vt_clean_min 0.0
+wandb:     vt_clean_q25 0.0
+wandb:     vt_clean_q75 0.0
+wandb:      vt_corr_max 0.00051
+wandb:     vt_corr_mean 0.0
+wandb:   vt_corr_median 0.0
+wandb:      vt_corr_min 0.0
+wandb:      vt_corr_q25 0.0
+wandb:      vt_corr_q75 1e-05
+wandb:    vt_noised_max 0.0006
+wandb:   vt_noised_mean 9e-05
+wandb: vt_noised_median 9e-05
+wandb:    vt_noised_min 5e-05
+wandb:    vt_noised_q25 8e-05
+wandb:    vt_noised_q75 0.0001
+wandb: 
+wandb: 🚀 View run lr-7.306e-05-wd-1.288e-06_adamwbc_eps-6_6_adamwbc_2 at: https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/ho2crd7f
+wandb: ⭐️ View project at: https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250503_175352-ho2crd7f/logs
+wandb: Tracking run with wandb version 0.19.10
+wandb: Run data is saved locally in /home/ubuntu/DP-AdamW/wandb/run-20250503_175611-er3c05a4
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run wobbly-lake-597
+wandb: ⭐️ View project at https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: 🚀 View run at https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/er3c05a4
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          epsilon ▁▃▄▄▄▅▅▅▆▆▆▆▇▇▇▇▇███
+wandb:     mt_clean_max █▃▄▃▁▁▂▂▂▂▂▃▄▃▃▃▃▃▄
+wandb:    mt_clean_mean ▂▄▁▃▆█▇▇▆▇▄▅▄▃▆▅▇▆▆
+wandb:  mt_clean_median ▁▆▅█▅▄▅▃▃▃▂▂▂▃▃▃▄▃▃
+wandb:     mt_clean_min ▃▃▁▃▅▇▇▇▇▇▇██▇▇▇▇█▇
+wandb:     mt_clean_q25 ▁▃▃▄▅▅▆▆▇▇▇▇▇▇█████
+wandb:     mt_clean_q75 █▆▆▅▄▄▃▃▂▂▂▂▂▂▁▁▁▁▁
+wandb:    mt_noised_max █▄▄▃▂▁▂▁▂▃▂▃▃▃▁▂▄▃▃
+wandb:   mt_noised_mean ▁▃▁▂▂▂▄▄▅▃▄▆█▄▅▂▃▄▇
+wandb: mt_noised_median ▁▄▄▆▄▃▆▄▅▅▆▇█▇█▄▅▆█
+wandb:    mt_noised_min ▃▃▁▃▅▆▇▇▆▇▆▇▆▇▇▆▇▇█
+wandb:    mt_noised_q25 ▁▆▇▇███████████████
+wandb:    mt_noised_q75 █▃▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:        perc_corr ▁▅▆▇▇▇▇██▇█▇▇▇▇▇▇▇▇
+wandb:    test_accuracy ▁▄▄▆▇▇▇▇▇███████████
+wandb:        test_loss █▅▄▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁
+wandb:   train_accuracy ▁▄▄▅▆▆▇▇▇▇▇█████████
+wandb:       train_loss █▅▄▄▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁
+wandb:     val_accuracy ▁▅▅▆▇▇▇▇▇███████████
+wandb:         val_loss █▅▄▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_max █▄▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    vt_clean_mean █▅▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁
+wandb:  vt_clean_median █▆▅▄▄▃▃▂▂▂▂▂▂▁▁▁▁▁▁
+wandb:     vt_clean_min ▁▃▅▆▅▄▄▄▄▅▆████████
+wandb:     vt_clean_q25 █▇▆▅▅▄▃▃▃▂▂▂▂▂▁▁▁▁▁
+wandb:     vt_clean_q75 █▆▄▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:      vt_corr_max █▅▃▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_corr_mean █▅▄▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:   vt_corr_median ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      vt_corr_min ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      vt_corr_q25 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      vt_corr_q75 █▅▄▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁
+wandb:    vt_noised_max █▅▃▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   vt_noised_mean █▅▄▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb: vt_noised_median ▁▆▇▇███████████████
+wandb:    vt_noised_min ▁▂▃▄▅▅▆▆▆▆▆▆▇▇▇████
+wandb:    vt_noised_q25 ▁▄▅▆▆▇▇▇▇▇█████████
+wandb:    vt_noised_q75 █▅▄▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          epsilon 5.95673
+wandb:     mt_clean_max 0.01808
+wandb:    mt_clean_mean -0.0
+wandb:  mt_clean_median -0.0
+wandb:     mt_clean_min -0.01043
+wandb:     mt_clean_q25 -8e-05
+wandb:     mt_clean_q75 8e-05
+wandb:    mt_noised_max 0.01788
+wandb:   mt_noised_mean 1e-05
+wandb: mt_noised_median 1e-05
+wandb:    mt_noised_min -0.01133
+wandb:    mt_noised_q25 -0.00149
+wandb:    mt_noised_q75 0.0015
+wandb:        perc_corr 0.48877
+wandb:    test_accuracy 52.28896
+wandb:        test_loss 1.7258
+wandb:   train_accuracy 56.61253
+wandb:       train_loss 1.55956
+wandb:     val_accuracy 53.59911
+wandb:         val_loss 1.70055
+wandb:     vt_clean_max 0.00048
+wandb:    vt_clean_mean 0.0
+wandb:  vt_clean_median 0.0
+wandb:     vt_clean_min 0.0
+wandb:     vt_clean_q25 0.0
+wandb:     vt_clean_q75 0.0
+wandb:      vt_corr_max 0.00049
+wandb:     vt_corr_mean 0.0
+wandb:   vt_corr_median 0.0
+wandb:      vt_corr_min 0.0
+wandb:      vt_corr_q25 0.0
+wandb:      vt_corr_q75 1e-05
+wandb:    vt_noised_max 0.00059
+wandb:   vt_noised_mean 9e-05
+wandb: vt_noised_median 9e-05
+wandb:    vt_noised_min 5e-05
+wandb:    vt_noised_q25 8e-05
+wandb:    vt_noised_q75 0.0001
+wandb: 
+wandb: 🚀 View run lr-7.306e-05-wd-1.288e-06_adamwbc_eps-6_6_adamwbc_3 at: https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/er3c05a4
+wandb: ⭐️ View project at: https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250503_175611-er3c05a4/logs
+wandb: Tracking run with wandb version 0.19.10
+wandb: Run data is saved locally in /home/ubuntu/DP-AdamW/wandb/run-20250503_175831-xmmp2qsd
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run soft-monkey-598
+wandb: ⭐️ View project at https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: 🚀 View run at https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/xmmp2qsd
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          epsilon ▁▃▄▄▄▅▅▅▆▆▆▆▇▇▇▇▇███
+wandb:     mt_clean_max █▃▃▂▁▂▂▂▃▄▃▄▄▃▃▃▄▄▄
+wandb:    mt_clean_mean █▄▃▃▃▄▂▂▁▁▂▂▂▂▁▂▁▁▁
+wandb:  mt_clean_median ██▄▁▄▃▃▄▄▂▂▄▃▃▂▃▄▄▃
+wandb:     mt_clean_min ▄▃▁▃▇▆▄▅▆▆▆▆▆▇▇█▇▇▆
+wandb:     mt_clean_q25 ▁▃▃▄▅▆▆▆▇▇▇▇▇██████
+wandb:     mt_clean_q75 █▆▆▅▄▃▃▂▂▂▂▂▂▁▁▁▁▁▁
+wandb:    mt_noised_max █▃▄▃▂▂▂▁▄▁▂▃▅▄▃▃▄▃▄
+wandb:   mt_noised_mean ▇█▃▁▂▂▃▃▄▅▂▁▆▁▂▁▄▃▅
+wandb: mt_noised_median ▆█▄▃▄▂▆▅▆▆▂▃▇▃▄▁▄▇▇
+wandb:    mt_noised_min ▄▅▁▄▇▆▆▅▅▇▆▅▇▇██▇▇▆
+wandb:    mt_noised_q25 ▁▆▇▇███████████████
+wandb:    mt_noised_q75 █▃▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:        perc_corr ▁▅▇▇▇█▇████████████
+wandb:    test_accuracy ▁▄▄▅▇▇▇▇▇███████████
+wandb:        test_loss █▅▄▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁
+wandb:   train_accuracy ▁▄▄▅▆▆▇▇▇▇██████████
+wandb:       train_loss █▅▄▄▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁
+wandb:     val_accuracy ▁▄▅▅▆▇▇▇▇███████████
+wandb:         val_loss █▅▄▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_max █▄▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    vt_clean_mean █▅▄▃▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:  vt_clean_median █▆▅▄▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁
+wandb:     vt_clean_min ▁▂▄▇▇▇█▇▇▇▇▇▇███▇▇▇
+wandb:     vt_clean_q25 █▇▆▅▅▄▃▃▃▂▂▂▂▂▁▁▁▁▁
+wandb:     vt_clean_q75 █▆▅▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:      vt_corr_max █▄▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_corr_mean █▅▄▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:   vt_corr_median ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      vt_corr_min ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      vt_corr_q25 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      vt_corr_q75 █▅▄▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb:    vt_noised_max █▄▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   vt_noised_mean █▅▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁
+wandb: vt_noised_median ▁▅▇▇▇██████████████
+wandb:    vt_noised_min ▁▃▃▄▅▅▆▆▆▇▆▇▇▇▇▇▇██
+wandb:    vt_noised_q25 ▁▄▅▆▆▇▇▇▇▇█████████
+wandb:    vt_noised_q75 █▅▄▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          epsilon 5.95673
+wandb:     mt_clean_max 0.01973
+wandb:    mt_clean_mean -0.0
+wandb:  mt_clean_median -0.0
+wandb:     mt_clean_min -0.01429
+wandb:     mt_clean_q25 -8e-05
+wandb:     mt_clean_q75 8e-05
+wandb:    mt_noised_max 0.01931
+wandb:   mt_noised_mean 0.0
+wandb: mt_noised_median 0.0
+wandb:    mt_noised_min -0.01549
+wandb:    mt_noised_q25 -0.00149
+wandb:    mt_noised_q75 0.00149
+wandb:        perc_corr 0.49139
+wandb:    test_accuracy 53.34445
+wandb:        test_loss 1.70033
+wandb:   train_accuracy 56.85884
+wandb:       train_loss 1.56091
+wandb:     val_accuracy 54.85083
+wandb:         val_loss 1.67017
+wandb:     vt_clean_max 0.00049
+wandb:    vt_clean_mean 0.0
+wandb:  vt_clean_median 0.0
+wandb:     vt_clean_min 0.0
+wandb:     vt_clean_q25 0.0
+wandb:     vt_clean_q75 0.0
+wandb:      vt_corr_max 0.00047
+wandb:     vt_corr_mean 0.0
+wandb:   vt_corr_median 0.0
+wandb:      vt_corr_min 0.0
+wandb:      vt_corr_q25 0.0
+wandb:      vt_corr_q75 1e-05
+wandb:    vt_noised_max 0.00056
+wandb:   vt_noised_mean 9e-05
+wandb: vt_noised_median 9e-05
+wandb:    vt_noised_min 5e-05
+wandb:    vt_noised_q25 8e-05
+wandb:    vt_noised_q75 0.0001
+wandb: 
+wandb: 🚀 View run lr-7.306e-05-wd-1.288e-06_adamwbc_eps-6_6_adamwbc_4 at: https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/xmmp2qsd
+wandb: ⭐️ View project at: https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250503_175831-xmmp2qsd/logs
+wandb: Tracking run with wandb version 0.19.10
+wandb: Run data is saved locally in /home/ubuntu/DP-AdamW/wandb/run-20250503_180055-tigxrp2j
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run light-wildflower-599
+wandb: ⭐️ View project at https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: 🚀 View run at https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/tigxrp2j
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          epsilon ▁▁▂▂▂▂▃▃▃▃▄▄▄▄▄▄▅▅▅▅▅▅▅▅▅▆▆▆▇▇▇▇▇▇▇█████
+wandb:     mt_clean_max ▃▆▇█▆▂▁▂▁▂▃▂▃▃▃▃▃▄▄▄▅▅▆▅▄▅▃▅▅▅▆▆▆▃▆▃▅▅▅▄
+wandb:    mt_clean_mean ▅▄▅▄▄▄▅▄▆▅▆▆▆▆██▇▇▇▇▇▅▅▆▄▆▆▅▃▅▆▅▆▅▄▃▁▁▃▃
+wandb:  mt_clean_median ▁▆█▆▄▄▅▆▆▆▆▆▆▆▇▆▅▆▆▆▆▆▆▅▅▅▆▆▅▆▆▆▆▆▆▆▆▆▆▆
+wandb:     mt_clean_min ▁▆▅▅▄█▇▇█▇▇▇▇▇▇███▇▇██▇▇▇▇▇▇▆▆▆▆▆▇▇▇▇▆▇▇
+wandb:     mt_clean_q25 ▁▄▄▄▅▆▆▆▆▆▇▇▇▇▇▇▇▇▇▇▇███████████████████
+wandb:     mt_clean_q75 █▆▅▅▅▄▄▃▃▃▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    mt_noised_max █▂▄▃▂▁▂▁▂▂▁▂▁▂▁▃▁▂▂▁▁▂▂▂▃▂▃▂▂▂▂▃▃▃▃▄▄▂▃▃
+wandb:   mt_noised_mean ▃▃▆▅▄▇▅▆▂▄▄▃▃▂▅▅█▇▆▅▆▄▅▃▂▁▄▁█▇█▂▃▂▅▄▅▇▆▃
+wandb: mt_noised_median ▃▄▆▆▃▅▅█▃▃▆▇▄█▁▄▆▃▅▆▄▃▂▄▃▇▄▆▅▇▄▁▃▄▄▄▇▄▃▃
+wandb:    mt_noised_min ▁▅▄▁▂▄▅▆▇▇▆▆▆▅▇▇██▇▆█▆▆▇▅▆▄▅▅▅▃▄▆▇▆▅▆▆▇▆
+wandb:    mt_noised_q25 ▁▅▆▆▆▇▇▇▇▇▇▇▇▇▇█▇▇▇▇██▇▇▇▇█▇█▇███▇█▇▇▇██
+wandb:    mt_noised_q75 █▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:        perc_corr ▁▅▆▇██████▇▇▇▇▆▇▇▇▇▆▆▆▆▆▆▆▆▆▆▆▅▅▅▆▅▅▅▅▆▅
+wandb:    test_accuracy ▁▂▃▆▆▇▇▇▇▇▇█████████████████████████████
+wandb:        test_loss █▆▅▄▄▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   train_accuracy ▁▃▃▄▄▆▆▇▇▇▇▇▇▇▇█████████████████████████
+wandb:       train_loss █▆▅▅▅▄▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     val_accuracy ▁▂▃▄▅▆▇▇▇▇▇▇▇▇▇█████████████████████████
+wandb:         val_loss █▅▄▄▄▃▃▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_max █▃▃▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    vt_clean_mean █▄▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  vt_clean_median █▆▅▄▄▃▃▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_min ▁▄▃▄▄▆▆▆▆█▇▆▆▆▆▆▅▆▆▅▅▅▅▆▅▅▅▅▄▄▄▄▄▄▄▄▄▄▃▃
+wandb:     vt_clean_q25 █▆▅▅▄▄▄▃▃▃▃▂▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_q75 █▆▃▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      vt_corr_max █▅▃▃▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_corr_mean █▅▄▄▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   vt_corr_median ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      vt_corr_min ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      vt_corr_q25 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      vt_corr_q75 █▆▄▄▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    vt_noised_max █▅▃▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   vt_noised_mean █▄▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: vt_noised_median ▁▆▇█████████████████████████████████████
+wandb:    vt_noised_min ▁▃▃▅▅▆▆▆▆▇▇▇▇▇▇█████████████████████████
+wandb:    vt_noised_q25 ▁▃▄▅▅▆▆▇▇▇▇▇▇███████████████████████████
+wandb:    vt_noised_q75 █▆▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          epsilon 11.91532
+wandb:     mt_clean_max 0.01549
+wandb:    mt_clean_mean -0.0
+wandb:  mt_clean_median -0.0
+wandb:     mt_clean_min -0.01384
+wandb:     mt_clean_q25 -5e-05
+wandb:     mt_clean_q75 5e-05
+wandb:    mt_noised_max 0.01688
+wandb:   mt_noised_mean -0.0
+wandb: mt_noised_median -0.0
+wandb:    mt_noised_min -0.01482
+wandb:    mt_noised_q25 -0.00149
+wandb:    mt_noised_q75 0.00148
+wandb:        perc_corr 0.48515
+wandb:    test_accuracy 54.37524
+wandb:        test_loss 1.66435
+wandb:   train_accuracy 59.31648
+wandb:       train_loss 1.46455
+wandb:     val_accuracy 55.88442
+wandb:         val_loss 1.63411
+wandb:     vt_clean_max 0.00029
+wandb:    vt_clean_mean 0.0
+wandb:  vt_clean_median 0.0
+wandb:     vt_clean_min 0.0
+wandb:     vt_clean_q25 0.0
+wandb:     vt_clean_q75 0.0
+wandb:      vt_corr_max 0.00032
+wandb:     vt_corr_mean 0.0
+wandb:   vt_corr_median 0.0
+wandb:      vt_corr_min 0.0
+wandb:      vt_corr_q25 0.0
+wandb:      vt_corr_q75 1e-05
+wandb:    vt_noised_max 0.00041
+wandb:   vt_noised_mean 9e-05
+wandb: vt_noised_median 9e-05
+wandb:    vt_noised_min 6e-05
+wandb:    vt_noised_q25 9e-05
+wandb:    vt_noised_q75 0.0001
+wandb: 
+wandb: 🚀 View run lr-4.086e-05-wd-3.112e-02_adamwbc_eps-12_12_adamwbc_0 at: https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/tigxrp2j
+wandb: ⭐️ View project at: https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250503_180055-tigxrp2j/logs
+wandb: Tracking run with wandb version 0.19.10
+wandb: Run data is saved locally in /home/ubuntu/DP-AdamW/wandb/run-20250503_180807-zvclsxt1
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run laced-rain-600
+wandb: ⭐️ View project at https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: 🚀 View run at https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/zvclsxt1
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          epsilon ▁▂▂▂▃▃▃▃▃▄▄▄▄▅▅▅▅▅▅▅▆▆▆▆▆▆▆▆▇▇▇▇▇▇▇▇████
+wandb:     mt_clean_max ▆▁█▆▅▃▂▁▁▁▂▁▃▃▃▂▂▂▄▄▃▃▃▃▄▅▄▅▃▄▃▄▃▂▅▅▄▅▄▅
+wandb:    mt_clean_mean ▁▁▃▂▂▁▂▂▃▃▄▄▄▅▆▇▆▆▆▆▆▆▆▆▆▇▇▇▇▇▇▇▇██▇▇▇▇▇
+wandb:  mt_clean_median ▆▅▅▅▅▁▃▄▅▅▆▇▇█████▇▇▇▇▇▇▇▇▇██▇▇█▇█▇▇▇▇▇▇
+wandb:     mt_clean_min ▁▇▇▆▆▇█▇▇▇█▇█████████████▇█▇██████▇▇▇▇▇█
+wandb:     mt_clean_q25 ▁▄▄▄▅▆▆▇▇▇▇▇▇▇▇▇▇▇██████████████████████
+wandb:     mt_clean_q75 █▅▅▄▄▃▃▃▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    mt_noised_max █▄▅▅▅▃▃▂▃▂▂▂▂▁▂▅▄▃▃▃▄▃▃▅▄▂▃▄▄▄▅▄▃▅▄▂▄▃▅▄
+wandb:   mt_noised_mean ▂▇▃▅▅▆▄▁▂▂▁▃▂▁▃▆▄█▄▅▆▆▇▅▆▄▄▆▅█▆▇▇▇▅▅▆▆▃▅
+wandb: mt_noised_median ▃▅▄▅▁▅▂▂▂▁▃▁▃▂▄▃▆▅▆▆▅▆█▅▄▅▆▅▅▅▅▄▆▅▃▆▆▃▄▆
+wandb:    mt_noised_min ▁▇▆▅▅▆▇▇▇▇▇▇▇▇▇▇▇▇███▇██▇▇▇▇▇████▇▇█████
+wandb:    mt_noised_q25 ▁▅▆▆▇▇▇▇▇▇▇▇▇▇▇▇▇█▇█▇██▇█▇██████████▇█▇█
+wandb:    mt_noised_q75 █▃▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:        perc_corr ▁▅▆▇█████▇▆▆▆▆▆▆▆▅▅▅▆▅▅▅▅▅▅▅▄▅▅▅▄▅▄▅▅▅▅▅
+wandb:    test_accuracy ▁▂▃▄▅▆▇▇▇▇▇█████████████████████████████
+wandb:        test_loss █▅▄▄▄▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   train_accuracy ▁▃▄▅▆▆▇▇▇▇▇▇████████████████████████████
+wandb:       train_loss █▆▃▃▃▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     val_accuracy ▁▃▅▆▇▇▇▇▇▇▇█████████████████████████████
+wandb:         val_loss █▇▆▅▄▃▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_max █▅▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    vt_clean_mean █▄▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  vt_clean_median █▆▅▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_min ▁▄▅▄▅▄▄▄▅▅██▇▇▇▆▆▅▅▅▅▅▅▅▅▅▅▅▄▄▄▄▄▄▄▄▃▃▃▃
+wandb:     vt_clean_q25 █▇▆▅▄▄▄▃▃▃▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_q75 █▄▃▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      vt_corr_max █▆▅▄▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_corr_mean █▅▃▃▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   vt_corr_median ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      vt_corr_min ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      vt_corr_q25 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      vt_corr_q75 █▄▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    vt_noised_max █▄▃▃▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   vt_noised_mean █▅▃▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: vt_noised_median ▁▆▇██▇▆▆▅▅▅▆▅▅▄▃▄▄▄▅▅▅▄▃▃▄▃▄▃▃▃▃▃▃▃▃▃▄▄▃
+wandb:    vt_noised_min ▁▂▃▃▃▆▆▆▇▇████▇████▇█████████▇██████████
+wandb:    vt_noised_q25 ▁▄▆▆▇▇▇▇▇███████████████████████████████
+wandb:    vt_noised_q75 █▆▅▄▄▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          epsilon 11.91532
+wandb:     mt_clean_max 0.01749
+wandb:    mt_clean_mean 0.0
+wandb:  mt_clean_median 0.0
+wandb:     mt_clean_min -0.01172
+wandb:     mt_clean_q25 -6e-05
+wandb:     mt_clean_q75 6e-05
+wandb:    mt_noised_max 0.01866
+wandb:   mt_noised_mean 1e-05
+wandb: mt_noised_median 1e-05
+wandb:    mt_noised_min -0.01117
+wandb:    mt_noised_q25 -0.00148
+wandb:    mt_noised_q75 0.0015
+wandb:        perc_corr 0.48645
+wandb:    test_accuracy 53.97815
+wandb:        test_loss 1.70377
+wandb:   train_accuracy 59.17023
+wandb:       train_loss 1.47817
+wandb:     val_accuracy 55.4381
+wandb:         val_loss 1.67077
+wandb:     vt_clean_max 0.00029
+wandb:    vt_clean_mean 0.0
+wandb:  vt_clean_median 0.0
+wandb:     vt_clean_min 0.0
+wandb:     vt_clean_q25 0.0
+wandb:     vt_clean_q75 0.0
+wandb:      vt_corr_max 0.00031
+wandb:     vt_corr_mean 0.0
+wandb:   vt_corr_median 0.0
+wandb:      vt_corr_min 0.0
+wandb:      vt_corr_q25 0.0
+wandb:      vt_corr_q75 1e-05
+wandb:    vt_noised_max 0.0004
+wandb:   vt_noised_mean 9e-05
+wandb: vt_noised_median 9e-05
+wandb:    vt_noised_min 6e-05
+wandb:    vt_noised_q25 9e-05
+wandb:    vt_noised_q75 0.0001
+wandb: 
+wandb: 🚀 View run lr-4.086e-05-wd-3.112e-02_adamwbc_eps-12_12_adamwbc_1 at: https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/zvclsxt1
+wandb: ⭐️ View project at: https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250503_180807-zvclsxt1/logs
+wandb: Tracking run with wandb version 0.19.10
+wandb: Run data is saved locally in /home/ubuntu/DP-AdamW/wandb/run-20250503_181522-ptevfup7
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run fallen-meadow-601
+wandb: ⭐️ View project at https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: 🚀 View run at https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/ptevfup7
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          epsilon ▁▂▂▃▃▃▄▄▄▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇▇▇▇▇█████
+wandb:     mt_clean_max █▄▆▅▂▂▁▃▄▃▃▃▃▃▃▄▃▃▄▃▄▃▄▃▄▄▄▅▄▅▄▄▄▄▄▅▅▃▄▄
+wandb:    mt_clean_mean ▁▆▆▆▅▅▅▅▇▇▇▇▇██▇█▇▇▇▇▇█▇▇▇▇███▇▆▇▇▇▇▇▇▆▇
+wandb:  mt_clean_median ▂▄▄▁▃▆▆▆▆▆▇▆▇▆█▇▇██▇▇▇▇▇▇▇▆▆▆▆▅▆▆▆▆▅▆▆▆▆
+wandb:     mt_clean_min ▁▇▇▆▇▇█▇▇▇▇▇▇██████████████████████▇▇▇██
+wandb:     mt_clean_q25 ▁▄▄▄▅▅▆▆▆▆▇▇▇▇▇▇████████████████████████
+wandb:     mt_clean_q75 █▆▅▅▅▄▄▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    mt_noised_max █▄▅▆▄▁▁▁▁▂▃▂▃▄▂▂▃▄▆▃▂▃▃▅▄▅▆▅▅▆▆▄▄▃▄▄▅▃▃▅
+wandb:   mt_noised_mean █▅▂▃▄▃▃▂▂▄▅▄▃▁▂▄▅▂▄▅▅▇▇▅▄▇▆▄▂▃▅▃▃▄▁▁▂▄▃▅
+wandb: mt_noised_median █▁▅▄▂▂▄▃▆▄▄▃▃▄▄▃▁▄▄▄▄▅▅▆▅▃▃▃▃▄▆▃▂▁▅▂▃▄▆▅
+wandb:    mt_noised_min ▁▇▇▆▆▇█▇█▇▇▇▇███████▇▇███████▇█▇███▇██▇█
+wandb:    mt_noised_q25 ▁▆▇▇▇▇▇█████████████████████████████████
+wandb:    mt_noised_q75 █▃▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:        perc_corr ▃▅▆▇█▇▇▆▆▆▅▅▅▅▄▄▄▄▄▃▃▃▂▃▂▃▂▂▁▂▂▁▁▂▂▁▁▂▂▂
+wandb:    test_accuracy ▁▂▂▃▄▆▆▇▇▇▇▇▇▇▇▇▇▇▇█████████████████████
+wandb:        test_loss █▇▆▆▅▃▃▂▂▂▂▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   train_accuracy ▁▃▄▄▅▇▇▇▇▇▇▇▇▇▇█████████████████████████
+wandb:       train_loss █▅▄▄▄▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     val_accuracy ▁▅▅▆▇▇▇▇▇▇██████████████████████████████
+wandb:         val_loss █▅▄▃▃▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_max █▅▄▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    vt_clean_mean █▆▅▅▄▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  vt_clean_median █▇▆▅▅▄▃▃▃▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_min ▁▂▃▄▄▄▇████▆▆▅▄▄▆▆▆▆▅▅▅▅▅▅▅▄▄▄▄▄▄▄▃▃▃▃▃▃
+wandb:     vt_clean_q25 ██▇▆▅▄▄▄▃▃▃▃▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_q75 █▅▃▃▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      vt_corr_max █▅▃▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_corr_mean █▅▄▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   vt_corr_median ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      vt_corr_min ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      vt_corr_q25 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      vt_corr_q75 █▆▄▄▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    vt_noised_max █▄▃▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   vt_noised_mean █▅▄▃▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: vt_noised_median ▁▇████████████████▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇
+wandb:    vt_noised_min ▁▄▅▅▅▆▆▆▇▇▆▇▇▇▇██▇▇▇█████████████▇█▇████
+wandb:    vt_noised_q25 ▁▅▆▆▆▇▇▇▇▇██████████████████████████████
+wandb:    vt_noised_q75 █▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          epsilon 11.91532
+wandb:     mt_clean_max 0.01662
+wandb:    mt_clean_mean 0.0
+wandb:  mt_clean_median 0.0
+wandb:     mt_clean_min -0.01219
+wandb:     mt_clean_q25 -6e-05
+wandb:     mt_clean_q75 6e-05
+wandb:    mt_noised_max 0.0197
+wandb:   mt_noised_mean 0.0
+wandb: mt_noised_median 0.0
+wandb:    mt_noised_min -0.01258
+wandb:    mt_noised_q25 -0.00149
+wandb:    mt_noised_q75 0.0015
+wandb:        perc_corr 0.48631
+wandb:    test_accuracy 54.34027
+wandb:        test_loss 1.66692
+wandb:   train_accuracy 59.44623
+wandb:       train_loss 1.4682
+wandb:     val_accuracy 55.32064
+wandb:         val_loss 1.64651
+wandb:     vt_clean_max 0.00031
+wandb:    vt_clean_mean 0.0
+wandb:  vt_clean_median 0.0
+wandb:     vt_clean_min 0.0
+wandb:     vt_clean_q25 0.0
+wandb:     vt_clean_q75 0.0
+wandb:      vt_corr_max 0.00031
+wandb:     vt_corr_mean 0.0
+wandb:   vt_corr_median 0.0
+wandb:      vt_corr_min 0.0
+wandb:      vt_corr_q25 0.0
+wandb:      vt_corr_q75 1e-05
+wandb:    vt_noised_max 0.00041
+wandb:   vt_noised_mean 9e-05
+wandb: vt_noised_median 9e-05
+wandb:    vt_noised_min 6e-05
+wandb:    vt_noised_q25 9e-05
+wandb:    vt_noised_q75 0.0001
+wandb: 
+wandb: 🚀 View run lr-4.086e-05-wd-3.112e-02_adamwbc_eps-12_12_adamwbc_2 at: https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/ptevfup7
+wandb: ⭐️ View project at: https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250503_181522-ptevfup7/logs
+wandb: Tracking run with wandb version 0.19.10
+wandb: Run data is saved locally in /home/ubuntu/DP-AdamW/wandb/run-20250503_182245-mn6bpw2w
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run rosy-river-602
+wandb: ⭐️ View project at https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: 🚀 View run at https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/mn6bpw2w
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          epsilon ▁▂▂▃▃▃▄▄▄▄▄▄▅▅▅▅▅▅▅▅▆▆▆▆▆▆▆▆▆▇▇▇▇▇▇▇████
+wandb:     mt_clean_max ▇█▄▂▁▂▄▃▂▃▂▁▂▃▂▅▅▃▄▄▅▅▅▄▅▅▅▄▃▆▅▄▅▅▄▆▆▄▅▅
+wandb:    mt_clean_mean ▂▂▁▂▁▃▁▁▂▄▆▅▅▆▆▅▅▆▆▆▆▇▅▇▆▇▆███▃▄▄▅▆▆▇▅▆▇
+wandb:  mt_clean_median ▁▇▂▃▄▆▅▇▆█▅▅▅▅▆▆▅▅▆▅▇▆▆▆▆▅▆▆▆▆▆▆▇▇▆▇▇███
+wandb:     mt_clean_min ▁▇▇▆▆▇▇▇▇▇▇▇█████▇█▇▇▇▇▇▇▇▇▇▇█▇▇▇▇██▇█▇▇
+wandb:     mt_clean_q25 ▁▄▄▅▅▆▆▆▇▇▇▇▇▇▇▇▇▇██████████████████████
+wandb:     mt_clean_q75 █▅▅▅▄▃▃▃▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    mt_noised_max █▆▆▆▃▂▂▂▂▁▂▃▁▂▁▂▄▂▃▄▁▂▄▂▃▃▃▁▂▂▃▂▂▅▅▃▄▃▅▅
+wandb:   mt_noised_mean ▅▅▆▇▅▃▄▆█▆▆▇█▅▂▇▇▇▇▇▅▆▆▃▁▆▆▆▅▄▄▆▆█▅▆▆▃▃▅
+wandb: mt_noised_median ▆▄▂▆▆▆▇▅▄▆▆▅▇▇█▁▄▇▇▆▇▅▅▆▃▄▅▄▂▆▅▄▅▅▄▅▄█▆▅
+wandb:    mt_noised_min ▅▅▂▁▅▆▇▅▆▆▇▇▆██▇▅▇▆▇▅▆▇█▅▆▆█▅▇▅▆▅▇▅▄▅▆▇▄
+wandb:    mt_noised_q25 ▁▄▅▆▇▇▇▇█▇▇▇▇██▇▇▇█▇███████▇▇██▇████████
+wandb:    mt_noised_q75 █▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:        perc_corr ▃▆███▇▇▆▆▆▆▅▅▄▄▃▃▂▂▃▂▂▂▂▁▂▂▃▃▃▃▂▁▃▂▂▂▂▂▃
+wandb:    test_accuracy ▁▂▄▄▅▆▆▇▇▇▇▇▇███████████████████████████
+wandb:        test_loss █▅▅▄▄▃▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   train_accuracy ▁▃▅▅▆▆▆▇▇▇▇▇▇▇▇█████████████████████████
+wandb:       train_loss █▅▅▄▄▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     val_accuracy ▁▄▅▆▆▇▇▇▇▇▇▇████████████████████████████
+wandb:         val_loss █▇▆▅▄▃▃▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_max █▆▅▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    vt_clean_mean █▆▄▄▄▃▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  vt_clean_median █▆▅▄▄▃▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_min ▁▃▂▄▄▆▇██▆▆▅▅▅▅▅▅▅▅▅▅▅▅▅▄▄▄▄▄▄▃▃▄▄▃▄▄▃▃▃
+wandb:     vt_clean_q25 ██▆▆▅▄▄▄▄▃▃▃▃▃▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_q75 █▆▅▄▄▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      vt_corr_max █▅▄▃▃▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_corr_mean █▄▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   vt_corr_median ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      vt_corr_min ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      vt_corr_q25 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      vt_corr_q75 █▄▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    vt_noised_max █▆▄▄▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   vt_noised_mean █▆▄▄▃▃▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: vt_noised_median ▁▆█▇█████▇█▇▇▇▇▇▇▇▇▇▇▇▇▆▆▇▆▆▆▇▇▇▇▆▇▇▇▇▇▇
+wandb:    vt_noised_min ▁▂▃▄▄▆▆▆▆▆▇▇▇█▇▇▇█▇▇████████████████████
+wandb:    vt_noised_q25 ▁▅▆▆▇▇▇▇████████████████████████████████
+wandb:    vt_noised_q75 █▆▄▄▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          epsilon 11.91532
+wandb:     mt_clean_max 0.01723
+wandb:    mt_clean_mean -0.0
+wandb:  mt_clean_median 0.0
+wandb:     mt_clean_min -0.01327
+wandb:     mt_clean_q25 -5e-05
+wandb:     mt_clean_q75 6e-05
+wandb:    mt_noised_max 0.0207
+wandb:   mt_noised_mean 0.0
+wandb: mt_noised_median 0.0
+wandb:    mt_noised_min -0.01842
+wandb:    mt_noised_q25 -0.00149
+wandb:    mt_noised_q75 0.0015
+wandb:        perc_corr 0.4872
+wandb:    test_accuracy 54.8567
+wandb:        test_loss 1.64314
+wandb:   train_accuracy 59.14274
+wandb:       train_loss 1.47447
+wandb:     val_accuracy 56.08913
+wandb:         val_loss 1.63027
+wandb:     vt_clean_max 0.00029
+wandb:    vt_clean_mean 0.0
+wandb:  vt_clean_median 0.0
+wandb:     vt_clean_min 0.0
+wandb:     vt_clean_q25 0.0
+wandb:     vt_clean_q75 0.0
+wandb:      vt_corr_max 0.00035
+wandb:     vt_corr_mean 0.0
+wandb:   vt_corr_median 0.0
+wandb:      vt_corr_min 0.0
+wandb:      vt_corr_q25 0.0
+wandb:      vt_corr_q75 1e-05
+wandb:    vt_noised_max 0.00044
+wandb:   vt_noised_mean 9e-05
+wandb: vt_noised_median 9e-05
+wandb:    vt_noised_min 6e-05
+wandb:    vt_noised_q25 9e-05
+wandb:    vt_noised_q75 0.0001
+wandb: 
+wandb: 🚀 View run lr-4.086e-05-wd-3.112e-02_adamwbc_eps-12_12_adamwbc_3 at: https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/mn6bpw2w
+wandb: ⭐️ View project at: https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250503_182245-mn6bpw2w/logs
+wandb: Tracking run with wandb version 0.19.10
+wandb: Run data is saved locally in /home/ubuntu/DP-AdamW/wandb/run-20250503_183014-cahbm9cv
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run toasty-jazz-603
+wandb: ⭐️ View project at https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: 🚀 View run at https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/cahbm9cv
+wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:          epsilon ▁▂▂▃▃▄▄▄▄▄▅▅▅▅▅▅▅▅▆▆▆▆▆▆▆▇▇▇▇▇▇▇▇▇▇█████
+wandb:     mt_clean_max ▄▅▇▆▄▁▂▃▄▂▄▃▃▄▅▄▅▄▄▆▆▅▅▅▅▅▄▅▅▅▆▅▆▅▅▄▆▆▆█
+wandb:    mt_clean_mean █▄▆▆▅▆▆█▇▆▅▆▆▅▄▆▅▃▄▄▅▄▃▄▁▄▃▃▁▃▄▄▄▃▂▃▂▃▂▃
+wandb:  mt_clean_median ▇▁▃▅▆▆▇▆▇▇▇▆▇▆█▆██▇▇█▆█▇▇▆▆▅▆▆▆▆▇▆▆▆▇▆▅▆
+wandb:     mt_clean_min ▁▇▆▆▅███▇██▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇█▇█▇▇▇▇█
+wandb:     mt_clean_q25 ▁▄▄▅▆▆▆▇▇▇▇▇▇▇▇▇████████████████████████
+wandb:     mt_clean_q75 █▆▅▅▅▄▄▃▃▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    mt_noised_max ▅▄▇▇▃▂▁▂▅▂▃▅█▄▄▃▆▅▅▃▄▅▄▆▅▄▅▂▆▅▅▃▃▅▄▃▄▇▃▆
+wandb:   mt_noised_mean ▂▅▄▅▆▅▃▄▆▃▂█▅▆▆▆▂▃▇▅▆▂▆▄▃▆▄▂▁▅▅▇▆▅▆▃▁▄▄▁
+wandb: mt_noised_median ▇▄▄█▄▅▆▃▇▆▂▆▆▃▅▄██▅▇▆▆▇▆▄▂▄▅▂▃▃▆▆█▅▇▆▄▅▁
+wandb:    mt_noised_min ▃▁▃▄▅█▆▇▇▇▇▇▇▇▇▆▇▇▆▅▅▅▆█▅▆▇▇▆▆█▆▆▇▆▆▇▇▇▅
+wandb:    mt_noised_q25 ▁▇▇▇▇███████████████████████████████████
+wandb:    mt_noised_q75 █▃▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:        perc_corr ▁▇▇███▇▇▇▇▆▆▆▇▇▆▆▆▆▆▆▅▆▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅
+wandb:    test_accuracy ▁▃▄▅▅▇▇▇▇▇▇█▇███████████████████████████
+wandb:        test_loss █▅▅▄▄▃▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   train_accuracy ▁▄▄▅▅▆▆▇▇▇▇▇▇▇██████████████████████████
+wandb:       train_loss █▆▅▅▄▃▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     val_accuracy ▁▁▃▄▅▇▇▇▇▇▇▇▇▇▇█████████████████████████
+wandb:         val_loss █▅▅▄▄▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_max █▅▄▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    vt_clean_mean █▄▃▃▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:  vt_clean_median █▆▅▄▄▃▃▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_min ▁▂▃▄▆▆████▇▆▆▆▆▅▅▅▄▅▅▅▅▅▅▅▄▄▄▃▃▃▃▃▃▄▃▄▄▄
+wandb:     vt_clean_q25 █▇▆▅▅▄▃▃▃▃▂▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_clean_q75 █▆▅▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      vt_corr_max █▅▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     vt_corr_mean █▅▃▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   vt_corr_median ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      vt_corr_min ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      vt_corr_q25 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      vt_corr_q75 █▄▄▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:    vt_noised_max █▅▄▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:   vt_noised_mean █▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: vt_noised_median ▁▇██████████████████████████████████████
+wandb:    vt_noised_min ▁▂▄▄▅▆▆▇▆▇▇▇▇▇▇▇▇▇▇█▇▇█▇████████████████
+wandb:    vt_noised_q25 ▁▄▅▆▇▇▇▇▇▇██████████████████████████████
+wandb:    vt_noised_q75 █▆▄▃▃▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:          epsilon 11.91532
+wandb:     mt_clean_max 0.0199
+wandb:    mt_clean_mean -0.0
+wandb:  mt_clean_median -0.0
+wandb:     mt_clean_min -0.0124
+wandb:     mt_clean_q25 -5e-05
+wandb:     mt_clean_q75 5e-05
+wandb:    mt_noised_max 0.01855
+wandb:   mt_noised_mean -1e-05
+wandb: mt_noised_median -1e-05
+wandb:    mt_noised_min -0.0127
+wandb:    mt_noised_q25 -0.0015
+wandb:    mt_noised_q75 0.00148
+wandb:        perc_corr 0.48483
+wandb:    test_accuracy 54.93694
+wandb:        test_loss 1.66674
+wandb:   train_accuracy 59.38026
+wandb:       train_loss 1.48081
+wandb:     val_accuracy 55.84415
+wandb:         val_loss 1.65158
+wandb:     vt_clean_max 0.00032
+wandb:    vt_clean_mean 0.0
+wandb:  vt_clean_median 0.0
+wandb:     vt_clean_min 0.0
+wandb:     vt_clean_q25 0.0
+wandb:     vt_clean_q75 0.0
+wandb:      vt_corr_max 0.00034
+wandb:     vt_corr_mean 0.0
+wandb:   vt_corr_median 0.0
+wandb:      vt_corr_min 0.0
+wandb:      vt_corr_q25 0.0
+wandb:      vt_corr_q75 1e-05
+wandb:    vt_noised_max 0.00043
+wandb:   vt_noised_mean 9e-05
+wandb: vt_noised_median 9e-05
+wandb:    vt_noised_min 6e-05
+wandb:    vt_noised_q25 9e-05
+wandb:    vt_noised_q75 0.0001
+wandb: 
+wandb: 🚀 View run lr-4.086e-05-wd-3.112e-02_adamwbc_eps-12_12_adamwbc_4 at: https://wandb.ai/cs2080/dp-gnn-sweeps2/runs/cahbm9cv
+wandb: ⭐️ View project at: https://wandb.ai/cs2080/dp-gnn-sweeps2
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20250503_183014-cahbm9cv/logs
+Logging for wandb is done setup
+SAMPLING EDGELISTS
+num train_nodes 90941
+dropped count 287
+FINISHED!
+FINISHED DATASET LOADING
+Getting subgraphs
+sampled subgraphs
+90941 8
+created accountant
+initializing...
+initialized
+Got clipping thresholds
+initialized model (etc.)
+Checkpoint directory: ./tmp/checkpoints
+Contents of ./tmp/checkpoints: []
+loading adam_summary_stats
+done training
+No RNG seed provided, using random seed: 424443
+Logging for wandb is done setup
+SAMPLING EDGELISTS
+num train_nodes 90941
+dropped count 303
+FINISHED!
+FINISHED DATASET LOADING
+Getting subgraphs
+sampled subgraphs
+90941 8
+created accountant
+initializing...
+initialized
+Got clipping thresholds
+initialized model (etc.)
+Checkpoint directory: ./tmp/checkpoints
+Contents of ./tmp/checkpoints: []
+loading adam_summary_stats
+done training
+No RNG seed provided, using random seed: 974291
+Logging for wandb is done setup
+SAMPLING EDGELISTS
+num train_nodes 90941
+dropped count 231
+FINISHED!
+FINISHED DATASET LOADING
+Getting subgraphs
+sampled subgraphs
+90941 8
+created accountant
+initializing...
+initialized
+Got clipping thresholds
+initialized model (etc.)
+Checkpoint directory: ./tmp/checkpoints
+Contents of ./tmp/checkpoints: []
+loading adam_summary_stats
+done training
+No RNG seed provided, using random seed: 22296
+Logging for wandb is done setup
+SAMPLING EDGELISTS
+num train_nodes 90941
+dropped count 262
+FINISHED!
+FINISHED DATASET LOADING
+Getting subgraphs
+sampled subgraphs
+90941 8
+created accountant
+initializing...
+initialized
+Got clipping thresholds
+initialized model (etc.)
+Checkpoint directory: ./tmp/checkpoints
+Contents of ./tmp/checkpoints: []
+loading adam_summary_stats
+done training
+Running row['epsilon']=6 row['optimizer']='adamwbc'
+No RNG seed provided, using random seed: 342888
+Logging for wandb is done setup
+SAMPLING EDGELISTS
+num train_nodes 90941
+dropped count 266
+FINISHED!
+FINISHED DATASET LOADING
+Getting subgraphs
+sampled subgraphs
+90941 8
+created accountant
+initializing...
+initialized
+Got clipping thresholds
+initialized model (etc.)
+Checkpoint directory: ./tmp/checkpoints
+Contents of ./tmp/checkpoints: []
+loading adam_summary_stats
+checkpoint 1checkpoint 2checkpoint 3done training
+No RNG seed provided, using random seed: 957501
+Logging for wandb is done setup
+SAMPLING EDGELISTS
+num train_nodes 90941
+dropped count 286
+FINISHED!
+FINISHED DATASET LOADING
+Getting subgraphs
+sampled subgraphs
+90941 8
+created accountant
+initializing...
+initialized
+Got clipping thresholds
+initialized model (etc.)
+Checkpoint directory: ./tmp/checkpoints
+Contents of ./tmp/checkpoints: []
+loading adam_summary_stats
+checkpoint 1checkpoint 2checkpoint 3done training
+No RNG seed provided, using random seed: 525849
+Logging for wandb is done setup
+SAMPLING EDGELISTS
+num train_nodes 90941
+dropped count 286
+FINISHED!
+FINISHED DATASET LOADING
+Getting subgraphs
+sampled subgraphs
+90941 8
+created accountant
+initializing...
+initialized
+Got clipping thresholds
+initialized model (etc.)
+Checkpoint directory: ./tmp/checkpoints
+Contents of ./tmp/checkpoints: []
+loading adam_summary_stats
+checkpoint 1checkpoint 2checkpoint 3done training
+No RNG seed provided, using random seed: 98592
+Logging for wandb is done setup
+SAMPLING EDGELISTS
+num train_nodes 90941
+dropped count 280
+FINISHED!
+FINISHED DATASET LOADING
+Getting subgraphs
+sampled subgraphs
+90941 8
+created accountant
+initializing...
+initialized
+Got clipping thresholds
+initialized model (etc.)
+Checkpoint directory: ./tmp/checkpoints
+Contents of ./tmp/checkpoints: []
+loading adam_summary_stats
+checkpoint 1checkpoint 2checkpoint 3done training
+No RNG seed provided, using random seed: 33737
+Logging for wandb is done setup
+SAMPLING EDGELISTS
+num train_nodes 90941
+dropped count 242
+FINISHED!
+FINISHED DATASET LOADING
+Getting subgraphs
+sampled subgraphs
+90941 8
+created accountant
+initializing...
+initialized
+Got clipping thresholds
+initialized model (etc.)
+Checkpoint directory: ./tmp/checkpoints
+Contents of ./tmp/checkpoints: []
+loading adam_summary_stats
+checkpoint 1checkpoint 2checkpoint 3done training
+Running row['epsilon']=12 row['optimizer']='adamwbc'
+No RNG seed provided, using random seed: 328248
+Logging for wandb is done setup
+SAMPLING EDGELISTS
+num train_nodes 90941
+dropped count 284
+FINISHED!
+FINISHED DATASET LOADING
+Getting subgraphs
+sampled subgraphs
+90941 8
+created accountant
+initializing...
+initialized
+Got clipping thresholds
+initialized model (etc.)
+Checkpoint directory: ./tmp/checkpoints
+Contents of ./tmp/checkpoints: []
+loading adam_summary_stats
+checkpoint 1checkpoint 2checkpoint 3checkpoint 4checkpoint 5checkpoint 6checkpoint 7checkpoint 8checkpoint 9checkpoint 10checkpoint 11checkpoint 12checkpoint 13done training
+No RNG seed provided, using random seed: 803601
+Logging for wandb is done setup
+SAMPLING EDGELISTS
+num train_nodes 90941
+dropped count 284
+FINISHED!
+FINISHED DATASET LOADING
+Getting subgraphs
+sampled subgraphs
+90941 8
+created accountant
+initializing...
+initialized
+Got clipping thresholds
+initialized model (etc.)
+Checkpoint directory: ./tmp/checkpoints
+Contents of ./tmp/checkpoints: []
+loading adam_summary_stats
+checkpoint 1checkpoint 2checkpoint 3checkpoint 4checkpoint 5checkpoint 6checkpoint 7checkpoint 8checkpoint 9checkpoint 10checkpoint 11checkpoint 12checkpoint 13done training
+No RNG seed provided, using random seed: 809463
+Logging for wandb is done setup
+SAMPLING EDGELISTS
+num train_nodes 90941
+dropped count 307
+FINISHED!
+FINISHED DATASET LOADING
+Getting subgraphs
+sampled subgraphs
+90941 8
+created accountant
+initializing...
+initialized
+Got clipping thresholds
+initialized model (etc.)
+Checkpoint directory: ./tmp/checkpoints
+Contents of ./tmp/checkpoints: []
+loading adam_summary_stats
+checkpoint 1checkpoint 2checkpoint 3checkpoint 4checkpoint 5checkpoint 6checkpoint 7checkpoint 8checkpoint 9checkpoint 10checkpoint 11checkpoint 12checkpoint 13done training
+No RNG seed provided, using random seed: 301237
+Logging for wandb is done setup
+SAMPLING EDGELISTS
+num train_nodes 90941
+dropped count 303
+FINISHED!
+FINISHED DATASET LOADING
+Getting subgraphs
+sampled subgraphs
+90941 8
+created accountant
+initializing...
+initialized
+Got clipping thresholds
+initialized model (etc.)
+Checkpoint directory: ./tmp/checkpoints
+Contents of ./tmp/checkpoints: []
+loading adam_summary_stats
+checkpoint 1checkpoint 2checkpoint 3checkpoint 4checkpoint 5checkpoint 6checkpoint 7checkpoint 8checkpoint 9checkpoint 10checkpoint 11checkpoint 12checkpoint 13done training
+No RNG seed provided, using random seed: 781647
+Logging for wandb is done setup
+SAMPLING EDGELISTS
+num train_nodes 90941
+dropped count 251
+FINISHED!
+FINISHED DATASET LOADING
+Getting subgraphs
+sampled subgraphs
+90941 8
+created accountant
+initializing...
+initialized
+Got clipping thresholds
+initialized model (etc.)
+Checkpoint directory: ./tmp/checkpoints
+Contents of ./tmp/checkpoints: []
+loading adam_summary_stats
+checkpoint 1checkpoint 2checkpoint 3checkpoint 4checkpoint 5checkpoint 6checkpoint 7checkpoint 8checkpoint 9checkpoint 10checkpoint 11checkpoint 12checkpoint 13done training

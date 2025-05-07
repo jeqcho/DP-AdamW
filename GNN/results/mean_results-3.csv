@@ -1,0 +1,2 @@
+optimizer,epsilon,lr,weight_decay,mean_test_accuracy,std_test_accuracy,original_test_accuracy
+adamw,3,0.0124695645243731,4.780044439e-07,0.5006193161010742,0.00920219099423472,51.42892456054688
