@@ -1,8 +1,8 @@
 import numpy as np
 
-from trainer.iterative import IterativeTrainer
-from trainer.utils import grad_norm, multiply_along_axis, _calculate_angle
-from data_utils.augmult import apply_augmult
+from jax_implementation.trainer.iterative import IterativeTrainer
+from jax_implementation.trainer.utils import grad_norm, multiply_along_axis, _calculate_angle
+from jax_implementation.data_utils.augmult import apply_augmult
 
 import jax
 import jax.numpy as jnp
@@ -18,19 +18,19 @@ from functools import partial
 import pickle
 import os
 
-parser = configlib.add_parser("DP Trainer config")
-parser.add_argument("--dp_sampling", default=False, action='store_true',
-                    help="Use proper DP sampling for amplification with https//opacus.ai/api/data_loader.html.")
-parser.add_argument("--dp_noise_multiplier", default=1., type=float,
-                    help="The noise multiple for DP-SGD and derivatives.")
-parser.add_argument("--dp_l2_norm_clip", default=1., type=float,
-                    help="The L2 clipping value for per example gradients for DP-SGD and derivatives.")
-parser.add_argument("--virtual_batch_size", "--vb", type=int, metavar="VBACH_SIZE",
-                    help="Use virual baches of size VBACH_SIZE iff batch_size > VBACH_SIZE.")
-parser.add_argument('--delta', type=float, default=1e-5)
-parser.add_argument('--augmult_num', type=int, default=0)
-parser.add_argument('--priv_accountant', choices=['rdp', 'prv'], default='prv')
-parser.add_argument('--target_eps', type=float, default=None)
+# parser = configlib.add_parser("DP Trainer config")
+# parser.add_argument("--dp_sampling", default=False, action='store_true',
+#                     help="Use proper DP sampling for amplification with https//opacus.ai/api/data_loader.html.")
+# parser.add_argument("--dp_noise_multiplier", default=1., type=float,
+#                     help="The noise multiple for DP-SGD and derivatives.")
+# parser.add_argument("--dp_l2_norm_clip", default=1., type=float,
+#                     help="The L2 clipping value for per example gradients for DP-SGD and derivatives.")
+# parser.add_argument("--virtual_batch_size", "--vb", type=int, metavar="VBACH_SIZE",
+#                     help="Use virual baches of size VBACH_SIZE iff batch_size > VBACH_SIZE.")
+# parser.add_argument('--delta', type=float, default=1e-5)
+# parser.add_argument('--augmult_num', type=int, default=0)
+# parser.add_argument('--priv_accountant', choices=['rdp', 'prv'], default='prv')
+# parser.add_argument('--target_eps', type=float, default=None)
 
 
 def clip_grad(single_example_batch_grad, l2_norm_clip):
@@ -72,7 +72,7 @@ def noise_and_normalize(grad_sum, l2_norm_clip, noise_multiplier, n, prng_key, s
 class DPIterativeTrainer(IterativeTrainer):
     def __init__(
             self,
-            conf: configlib.Config,
+            conf,
             model_fn,
             train_set,
             test_set,

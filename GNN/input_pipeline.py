@@ -24,9 +24,9 @@ import numpy as np
 from scipy import sparse
 import copy
 
-import dataset_readers
-import normalizations
-import sampler
+from GNN import dataset_readers
+from GNN import normalizations
+from GNN import sampler
 
 
 def add_reverse_edges(

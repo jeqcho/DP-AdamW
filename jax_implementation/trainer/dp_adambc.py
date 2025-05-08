@@ -1,8 +1,8 @@
 import functools
 
-from trainer.dp_iterative import DPIterativeTrainer, noise_and_normalize, clip_grad
-from trainer.utils import tree_zeros_like, tree_flatten_1dim, grad_norm, tree_ones_like
-from data_utils.jax_dataloader import NumpyLoader, Cycle
+from jax_implementation.trainer.dp_iterative import DPIterativeTrainer, noise_and_normalize, clip_grad
+from jax_implementation.trainer.utils import tree_zeros_like, tree_flatten_1dim, grad_norm, tree_ones_like
+from jax_implementation.data_utils.jax_dataloader import NumpyLoader, Cycle
 
 import configlib
 import math
@@ -25,21 +25,21 @@ from optax._src.alias import _scale_by_learning_rate
 from typing import Any, Callable, NamedTuple, Optional, Union
 import chex
 
-parser = configlib.add_parser("DP-Adam Trainer config")
-parser.add_argument("--beta_1", default=0.9, type=float)
-parser.add_argument("--beta_2", default=0.999, type=float)
-parser.add_argument("--adam_corr", default=False, action='store_true')
-parser.add_argument("--adam_corr_after_epoch", default=-1, type=int)
-parser.add_argument("--sgd_momentum", default=False, action='store_true')
-parser.add_argument("--imp_min", type=float, default=0)
-parser.add_argument("--imp_max", type=float, default=1)
-parser.add_argument("--tmp_bias", type=float, default=0)
-parser.add_argument("--eps", type=float, default=5e-8)
-parser.add_argument("--eps_root", type=float, default=5e-8)
-parser.add_argument("--dict_path", type=str, default="/tmp")
-parser.add_argument("--clipping_only", default=False, action='store_true')
-parser.add_argument("--gamma_decay", type=float, default=1.0)
-parser.add_argument("--lr_decay", type=float, default=1.0)
+# parser = configlib.add_parser("DP-Adam Trainer config")
+# parser.add_argument("--beta_1", default=0.9, type=float)
+# parser.add_argument("--beta_2", default=0.999, type=float)
+# parser.add_argument("--adam_corr", default=False, action='store_true')
+# parser.add_argument("--adam_corr_after_epoch", default=-1, type=int)
+# parser.add_argument("--sgd_momentum", default=False, action='store_true')
+# parser.add_argument("--imp_min", type=float, default=0)
+# parser.add_argument("--imp_max", type=float, default=1)
+# parser.add_argument("--tmp_bias", type=float, default=0)
+# parser.add_argument("--eps", type=float, default=5e-8)
+# parser.add_argument("--eps_root", type=float, default=5e-8)
+# parser.add_argument("--dict_path", type=str, default="/tmp")
+# parser.add_argument("--clipping_only", default=False, action='store_true')
+# parser.add_argument("--gamma_decay", type=float, default=1.0)
+# parser.add_argument("--lr_decay", type=float, default=1.0)
 
 
 def _gamma_exponential_decay_scheduler(step_number, init_value, decay_rate):
@@ -287,7 +287,7 @@ def my_sgd(
 class DPAdamTrainer(DPIterativeTrainer):
     def __init__(
             self,
-            conf: configlib.Config,
+            conf,
             model_fn,
             train_set,
             test_set,

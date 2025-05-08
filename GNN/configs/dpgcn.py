@@ -24,9 +24,9 @@ def get_config():
   config = ml_collections.ConfigDict()
 
   config.dataset = 'ogbn-arxiv-disjoint'
-  config.dataset_path = 'datasets/'
-  config.wandb_project = 'dp-adamw'
-  config.experiment_name = 'dpadambc_eps_3'
+  config.dataset_path = 'GNN/datasets/'
+  config.wandb_project = 'dp-gnn-sweeps'
+  config.experiment_name = 'dpadambc_eps_3-adamw-0.01'
   config.group = 'eps_3_ogbn_arxiv'
   config.multi_graph = False
   config.pad_subgraphs_to = 100
@@ -39,17 +39,17 @@ def get_config():
   config.num_decoder_layers = 2
   config.activation_fn = 'tanh'
   config.num_classes = 40
-  config.max_degree = 6
+  config.max_degree = 7
   config.differentially_private_training = True
   config.l2_norm_threshold = 3e-4
-  config.training_noise_multiplier = 2.7
+  config.training_noise_multiplier = 2
   config.num_training_steps = 10000
   config.max_training_epsilon = 3
   config.evaluate_every_steps = 10
   config.resample_every_steps = 0
   config.checkpoint_every_steps = 50
   config.rng_seed = 86583
-  config.optimizer = 'adamcorr'
+  config.optimizer = 'adamw'
   config.learning_rate = 1e-4
   config.momentum = 0.
   config.nesterov = False
@@ -58,4 +58,5 @@ def get_config():
   config.eps = 1e-12
   config.batch_size = 10000
   config.virtual_batch_size = 5000
+  config.weight_decay = 0.001
   return config
