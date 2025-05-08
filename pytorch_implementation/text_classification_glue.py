@@ -345,6 +345,16 @@ def main():
             dp_noise_multiplier=NOISE_MULTIPLIER,
             dp_l2_norm_clip=MAX_GRAD_NORM,
         )
+    elif conf.opt_model == "dp_adamw":
+        from adam_corr import DPAdamW
+        optimizer = DPAdamW(
+            model.parameters(), lr=conf.lr, eps=conf.eps,
+            betas=(conf.beta_1, conf.beta_2),
+            weight_decay=1e-2,
+            dp_batch_size=BATCH_SIZE,
+            dp_noise_multiplier=NOISE_MULTIPLIER,
+            dp_l2_norm_clip=MAX_GRAD_NORM,
+        )
     elif conf.opt_model == "adam":
         # optimizer = OrigAdam(model.parameters(), lr=conf.lr, eps=conf.eps, tmp_err=conf.tmp_err,
         #                      betas=(conf.beta_1, conf.beta_2),)  # if needed logging
