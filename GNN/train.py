@@ -677,7 +677,10 @@ def train_and_evaluate(config, workdir):
     initial_step = int(state.step) + 1
 
     # Log overview of parameters.
+    print("logging params")
     parameter_overview.log_parameter_overview(state.params)
+    print(parameter_overview.get_parameter_overview(state.params))
+    print("done logging params")
 
     # Log metrics after initialization.
     logits = compute_logits(state, graph)
